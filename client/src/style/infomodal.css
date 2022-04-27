@@ -9,10 +9,26 @@
 
 .text-holder{
     font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    opacity: 1;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title-intro{
+  font-size: 250%;
 }
 
 .title-logo{
     font-family: 'Nosifer', cursive;
+    font-size: 600%;
+    padding-bottom: 5%;
+}
+
+.title-subtitle{
+  font-size: 150%;
 }
 
 
@@ -115,12 +131,18 @@
   }
   
 .infomodal-curtain{
-    position: absolute;
-    z-index:999;
-    background-color: black;
-    opacity: .55;
-    padding-top: 1000px;
-    padding-left: 10000px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right:0; 
+  background-color: rgba(0, 0, 0, 0.406);
+  z-index: 100;
+  transition: 1s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
   
 .hidden{
@@ -131,3 +153,17 @@
     color: transparent;
 }
 
+.information-modal-container{
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.75);
+  width: 50%;
+  position: absolute;
+  animation: fadeInAnimation ease .4s;
+  animation-iteration-count: '1';
+  animation-fill-mode: forwards;
+  z-index:1000;
+  position: fixed; 
+  top: 15%; 
+  left: 25%; 
+
+}
