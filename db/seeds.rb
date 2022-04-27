@@ -55,19 +55,19 @@ puts "seeding profiles"
   p35.id, p36.id, p37.id, p38.id, p39.id, p40.id, p41.id].shuffle
 
 puts "creating interactions"
-  l1 = Interaction.create(user_id: u1.id, profile_id: profile_array[0], user_like: nil, profile_like: true, swipe_status: false)
-  l2 = Interaction.create(user_id: u1.id, profile_id: profile_array[1], user_like: nil, profile_like: true, swipe_status: false)
-  l3 = Interaction.create(user_id: u1.id, profile_id: profile_array[2], user_like: nil, profile_like: true, swipe_status: false)
-  l4 = Interaction.create(user_id: u1.id, profile_id: profile_array[3], user_like: nil, profile_like: true, swipe_status: false)
-  l5 = Interaction.create(user_id: u1.id, profile_id: profile_array[4], user_like: nil, profile_like: true, swipe_status: false)
-  l6 = Interaction.create(user_id: u1.id, profile_id: profile_array[5], user_like: nil, profile_like: true, swipe_status: false)
-  l7 = Interaction.create(user_id: u1.id, profile_id: profile_array[6], user_like: nil, profile_like: true, swipe_status: false)
-  l8 = Interaction.create(user_id: u1.id, profile_id: profile_array[7], user_like: nil, profile_like: true, swipe_status: false)
-  l9 = Interaction.create(user_id: u1.id, profile_id: profile_array[8], user_like: nil, profile_like: true, swipe_status: false)
-  l10 = Interaction.create(user_id: u1.id, profile_id: profile_array[9], user_like: nil, profile_like: true, swipe_status: false)
-  l11 = Interaction.create(user_id: u1.id, profile_id: profile_array[10], user_like: nil, profile_like: true, swipe_status: false)
-  l12 = Interaction.create(user_id: u1.id, profile_id: profile_array[11], user_like: nil, profile_like: true, swipe_status: false)
-  l13 = Interaction.create(user_id: u1.id, profile_id: profile_array[12], user_like: nil, profile_like: true, swipe_status: false)
-  l14 = Interaction.create(user_id: u1.id, profile_id: profile_array[13], user_like: nil, profile_like: true, swipe_status: false)
+  l1 = Interaction.create(user_id: u1.id, profile_id: profile_array[0], user_like: nil, profile_like: true, swiped_status: false)
+  l2 = Interaction.create(user_id: u1.id, profile_id: profile_array[1], user_like: nil, profile_like: true, swiped_status: false)
+  l3 = Interaction.create(user_id: u1.id, profile_id: profile_array[2], user_like: nil, profile_like: true, swiped_status: false)
+  l4 = Interaction.create(user_id: u1.id, profile_id: profile_array[3], user_like: nil, profile_like: true, swiped_status: false)
+  l5 = Interaction.create(user_id: u1.id, profile_id: profile_array[4], user_like: nil, profile_like: true, swiped_status: false)
+  l6 = Interaction.create(user_id: u1.id, profile_id: profile_array[5], user_like: nil, profile_like: true, swiped_status: false)
+  l7 = Interaction.create(user_id: u1.id, profile_id: profile_array[6], user_like: nil, profile_like: true, swiped_status: false)
+  l8 = Interaction.create(user_id: u1.id, profile_id: profile_array[7], user_like: nil, profile_like: true, swiped_status: false)
+  l9 = Interaction.create(user_id: u1.id, profile_id: profile_array[8], user_like: nil, profile_like: true, swiped_status: false)
+  l10 = Interaction.create(user_id: u1.id, profile_id: profile_array[9], user_like: nil, profile_like: true, swiped_status: false)
+  l11 = Interaction.create(user_id: u1.id, profile_id: profile_array[10], user_like: nil, profile_like: true, swiped_status: false)
+  l12 = Interaction.create(user_id: u1.id, profile_id: profile_array[11], user_like: nil, profile_like: true, swiped_status: false)
+  l13 = Interaction.create(user_id: u1.id, profile_id: profile_array[12], user_like: nil, profile_like: true, swiped_status: false)
+  l14 = Interaction.create(user_id: u1.id, profile_id: profile_array[13], user_like: nil, profile_like: true, swiped_status: false)
 
 puts "have a nice day!"
