@@ -14,35 +14,35 @@ import '../components/InfoModal'
 //gets
 
 //unswiped profiles (base data)
-let unswipesUrl = 'http://localhost:4000/unswiped_profiles'
+let unswiped = '/unswiped_profiles'
 
 //everyone (swiped/unswiped)
-let peopleUrl = 'http://localhost:4000/profiles'
+let peopleUrl = '/profiles'
 
 // all likes
-let likesUrl = 'http://localhost:4000/likes'
+let likesUrl = '/likes'
 
 //all matches
-let matchesUrl = 'http://localhost:4000/matches'
+let matchesUrl = '/matches'
 
 // Single results
 //gets the user 
-let userUrl = 'http://localhost:4000/user'
+let userUrl = '/user'
 //gets a specific profile
-let profileUrl = 'http://localhost:4000//profile/:id'
+let profileUrl = '/profile/:id'
 
 // posts 
 // upon swiping either direction, creates a 'like' model for the user and targeted profile
-let likeUrl = 'http://localhost:4000/like'
-let dislikeUrl = 'http://localhost:4000/dislike'
+let likeUrl = '/like'
+let dislikeUrl = '/dislike'
 
 //patches
 // upon clicking the undo button, this resets the 'like' model for the user and targeted profile
-let undoUrl = 'http://localhost:4000/undo'
+let undoUrl = '/undo'
 
 // patching to this will reset all information
-let resetUrl = 'http://localhost:4000/reset'
-let unmatchUrl = 'http://localhost:4000/unmatch'
+let resetUrl = '/reset'
+let unmatchUrl = '/unmatch'
 
 
 function App () {
@@ -65,7 +65,7 @@ function App () {
 
 
   useEffect(()=>{
-    axios.get(unswipesUrl)
+    axios.get(unswiped)
     .then(r=>{
       setDB(r.data)
       // console.log(r.data)

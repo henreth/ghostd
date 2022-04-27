@@ -67,20 +67,8 @@ function MatchModal({ setShowMatchModal, user, profile}) {
 
     return (
         <React.Fragment>
-            <div className={openMatchModal?'matchmodal-curtain':'hidden'} style={{transition: '1s ease-in-out'}}>-</div>
-            <BS.Modal
-                size="lg"
-                aria-labelledby="contained-modal-title-vcenter"
-                centered
-                show={openMatchModal}
-                onHide={handleClose}
-                // backdrop='static'
-                style={{
-                    animation: 'fadeInAnimation ease .5s',
-                    animationIterationCount: '1',
-                    animationFillMode: 'forwards',
-                    borderRadius: '30px', zIndex:1000, backgroundColor: 'rgba(0, 0, 0, 0.75)', width:'50%', position:'absolute',marginLeft:'370px', marginTop:'-790px'}}
-            >
+            <div className={openMatchModal?'infomodal-curtain':'hidden'} style={{transition: '1s ease-in-out'}}>-</div>
+            <div className='information-modal-container'>
                                     {/* <div style={{marginTop:'100px'}}></div> */}
 
                 <BS.Modal.Body style={{ padding: '80px',paddingLeft:'70px',textAlign: "center", opacity: '1', color: 'white', background: ''}}>
@@ -95,7 +83,7 @@ function MatchModal({ setShowMatchModal, user, profile}) {
                         <button className='swipe-button' onClick={handleClose}>KEEP SWIPING</button>
                     </div>
                 </BS.Modal.Body>
-            </BS.Modal>
+            </div>
         </React.Fragment>
     )
 }

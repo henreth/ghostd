@@ -7,25 +7,25 @@ import reject from '../img/bones-icon.png';
 import ProfileCard from './ProfileCard'
 import Card from './Card';
 import info from '../img/info-icon.png';
-import FakeModal from './MatchModal';
+import MatchModal from './MatchModal';
 import MoreProfileInfo from './MoreProfileInfo';
 
 
 // posts 
 // upon swiping either direction, creates a 'like' model for the user and targeted profile
-let likeUrl = 'http://localhost:4000/like'
-let dislikeUrl = 'http://localhost:4000/dislike'
+let likeUrl = '/like'
+let dislikeUrl = '/dislike'
 
 //patches
 // upon clicking the undo button, this resets the 'like' model for the user and targeted profile
-let undoUrl = 'http://localhost:4000/undo'
+let undoUrl = '/undo'
 
 
 function HomePage({ db, setDB, likes, setLikes, currentIndex, setCurrentIndex, lastPerson, setLastPerson, peopleUrl, user, matches, setMatches, showMatchModal, setShowMatchModal, handleAllModals }) {
   document.title = 'Ghostd - Home'
   let [userx, setUserx] = useState('')
   useEffect(() => {
-    axios.get('http://localhost:4000/user')
+    axios.get('/user')
       .then(r => setUserx(r.data))
   }, [])
   let id = userx.id
@@ -134,7 +134,7 @@ function HomePage({ db, setDB, likes, setLikes, currentIndex, setCurrentIndex, l
   return (
     <React.Fragment>
       <div>
-        {showMatchModal ? <FakeModal user={userx} profile={db[currentIndex + 1]} setShowMatchModal={setShowMatchModal} /> : null}
+        {showMatchModal ? <MatchModal user={userx} profile={db[currentIndex + 1]} setShowMatchModal={setShowMatchModal} /> : null}
         {showMoreProfileInfo ? <React.Fragment><div className='moreProfileInfo-curtain'>-</div> <MoreProfileInfo showMoreProfileInfo={showMoreProfileInfo} setShowMoreProfileInfo={setShowMoreProfileInfo} profile={lastPerson} nameLength={lastPerson.name.length} locationLength={lastPerson.location.length} /></React.Fragment> : null}
         <div className='cardContainer'>
           {cardsToDisplay}
