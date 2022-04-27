@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_27_195707) do
+ActiveRecord::Schema.define(version: 2022_04_27_201414) do
 
   create_table "interactions", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 2022_04_27_195707) do
     t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "username"
+    t.string "password_digest"
   end
 
   add_foreign_key "interactions", "profiles"
