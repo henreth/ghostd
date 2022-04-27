@@ -1,0 +1,91 @@
+.mini-cardContainer {
+    width: 39vw;
+    max-width: 46px;
+    height: 49px;
+    margin-bottom: 90px;
+  }
+  
+  .mini-card {
+    /* position: flex; */
+    background-color: rgb(78, 80, 78);
+    width: 88vw;
+    height: 130px;
+    width: 126px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition: color .5s;
+  }
+
+    
+  .mini-card:hover {
+    color: rgb(95, 165, 142);
+  }
+
+  .mini-name{
+    position: absolute;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 100px;
+    /* margin-left: 7px; */
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.092) 0%,rgba(0,0,0, 1) 100%), url(http://www.stadtteilschule-oejendorf.de/Unterricht/files/stacks_image_2936.png);
+    padding-right: 80px;;
+    padding-left: 5px;
+    max-width: 126px;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+    
+  .mini-cardContent {
+    width: 100%;
+    height: 100%;
+  }
+
+  .mini-img {
+    height: 130px;
+    width: 126px;
+    border-radius: 10px;
+  }
+  
+  /* .mini-card:hover{
+    box-shadow: 0px 0px 10px 0px rgba(60, 236, 183, 0.295);
+  } */
+
+  .cancel-button{
+    position: absolute;
+    height: 15px;
+    filter: invert(80%);
+    margin-left: -10px;
+    margin-top: -1px;
+    opacity: 0;
+    transition: .25s;
+    z-index: 100;
+  }
+
+  .cancel-button:hover{
+    opacity: 1;
+    transform: scale(1.15);
+  }
+
+  .exit-button{
+    /* display: inline-block; */
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 700;
+    border-radius: 5px;
+    padding-left: 3.4rem;
+    padding-right: 3.4rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: rgba(112, 111, 111, 1);
+    margin-left: 60px;
+    transition: .25s;
+}
+
+.exit-button:hover {
+    background-color: rgb(37, 37, 37);
+    color: salmon
+  }
