@@ -137,7 +137,7 @@
   bottom: 0;
   right:0; 
   background-color: rgba(0, 0, 0, 0.765);
-  z-index: 100;
+  z-index: 1;
   transition: 1s ease;
   display: flex;
   flex-direction: column;
