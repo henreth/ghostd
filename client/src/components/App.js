@@ -6,7 +6,8 @@ import Header from './Header';
 import HomePage from './HomePage';
 import Matches from './Matches';
 import SelectedProfile from './SelectedProfile';
-import '../components/InfoModal'
+import '../components/InfoModal';
+import Auth from './Auth/Auth';
 
 //Endpoints:
 
@@ -136,6 +137,10 @@ function App () {
               <SelectedProfile
                   matches={matches}
                   setMatches={setMatches}                
+              />
+          </Route>
+          <Route path='/auth'>
+              <Auth
               />
           </Route>
 

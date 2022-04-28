@@ -5,6 +5,12 @@ class UsersController < ApplicationController
         render json: user
     end
 
+    def create
+        user = User.create!(user_params)
+        session[:user_id] = user.id
+        render json: user, status: :created
+    end
+
     def matching_profiles
         user = find_user
         matches = user.interactions.where(user_like: true, profile_like: true).collect do |match|
