@@ -94,23 +94,23 @@ export default function App() {
               setCurrentIndex(r.data.length - 1)
               setLastPerson(r.data[r.data.length - 1])
 
-              axios.get(likesUrl)
-                .then(r => {
-                  // console.log(r.data)
-                  setLikes(r.data)
-                })
+              // axios.get(likesUrl)
+              //   .then(r => {
+              //     // console.log(r.data)
+              //     setLikes(r.data)
+              //   })
 
-              axios.get(matchesUrl)
-                .then(r => {
-                  setMatches(r.data)
-                  // console.log(r.data)
-                })
+              // axios.get(matchesUrl)
+              //   .then(r => {
+              //     setMatches(r.data)
+              //     // console.log(r.data)
+              //   })
 
-              axios.get(userUrl)
-                .then(r => {
-                  setUser(r.data)
-                  // console.log(r.data)
-                })
+              // axios.get(userUrl)
+              //   .then(r => {
+              //     setUser(r.data)
+              //     // console.log(r.data)
+              //   })
             })
         } else {
           history.push("/auth")
@@ -178,24 +178,24 @@ export default function App() {
                     setCurrentIndex(r.data.length - 1)
                     setLastPerson(r.data[r.data.length - 1])
 
-                    axios.get(likesUrl)
-                      .then(r => {
-                        // console.log(r.data)
-                        setLikes(r.data)
-                      })
+                    // axios.get(likesUrl)
+                    //   .then(r => {
+                    //     // console.log(r.data)
+                    //     setLikes(r.data)
+                    //   })
 
-                    axios.get(matchesUrl)
-                      .then(r => {
-                        setMatches(r.data)
-                        // console.log(r.data)
-                      })
+                    // axios.get(matchesUrl)
+                    //   .then(r => {
+                    //     setMatches(r.data)
+                    //     // console.log(r.data)
+                    //   })
 
-                    axios.get(userUrl)
-                      .then(r => {
-                        setUser(r.data)
-                        // console.log(r.data)
-                      })
-
+                    // axios.get(userUrl)
+                    //   .then(r => {
+                    //     setUser(r.data)
+                    //     // console.log(r.data)
+                    //   })
+                    history.push('/');
                   })
 
               })
@@ -205,7 +205,6 @@ export default function App() {
             }
           })
 
-        // navigate('/');
       })
       .catch(function (error) {
         if (error.response) {

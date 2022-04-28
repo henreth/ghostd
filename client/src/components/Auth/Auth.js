@@ -3,10 +3,16 @@ import './Auth.css';
 
 
 
-export default function Auth() {
+export default function Auth({username, setUsername, password, setPassword, signedIn, handleLogInSubmit,signUpName, setSignUpName, signUpLocation, setSignUpLocation, signUpPasswordConfirmation, setSignUpPasswordConfirmation, signUpProNouns,setSignUpProNouns, handleSignUpSubmit }) {
     let [formType,setFormType]=useState(false)
 
     function changeType(){
+        setUsername('');
+        setPassword('');
+        setSignUpPasswordConfirmation('');
+        setSignUpName('');    
+        setSignUpLocation('');    
+        setSignUpProNouns('');    
         setFormType(!formType)
     }
 
@@ -31,15 +37,15 @@ export default function Auth() {
             </div>
             /////
             <div className={formType?"frontbox moving":"frontbox"}>
-                <div className={formType?"login hide": "login"}>
+                <form className={formType?"login hide": "login"}>
                     <h2 className='auth-title-type'>LOG IN</h2>
                     <div className="inputbox">
-                        <input type="text" name="email" placeholder="  USERNAME" />
-                        <input type="password" name="password" placeholder="  PASSWORD" />
+                        <input type="text" name="email" placeholder="  USERNAME" value={username} onChange={(e)=>{setUsername(e.target.value)}} />
+                        <input type="password" name="password" placeholder="  PASSWORD"  value={password} onChange={(e)=>{setPassword(e.target.value)}}/>
                     </div>
                     <p>FORGOT YOUR PASSWORD?</p>
-                    <button className='auth-button'>LOG IN</button>
-                </div>
+                    <button className='auth-button' onClick={handleLogInSubmit}>LOG IN</button>
+                </form>
 
                 <div className={formType?"signup":"signup hide"}>
                     <h2 className='auth-title-type'>JOIN US</h2>
