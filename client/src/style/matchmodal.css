@@ -1,8 +1,5 @@
 .my-holder{
-    /* position: absolute; */
     z-index: 1000;
-    /* margin-top: 100px; */
-    /* margin-bottom: 100px; */
     width: 50% !important;
     background-color: black;
 }
@@ -12,30 +9,36 @@
 }
 
 .match-profile-image{
-    position: absolute;
     height: 250px;
     width: 250px;
     border-radius: 300px;
     border-style: solid;
     border: 6px solid whitesmoke;
-    margin-top: 100px;
-    margin-left: -165px; 
+}
+
+.match-image{
+    height: 250px;
+    width: 250px;   
+    border-radius: 300px;
+    border-style: solid;
+    border: 6px solid whitesmoke;  
+}
+
+.userimage{ 
+    border: 6px solid black;
+    filter: invert(50);
 }
 
 .match-user-image{
-    position: absolute;
     height: 250px;
     width: 250px;
     border-radius: 300px;
     border-style: solid;
     border: 6px solid black;
-    margin-top: 98px;
-    margin-left: -500px; 
     filter: invert(50);
 }
 
 .redirect-button{
-    /* display: inline-block; */
     cursor: pointer;
     font-size: 1.1rem;
     color: #fff;
@@ -70,7 +73,6 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
     background-color: rgba(112, 111, 111, 1);
-    margin-left: 60px;
     transition: .25s;
 }
 
@@ -79,14 +81,6 @@
     color: salmon
   }
 
-.matchmodal-curtain{
-    position: absolute;
-    z-index:999;
-    background-color: black;
-    opacity: .65;
-    padding-top: 1000px;
-    padding-left: 10000px;
-}
 
 .hidden{
     display:hidden;
@@ -102,5 +96,17 @@
 }
 
 .itsamatch{
-    /* font-family: 'Nosifer', cursive; */
+    font-family: 'Nosifer', cursive;
+    font-size: 500%;
+}
+
+.match-subtitle{
+    font-size: 200%;
+    text-transform: uppercase;
+}
+
+.match-images {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
