@@ -283,6 +283,8 @@ export default function App() {
         user={user}
         handleAllModals={handleAllModals}
         handleLogOut={handleLogOut}
+        signedIn={signedIn}
+        setUser={setUser}
       /> : null}
       {/* ADD WELCOME TO GHOSTED TITLE THAT ONLY DISPLAYS WHEN NOT SIGNED IN */}
       <div className='main-page'>

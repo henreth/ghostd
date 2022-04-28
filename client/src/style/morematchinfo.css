@@ -20,7 +20,7 @@
   background-position: center;
   box-shadow: -80px -15px 25px rgba(0, 0, 0, 0.199);
   transition: all .15s;
-  margin-left: 325px;
+  /* margin-left: 325px; */
   margin-top: 95px;
   z-index: 1000;
   animation: fadeInAnimation ease .3s;
@@ -62,7 +62,7 @@
   background-position: center;
   box-shadow: -80px -15px 25px rgba(0, 0, 0, 0.199);
   transition: all .15s;
-  margin-left: -390px;
+  /* margin-left: -390px; */
   margin-top: 150px;
   z-index: 1000;
 }

@@ -12,6 +12,11 @@ class UsersController < ApplicationController
         render json: user, status: :created
     end
 
+    def update
+        @current_user.update!(user_params)
+        render json: @current_user
+    end
+
     def matching_profiles
         user = find_user
         matches = user.interactions.where(user_like: true, profile_like: true).collect do |match|
