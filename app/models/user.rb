@@ -4,9 +4,9 @@ class User < ApplicationRecord
     
     has_secure_password
 
-    validates :username, presence: true, uniqueness: true
-    validates :name, presence: true
+    validates :username, presence: true, uniqueness: true, length: {minimum: 4}, allow_blank: false
+    validates :name, presence: true, length: {minimum: 4}, allow_blank: false
     validates :age, presence: true
-    validates :pronouns, presence: true
-    validates :location, presence: true
+    validates :pronouns, presence: true, length: {minimum: 4}, allow_blank: false
+    validates :location, presence: true, length: {minimum: 2}, allow_blank: false
 end
