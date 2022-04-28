@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   # Profiles 
   get "/profiledeck", to: "profiles#index"
 
+  # Users
+  get "/me", to: "users#show"
+
 end
