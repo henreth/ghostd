@@ -9,5 +9,9 @@ Rails.application.routes.draw do
   # Users
   get "/me", to: "users#show"
   get "/matches", to: "users#matching_profiles"
+  get "/unswiped_profiles", to "users#unswiped_profiles"
+
+  ## All route name changes
+    ##"/profiles" to "/profiledeck"
 
 end

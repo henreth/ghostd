@@ -11,8 +11,16 @@ class UsersController < ApplicationController
             match.profile
         end
 
-        matches.to_json
+        render json: matches
+    end
 
+    def unswiped_profiles
+        user = find_user
+        fresh_profiles = user.interactions.where(swiped_status: false).collect do |fresh|
+            fresh.profile
+        end
+
+        render json: fresh_profiles
     end
 
     private 
