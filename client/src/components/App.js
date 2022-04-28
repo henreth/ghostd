@@ -142,7 +142,7 @@ export default function App() {
         setSignUpLocation('');
         setSignUpProNouns('');
 
-        
+
         setUser(r.data)
         setSignedIn(true)
         history.push('/')
@@ -246,6 +246,28 @@ export default function App() {
           console.log('Error', error.message);
         }
       });
+  }
+
+  function handleLogOut() {
+    axios.delete('/logout')
+      .then(r => {
+        alert('You have now been logged out.')
+        setSignedIn(false);
+        history.push('/');
+        setUser("");
+        window.location.reload();
+      })
+      .catch(function (error) {
+        if (error.response) {
+          console.log(error.response.data.errors);
+          alert(error.response.data.errors)
+        } else if (error.request) {
+          console.log(error.request);
+        } else {
+          console.log('Error', error.message);
+        }
+      });
+
   }
 
 
