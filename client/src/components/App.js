@@ -141,8 +141,38 @@ export default function App() {
         setSignUpName('');
         setSignUpLocation('');
         setSignUpProNouns('');
-        history.push('/login')
-        alert('Please sign in with your provided details')
+
+        
+        setUser(r.data)
+        setSignedIn(true)
+        history.push('/')
+        axios.get(unswiped)
+        .then(r => {
+          setDB(r.data)
+          // console.log(r.data)
+          setCurrentIndex(r.data.length - 1)
+          setLastPerson(r.data[r.data.length - 1])
+
+          // axios.get(likesUrl)
+          //   .then(r => {
+          //     // console.log(r.data)
+          //     setLikes(r.data)
+          //   })
+
+          // axios.get(matchesUrl)
+          //   .then(r => {
+          //     setMatches(r.data)
+          //     // console.log(r.data)
+          //   })
+
+          // axios.get(userUrl)
+          //   .then(r => {
+          //     setUser(r.data)
+          //     // console.log(r.data)
+          //   })
+          history.push('/');
+        })
+
       })
       .catch(function (error) {
         if (error.response) {

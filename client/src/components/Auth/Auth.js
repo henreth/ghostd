@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom';
 import './Auth.css';
 
 
 
 export default function Auth({username, setUsername, password, setPassword, signedIn, handleLogInSubmit,signUpName, setSignUpName, signUpLocation, setSignUpLocation, signUpPasswordConfirmation, setSignUpPasswordConfirmation, signUpProNouns,setSignUpProNouns, handleSignUpSubmit }) {
     let [formType,setFormType]=useState(false)
+    let history = useHistory();
+
+    // useEffect(() => {
+    //     if (signedIn == true) {
+    //       history.push('/');
+    //     }
+    //   }, [])
 
     function changeType(){
         setUsername('');
@@ -47,18 +55,18 @@ export default function Auth({username, setUsername, password, setPassword, sign
                     <button className='auth-button' onClick={handleLogInSubmit}>LOG IN</button>
                 </form>
 
-                <div className={formType?"signup":"signup hide"}>
+                <form className={formType?"signup":"signup hide"}>
                     <h2 className='auth-title-type'>JOIN US</h2>
                     <div className="inputbox">
-                        <input type="text" name="fullname" placeholder="  FULLNAME" />
-                        <input type="text" name="email" placeholder="  USERNAME" />
-                        <input type="text" name="pronouns" placeholder="  PRONOUNS" />
-                        <input type="text" name="location" placeholder="  LOCATION" />
-                        <input type="password" name="password" placeholder="  PASSWORD" />
-                        <input type="password" name="password" placeholder="  PASSWORD CONFIRMATION" />
+                        <input type="text" name="fullname" placeholder="  FULL NAME" value={signUpName} onChange={(e)=>{setSignUpName(e.target.value)}} />
+                        <input type="text" name="email" placeholder="  USERNAME" value={username} onChange={(e)=>{setUsername(e.target.value)}} />
+                        <input type="text" name="pronouns" placeholder="  PRONOUNS" value={signUpProNouns} onChange={(e)=>{setSignUpProNouns(e.target.value)}}  />
+                        <input type="text" name="location" placeholder="  LOCATION" value={signUpLocation} onChange={(e)=>{setSignUpLocation(e.target.value)}} />
+                        <input type="password" name="password" placeholder="  PASSWORD" value={password} onChange={(e)=>{setPassword(e.target.value)}} />
+                        <input type="password" name="password" placeholder="  PASSWORD CONFIRMATION" value={signUpPasswordConfirmation} onChange={(e)=>{setSignUpPasswordConfirmation(e.target.value)}} />
                     </div>
-                    <button className='auth-button'>SIGN UP</button>
-                </div>
+                    <button className='auth-button' onClick={handleSignUpSubmit}>SIGN UP</button>
+                </form>
 
             </div>
         </div>
