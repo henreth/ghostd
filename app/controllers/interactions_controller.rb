@@ -18,6 +18,19 @@ class InteractionsController < ApplicationController
             render json: response
         end
 
+    end
+
+    def dislike
+        user = User.find_by(id: session[:user_id])
+        profile = Profile.find(params[:profile_id])
+        target_interaction = Interaction.find_by(:user_id => user.id, :profile_id => profile.id)
+
+        if target_interaction.exists?
+            target_interaction.update(:user_like => false, swiped_status => true)
+
+        else
+            Interaction.create(user_id: user.id, profile_id: profile.id, user_like: true, profile_like: nil, swiped_status: true)
+        end
 
 
     end
