@@ -7,7 +7,7 @@ import axios from 'axios';
 let unmatchUrl = 'http://localhost:4000/unmatch';
 let userUrl = 'http://localhost:4000/user';
 
-function MoreProfileInfo ({showMoreProfileInfo, setShowMoreProfileInfo, profile,nameLength,locationLength}) {
+function MoreProfileInfo ({showMoreProfileInfo, setShowMoreProfileInfo, profile,nameLength,locationLength,handleLogOut}) {
     // console.log(nameLength)
 
 
@@ -26,6 +26,7 @@ function MoreProfileInfo ({showMoreProfileInfo, setShowMoreProfileInfo, profile,
                     <hr></hr>
                     <p className='card-text'>{profile.description}</p>
                     <button className='close-button' onClick={handleCloseProfile}>CLOSE PROFILE</button>
+                    <button className='close-button' onClick={handleLogOut}>LOG OUT</button>
                 </div>
             </div>
       </div>

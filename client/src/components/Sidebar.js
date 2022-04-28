@@ -8,7 +8,7 @@ import userPhoto from '../img/user-icon.png'
 import location from '../img/location_icon.png';
 
 
-function Sidebar({ matches, setMatches, user }) {
+function Sidebar({ matches, setMatches, user,handleLogOut }) {
     let [showMoreUserInfo, setShowMoreUserInfo] = useState(false);
     let [showMoreProfileInfo, setShowMoreProfileInfo] = useState(false);
     let [selectedMatch, setSelectedMatch] = useState(user);
@@ -57,7 +57,7 @@ function Sidebar({ matches, setMatches, user }) {
     return (
         <div className='menu-holder'>
             <Menu>
-                {showMoreUserInfo ? <MoreProfileInfo showMoreProfileInfo={showMoreUserInfo} setShowMoreProfileInfo={setShowMoreUserInfo} profile={user} /> : null}
+                {showMoreUserInfo ? <MoreProfileInfo showMoreProfileInfo={showMoreUserInfo} setShowMoreProfileInfo={setShowMoreUserInfo} profile={user} handleLogOut={handleLogOut} /> : null}
                 {showMoreProfileInfo ? <SideBarMoreMatchInfo matches={matches} setMatches={setMatches} showMoreProfileInfo={showMoreProfileInfo} setShowMoreProfileInfo={setShowMoreProfileInfo} profile={selectedMatch} nameLength={selectedMatch.name.length} locationLength={selectedMatch.name.length} descriptionLength={selectedMatch.description.length} /> : null}
                 <img src={userPhoto} onClick={handleClickUser} className='profile-photo-sidebar' />
                 <a className="spacing-menu-item">'</a>

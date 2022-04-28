@@ -13,7 +13,7 @@ import InfoModal from './InfoModal';
 let undoUrl = '/reset'
 
 
-function Header({ matches, setMatches, user, showInfoModal, setShowInfoModal, handleAllModals }) {
+function Header({ matches, setMatches, user, showInfoModal, setShowInfoModal, handleAllModals,handleLogOut }) {
 
   let history = useHistory();
 
@@ -43,6 +43,7 @@ function Header({ matches, setMatches, user, showInfoModal, setShowInfoModal, ha
         matches={matches}
         setMatches={setMatches}
         user={user}
+        handleLogOut={handleLogOut}
       />
       {showInfoModal ? <InfoModal user={user} setShowInfoModal={setShowInfoModal} /> : null}
 
