@@ -135,7 +135,7 @@ function HomePage({ db, setDB, likes, setLikes, currentIndex, setCurrentIndex, l
     <React.Fragment>
       <div>
         {showMatchModal ? <MatchModal user={userx} profile={db[currentIndex + 1]} setShowMatchModal={setShowMatchModal} /> : null}
-        {showMoreProfileInfo ? <React.Fragment><div className='moreProfileInfo-curtain'>-</div> <MoreProfileInfo showMoreProfileInfo={showMoreProfileInfo} setShowMoreProfileInfo={setShowMoreProfileInfo} profile={lastPerson} nameLength={lastPerson.name.length} locationLength={lastPerson.location.length} /></React.Fragment> : null}
+        {showMoreProfileInfo ? <React.Fragment><div className='infomodal-curtain'>-</div> <MoreProfileInfo showMoreProfileInfo={showMoreProfileInfo} setShowMoreProfileInfo={setShowMoreProfileInfo} profile={lastPerson} nameLength={lastPerson.name.length} locationLength={lastPerson.location.length} /></React.Fragment> : null}
         <div className='cardContainer'>
           {cardsToDisplay}
         </div>

@@ -1,5 +1,5 @@
 import * as BS from 'react-bootstrap'
-import React,{ useState } from 'react'
+import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import confetti from "canvas-confetti";
 import '../style/matchmodal.css'
@@ -7,7 +7,7 @@ import userPhoto from '../img/user-icon.png'
 
 
 
-function MatchModal({ setShowMatchModal, user, profile}) {
+function MatchModal({ setShowMatchModal, user, profile }) {
     const [openMatchModal, setOpenMatchModal] = useState(true)
     const history = useHistory()
 
@@ -18,7 +18,7 @@ function MatchModal({ setShowMatchModal, user, profile}) {
     }
 
     function handleGoToProfile() {
-        history.push('/match/'+profile.id)
+        history.push('/match/' + profile.id)
         history.go(0)
         setShowMatchModal(false)
     }
@@ -67,22 +67,22 @@ function MatchModal({ setShowMatchModal, user, profile}) {
 
     return (
         <React.Fragment>
-            <div className={openMatchModal?'infomodal-curtain':'hidden'} style={{transition: '1s ease-in-out'}}>-</div>
+            <div className={openMatchModal ? 'infomodal-curtain' : 'hidden'}>-</div>
             <div className='information-modal-container'>
-                                    {/* <div style={{marginTop:'100px'}}></div> */}
-
-                <BS.Modal.Body style={{ padding: '80px',paddingLeft:'70px',textAlign: "center", opacity: '1', color: 'white', background: ''}}>
+                <div className='text-holder'>
                     <div className='text-holder'>
-                        <strong className='itsamatch' style={{marginLeft:'35px', fontSize:'70px', fontFamily:"Nosifer, cursive;"}}>IT'S A MATCH!</strong>
-                        <strong style={{marginLeft: '40px', fontSize:'20px'}}> YOU AND {profile.name.toUpperCase()} LIKED ONE ANOTHER</strong>
-                        <img className = 'match-user-image' src={userPhoto}/>
-                        <img className = 'match-profile-image' src={profile.image}/>
+                        <strong className='itsamatch'>IT'S A MATCH!</strong>
+                        <strong className='match-subtitle'> YOU AND {profile.name} LIKED ONE ANOTHER</strong>
+                        <div className='match-images'>
+                            <img className='match-image userimage' src={userPhoto} />
+                            <img className='match-image' src={profile.image} />
+                        </div>
                         <hr></hr>
-                        <div style={{marginTop:'420px'}}></div>
+                        <div></div>
                         <button className='redirect-button' onClick={handleGoToProfile}>GO TO PROFILE</button>
                         <button className='swipe-button' onClick={handleClose}>KEEP SWIPING</button>
                     </div>
-                </BS.Modal.Body>
+                </div>
             </div>
         </React.Fragment>
     )
