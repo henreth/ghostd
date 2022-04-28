@@ -18,7 +18,7 @@ import Auth from './Auth/Auth';
 let unswiped = '/unswiped_profiles'
 
 //everyone (swiped/unswiped)
-let peopleUrl = '/profiles'
+let peopleUrl = '/profiledeck'
 
 // all likes
 let likesUrl = '/likes'
@@ -61,8 +61,9 @@ export default function App() {
 
 
     //Sign Up
-    const [signUpFirstName, setSignUpFirstName] = useState("");
-    const [signUpLastName, setSignUpLastName] = useState("");
+    const [signUpName, setSignUpName] = useState("");
+    const [signUpLocation, setSignUpLocation] = useState("");
+    const [signUpProNouns, setSignUpProNouns] = useState("");
     const [signUpPasswordConfirmation, setSignUpPasswordConfirmation] = useState("");
   
     // Log In:
@@ -118,6 +119,44 @@ export default function App() {
         )
 
     }, [])
+
+    // Auth Functions
+
+    function handleSignUpSubmit(e) {
+      e.preventDefault();
+      const signUpDetails = {
+        "name": signUpName,
+        "location": signUpLocation,
+        "pronouns": signUpProNouns,
+        "age": 1,
+        username,
+        password,
+        "password_confirmation": signUpPasswordConfirmation,
+      }
+      axios.post("/signup", signUpDetails)
+        .then(r => {
+          setUsername('');
+          setPassword('');
+          setSignUpPasswordConfirmation('');
+          setSignUpName('');
+          setSignUpLocation('');
+          setSignUpProNouns('');
+          history.push('/login')
+          alert('Please sign in with your provided details')
+        })
+        .catch(function (error) {
+          if (error.response) {
+            console.log(error.response.data.errors);
+            alert(error.response.data.errors)
+          } else if (error.request) {
+            console.log(error.request);
+          } else {
+            console.log('Error', error.message);
+          }
+        });
+  
+    }
+  
 
     return (
       <React.Fragment>
