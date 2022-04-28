@@ -8,5 +8,6 @@ Rails.application.routes.draw do
 
   # Users
   get "/me", to: "users#show"
+  get "/matches", to: "users#matching_profiles"
 
 end

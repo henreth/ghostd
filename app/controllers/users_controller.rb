@@ -5,6 +5,16 @@ class UsersController < ApplicationController
         render json: user
     end
 
+    def matching_profiles
+        user = find_user
+        matches = user.interactions.where(user_like: true, profile_like: true).collect do |match|
+            match.profile
+        end
+
+        matches.to_json
+
+    end
+
     private 
 
     def user_params 
