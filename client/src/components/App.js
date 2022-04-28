@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, useHistory } from "react-router-dom";
 import axios from 'axios';
 import '../style/app.css';
 import Header from './Header';
 import HomePage from './HomePage';
 import Matches from './Matches';
 import SelectedProfile from './SelectedProfile';
-import '../components/InfoModal'
+import '../components/InfoModal';
+import Auth from './Auth/Auth';
 
 //Endpoints:
 
@@ -17,7 +18,7 @@ import '../components/InfoModal'
 let unswiped = '/unswiped_profiles'
 
 //everyone (swiped/unswiped)
-let peopleUrl = '/profiles'
+let peopleUrl = '/profiledeck'
 
 // all likes
 let likesUrl = '/likes'
@@ -45,12 +46,12 @@ let resetUrl = '/reset'
 let unmatchUrl = '/unmatch'
 
 
-function App () {
+export default function App() {
+  let history = useHistory();
 
-  let [db,setDB] = useState([]);
-  let [likes,setLikes] = useState([]);
-  let [matches,setMatches] = useState([]);
-  let [user, setUser] = useState([]);
+  let [db, setDB] = useState([]);
+  let [likes, setLikes] = useState([]);
+  let [matches, setMatches] = useState([]);
 
   const [currentIndex, setCurrentIndex] = useState(db.length - 1)
   const [lastPerson, setLastPerson] = useState({})
@@ -58,56 +59,239 @@ function App () {
   let [showMatchModal, setShowMatchModal] = useState(false);
   let [showInfoModal, setShowInfoModal] = useState(false);
 
-  function handleAllModals(){
+
+  //Sign Up
+  const [signUpName, setSignUpName] = useState("");
+  const [signUpLocation, setSignUpLocation] = useState("");
+  const [signUpProNouns, setSignUpProNouns] = useState("");
+  const [signUpPasswordConfirmation, setSignUpPasswordConfirmation] = useState("");
+
+  // Log In:
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const [user, setUser] = useState('');
+  const [signedIn, setSignedIn] = useState(false)
+
+
+  function handleAllModals() {
     setShowMatchModal(false)
     setShowInfoModal(false)
   }
+  useEffect(() => {
+    fetch("/me")
+      .then((r) => {
+        if (r.ok) {
+          r.json().then((user) => {
+            setUser(user)
+            setSignedIn(true)
+          })
+
+          axios.get(unswiped)
+            .then(r => {
+              setDB(r.data)
+              // console.log(r.data)
+              setCurrentIndex(r.data.length - 1)
+              setLastPerson(r.data[r.data.length - 1])
+
+              // axios.get(likesUrl)
+              //   .then(r => {
+              //     // console.log(r.data)
+              //     setLikes(r.data)
+              //   })
+
+              // axios.get(matchesUrl)
+              //   .then(r => {
+              //     setMatches(r.data)
+              //     // console.log(r.data)
+              //   })
+
+              // axios.get(userUrl)
+              //   .then(r => {
+              //     setUser(r.data)
+              //     // console.log(r.data)
+              //   })
+            })
+        } else {
+          history.push("/auth")
+        }
+      }
+      )
+
+  }, [])
+
+  // Auth Functions
+
+  function handleSignUpSubmit(e) {
+    e.preventDefault();
+    const signUpDetails = {
+      "name": signUpName,
+      "location": signUpLocation,
+      "pronouns": signUpProNouns,
+      "age": 1,
+      username,
+      password,
+      "password_confirmation": signUpPasswordConfirmation,
+    }
+    axios.post("/signup", signUpDetails)
+      .then(r => {
+        setUsername('');
+        setPassword('');
+        setSignUpPasswordConfirmation('');
+        setSignUpName('');
+        setSignUpLocation('');
+        setSignUpProNouns('');
 
 
-  useEffect(()=>{
-    axios.get(unswiped)
-    .then(r=>{
-      setDB(r.data)
-      // console.log(r.data)
-      setCurrentIndex(r.data.length-1)
-      setLastPerson(r.data[r.data.length-1])
+        setUser(r.data)
+        setSignedIn(true)
+        history.push('/')
+        axios.get(unswiped)
+        .then(r => {
+          setDB(r.data)
+          // console.log(r.data)
+          setCurrentIndex(r.data.length - 1)
+          setLastPerson(r.data[r.data.length - 1])
 
-    axios.get(likesUrl)
-    .then(r=>{
-      // console.log(r.data)
-      setLikes(r.data)})
+          // axios.get(likesUrl)
+          //   .then(r => {
+          //     // console.log(r.data)
+          //     setLikes(r.data)
+          //   })
 
-    axios.get(matchesUrl)
-    .then(r=>{
-      setMatches(r.data)
-      // console.log(r.data)
-    })
+          // axios.get(matchesUrl)
+          //   .then(r => {
+          //     setMatches(r.data)
+          //     // console.log(r.data)
+          //   })
 
-    axios.get(userUrl)
-    .then(r=>{
-      setUser(r.data)
-      // console.log(r.data)
-    })
-  })
-  },[])
+          // axios.get(userUrl)
+          //   .then(r => {
+          //     setUser(r.data)
+          //     // console.log(r.data)
+          //   })
+          history.push('/');
+        })
+
+      })
+      .catch(function (error) {
+        if (error.response) {
+          console.log(error.response.data.errors);
+          alert(error.response.data.errors)
+        } else if (error.request) {
+          console.log(error.request);
+        } else {
+          console.log('Error', error.message);
+        }
+      });
+
+  }
+
+  function handleLogInSubmit(e) {
+    e.preventDefault();
+    const logInDetails = {
+      username,
+      password
+    }
+
+    axios.post("/login", logInDetails)
+      .then((r) => {
+        fetch("/me")
+          .then((r) => {
+            if (r.ok) {
+              r.json().then((user) => {
+                setUser(user)
+                axios.get(unswiped)
+                  .then(r => {
+                    setDB(r.data)
+                    // console.log(r.data)
+                    setCurrentIndex(r.data.length - 1)
+                    setLastPerson(r.data[r.data.length - 1])
+
+                    // axios.get(likesUrl)
+                    //   .then(r => {
+                    //     // console.log(r.data)
+                    //     setLikes(r.data)
+                    //   })
+
+                    // axios.get(matchesUrl)
+                    //   .then(r => {
+                    //     setMatches(r.data)
+                    //     // console.log(r.data)
+                    //   })
+
+                    // axios.get(userUrl)
+                    //   .then(r => {
+                    //     setUser(r.data)
+                    //     // console.log(r.data)
+                    //   })
+                    history.push('/');
+                  })
+
+              })
+            }
+            else {
+              history.push("/");
+            }
+          })
+
+      })
+      .catch(function (error) {
+        if (error.response) {
+          console.log(error.response.data.errors);
+          alert(error.response.data.errors)
+        } else if (error.request) {
+          console.log(error.request);
+        } else {
+          console.log('Error', error.message);
+        }
+      });
+  }
+
+  function handleLogOut() {
+    axios.delete('/logout')
+      .then(r => {
+        alert('You have now been logged out.')
+        setSignedIn(false);
+        history.push('/');
+        setUser("");
+        window.location.reload();
+      })
+      .catch(function (error) {
+        if (error.response) {
+          console.log(error.response.data.errors);
+          alert(error.response.data.errors)
+        } else if (error.request) {
+          console.log(error.request);
+        } else {
+          console.log('Error', error.message);
+        }
+      });
+
+  }
+
 
   return (
     <React.Fragment>
-      <Header
-        matches = {matches}
-        setMatches = {setMatches}
+      {signedIn ? <Header
+        matches={matches}
+        setMatches={setMatches}
         showMatchModal={showMatchModal}
         setShowMatchModal={setShowMatchModal}
         showInfoModal={showInfoModal}
         setShowInfoModal={setShowInfoModal}
         user={user}
         handleAllModals={handleAllModals}
-        />
+        handleLogOut={handleLogOut}
+        signedIn={signedIn}
+        setUser={setUser}
+      /> : null}
+      {/* ADD WELCOME TO GHOSTED TITLE THAT ONLY DISPLAYS WHEN NOT SIGNED IN */}
       <div className='main-page'>
-      <Switch>
+        <Switch>
           <Route exact path="/">
-            <HomePage 
-              db = {db}
+            <HomePage
+              db={db}
               setDB={setDB}
               likes={likes}
               setLikes={setLikes}
@@ -123,20 +307,40 @@ function App () {
               showMatchModal={showMatchModal}
               setShowMatchModal={setShowMatchModal}
               handleAllModals={handleAllModals}
-              />
+            />
           </Route>
-          <Route path ="/matches">
-              <Matches 
-                  user={user}
-                  matches = {matches}
-                  setMatches = {setMatches} 
-              />
+          <Route path="/matches">
+            <Matches
+              user={user}
+              matches={matches}
+              setMatches={setMatches}
+            />
           </Route>
-          <Route exact path ='/match/:profileId'>
-              <SelectedProfile
-                  matches={matches}
-                  setMatches={setMatches}                
-              />
+          <Route exact path='/match/:profileId'>
+            <SelectedProfile
+              matches={matches}
+              setMatches={setMatches}
+            />
+          </Route>
+          <Route path='/auth'>
+            <Auth
+              signedIn={signedIn}
+              username={username}
+              setUsername={setUsername}
+              password={password}
+              setPassword={setPassword}
+              handleLogInSubmit={handleLogInSubmit}
+              setSignedIn={setSignedIn}
+              signUpPasswordConfirmation={signUpPasswordConfirmation}
+              setSignUpPasswordConfirmation={setSignUpPasswordConfirmation}
+              signUpName={signUpName}
+              setSignUpName={setSignUpName}
+              signUpLocation={signUpLocation}
+              setSignUpLocation={setSignUpLocation}
+              signUpProNouns={signUpProNouns}
+              setSignUpProNouns={setSignUpProNouns}
+              handleSignUpSubmit={handleSignUpSubmit}
+            />
           </Route>
 
         </Switch>
@@ -145,5 +349,3 @@ function App () {
     </React.Fragment>
   )
 }
-
-export default App

@@ -9,13 +9,13 @@
       margin-bottom: 90px;
     /* margin-right: auto; */
     position: absolute;
-    margin-left: 300px;
+    /* margin-left: 300px; */
   }
   
 .moreuser-info-card {
     /* position: flex; */
     /* background-color: rgb(78, 80, 78); */
-    position: absolute;
+    /* position: absolute; */
     display: flex;
     flex-direction: row;
     background-color: black;
@@ -27,7 +27,7 @@
     /* cursor: pointer; */
     box-shadow: -80px -15px 25px rgba(0, 0, 0, 0.199);
     transition: all .15s;
-    margin-left: 325px;
+    /* margin-left: 325px; */
     margin-top: 95px;
     animation: fadeInAnimation ease .3s;
     animation-iteration-count: 1;
@@ -49,8 +49,8 @@
     /* cursor: pointer; */
     box-shadow: -80px -15px 25px rgba(0, 0, 0, 0.199);
     transition: all .15s;
-    margin-left: -390px;
-    margin-top: 150px;
+    /* margin-left: -390px; */
+    /* margin-top: 150px; */
     z-index: 1000;
     animation: fadeInAnimation ease-in-out .3s;
     animation-iteration-count: 1;
