@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # resources :interactions
   # resources :profiles
-  # resources :users
+  resources :users
 
   # Profiles 
   get "/profiledeck", to: "profiles#index"
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   # Interactions
   post "/like", to: "interactions#like"
   post "/dislike", to: "interactions#dislike"
-  
+
   ## All route name changes
     ##"/profiles" to "/profiledeck"
 

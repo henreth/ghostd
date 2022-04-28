@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import '../style/moreprofileinfo.css';
-import location from '../img/location_icon.png';
+import locationIcon from '../img/location_icon.png';
 import userPhoto from '../img/user-icon.png'
 import axios from 'axios';
 
@@ -50,6 +50,7 @@ function MoreProfileInfo({ signedIn, showMoreProfileInfo, setShowMoreProfileInfo
             .then(r => {
                 setUser(r.data)
                 alert('Your account has been updated!')
+                setClickedEdit(false)
             })
             .catch(function (error) {
                 if (error.response) {
@@ -79,12 +80,12 @@ function MoreProfileInfo({ signedIn, showMoreProfileInfo, setShowMoreProfileInfo
 
     return (
         <div className='moreProfileInfo-cardContainer'>
-            <div className={profile.name === 'Jonathan' ? 'moreuser-info-card' : 'moreprofile-info-card'}>
+            <div className='moreuser-info-card'>
                 <img className='moreprofile-info-img' src={profile.image} />
                 <div className='info-box'>
-                    <h1 className={nameLength > 10 ? 'card-title-long' : 'card-title'}>{profile.name}</h1>
-                    <h3 className={locationLength > 15 ? 'card-location-long' : 'card-location'}><img className='location-icon-here' src={location} />{profile.location}</h3>
-                    <h3 className='card-subtitle'>{profile.pronouns} - {profile.age} years dead</h3>
+                    {clickedEdit?<input className='' type='text' name='name' value={fullName} placeholder='Full Name' onChange={(e)=>{setFullName(e.target.value)}} />:<h1 className={nameLength > 10 ? 'card-title-long' : 'card-title'}>{profile.name}</h1>}
+                    <h3 className={locationLength > 15 ? 'card-location-long' : 'card-location'}><img className='location-icon-here' src={locationIcon} />{clickedEdit?<input className='' type='text' name='location' value={location} placeholder='Location' onChange={(e)=>{setLocation(e.target.value)}} />:profile.location}</h3>
+                    <h3 className='card-subtitle'>{clickedEdit?<input className='' type='text' name='pronouns' value={pronouns} placeholder='Pronouns' onChange={(e)=>{setPronouns(e.target.value)}} />:profile.pronouns} - {profile.age} years dead</h3>
                     <hr></hr>
                     <p className='card-text'>{profile.description}</p>
                     {buttonsToDisplay}
