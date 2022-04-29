@@ -3,7 +3,7 @@ import { elastic as Menu } from 'react-burger-menu';
 import '../style/sidebar.css';
 import MiniCard from './MiniCard/MiniCard';
 import SideBarMoreMatchInfo from './SideBarMoreMatchInfo';
-import MoreProfileInfo from './MoreProfileInfo';
+import MoreProfileInfo from './MoreUserInfo/MoreUserInfo';
 import userPhoto from '../img/user-icon.png'
 import location from '../img/location_icon.png';
 

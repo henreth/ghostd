@@ -8,7 +8,7 @@ import ProfileCard from '../ProfileCard/ProfileCard'
 import Card from '../ProfileCard/Card';
 import info from '../../img/info-icon.png';
 import MatchModal from '../MatchModal/MatchModal';
-import MoreProfileInfo from '../MoreProfileInfo';
+import MoreProfileInfo from '../MoreProfileInfo/MoreProfileInfo';
 
 
 // posts 

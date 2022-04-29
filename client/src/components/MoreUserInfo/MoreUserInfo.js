@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import '../style/moreprofileinfo.css';
-import locationIcon from '../img/location_icon.png';
-import userPhoto from '../img/user-icon.png'
+import './moreuserinfo.css';
+import locationIcon from '../../img/location_icon.png';
+import userPhoto from '../../img/user-icon.png'
 import axios from 'axios';
 
-let unmatchUrl = 'http://localhost:4000/unmatch';
-let userUrl = 'http://localhost:4000/user';
+let unmatchUrl = '/unmatch';
+let userUrl = '/user';
 
 function MoreProfileInfo({ signedIn, showMoreProfileInfo, setShowMoreProfileInfo, profile, setUser, nameLength, locationLength, handleLogOut }) {
     let [clickedLogOut, setClickedLogOut] = useState(false);
@@ -81,7 +81,7 @@ function MoreProfileInfo({ signedIn, showMoreProfileInfo, setShowMoreProfileInfo
     return (
         <div className='moreProfileInfo-cardContainer'>
             <div className='moreuser-info-card'>
-                <img className='moreprofile-info-img' src={profile.image} />
+                <img className='moreprofile-info-img' src={userPhoto} />
                 <div className='info-box'>
                     {clickedEdit?<input className='' type='text' name='name' value={fullName} placeholder='Full Name' onChange={(e)=>{setFullName(e.target.value)}} />:<h1 className={nameLength > 10 ? 'card-title-long' : 'card-title'}>{profile.name}</h1>}
                     <h3 className={locationLength > 15 ? 'card-location-long' : 'card-location'}><img className='location-icon-here' src={locationIcon} />{clickedEdit?<input className='' type='text' name='location' value={location} placeholder='Location' onChange={(e)=>{setLocation(e.target.value)}} />:profile.location}</h3>
