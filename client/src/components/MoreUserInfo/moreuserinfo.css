@@ -2,7 +2,7 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-.MoreProfileInfo-cardContainer {
+.moreuserinfo-cardContainer {
   width: 390vw;
   max-width: 460px;
   height: 490px;
@@ -44,56 +44,6 @@
           animation-fill-mode: forwards;
 }
 
-.moreprofile-info-card {
-  /* position: flex; */
-  /* background-color: rgb(78, 80, 78); */
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  background-color: #282828;
-  width: 850px;
-  height: 500px;
-  border-radius: 10px;
-  background-size: cover;
-  background-position: center;
-  /* cursor: pointer; */
-  -webkit-box-shadow: -80px -15px 25px rgba(0, 0, 0, 0.199);
-          box-shadow: -80px -15px 25px rgba(0, 0, 0, 0.199);
-  -webkit-transition: all .15s;
-  transition: all .15s;
-  /* margin-left: -390px; */
-  /* margin-top: 150px; */
-  z-index: 1000;
-  -webkit-animation: fadeInAnimation ease-in-out .3s;
-          animation: fadeInAnimation ease-in-out .3s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-.moreprofile-info-img {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: left;
-      -ms-flex-pack: left;
-          justify-content: left;
-  height: 500px;
-  width: 460px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-}
-
 .moreuser-info-img {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -119,7 +69,7 @@
   height: 70%;
 }
 
-.info-box {
+.moreuser-info-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -135,7 +85,7 @@
   padding-right: 5%;
 }
 
-.card-title {
+.moreuser-card-title {
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -150,7 +100,7 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-.card-title-long {
+.moreuser-card-title-long {
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -165,7 +115,7 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-.card-location {
+.moreuser-card-location {
   margin-top: 2%;
   color: white;
   display: -webkit-box;
@@ -177,7 +127,7 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-.card-location-long {
+.moreuser-card-location-long {
   margin-top: 2%;
   color: white;
   display: -webkit-box;
@@ -189,7 +139,7 @@
   font-size: 150%;
 }
 
-.card-subtitle {
+.moreuser-card-subtitle {
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -200,7 +150,7 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-.card-text {
+.moreuser-card-text {
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -213,7 +163,7 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-.close-button {
+.moreuser-close-button {
   font-family: 'Montserrat', sans-serif;
   margin-top: 10%;
   cursor: pointer;
@@ -232,8 +182,7 @@
   transition: .25s;
 }
 
-.close-button:hover {
-  /* background-color: rgb(37, 37, 37); */
+.moreuser-close-button:hover {
   background-color: #926060;
   color: #121212;
 }
