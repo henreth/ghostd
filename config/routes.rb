@@ -10,18 +10,29 @@ Rails.application.routes.draw do
   # Users
   get "/matches", to: "users#matching_profiles"
   get "/unswiped_profiles", to: "users#unswiped_profiles"
+  get "/unswiped_likes", to: "users#unswiped_likes"
 
   # Authorization
   get "/me", to: "users#show"
+
   post "/signup", to: "users#create"
   post "/login", to: "sessions#create"
+
   delete "/logout", to: "sessions#destroy"
 
   # Interactions
-  post "/like", to: "interactions#like"
-  post "/dislike", to: "interactions#dislike"
+  get "/all_interactions", to: "interactions#index"
+  
+  patch "/like", to: "interactions#like"
+  patch "/dislike", to: "interactions#dislike"
+  patch "/undo", to: "interactions#undo"
+  patch "/unmatch", to: "interaction#unmatch"
 
-  ## All route name changes
+
+
+  ## All changes
     ##"/profiles" to "/profiledeck"
+    ##"/likes" to "/all_interactions"
+    ## like and dislike are now patches
 
 end
