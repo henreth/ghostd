@@ -26,7 +26,7 @@ function HomePage({ db, setDB, likes, setLikes, currentIndex, setCurrentIndex, l
 
   let [userx, setUserx] = useState('')
   useEffect(() => {
-    axios.get('/user')
+    axios.get('/me')
       .then(r => setUserx(r.data))
   }, [])
   let id = userx.id
@@ -56,7 +56,7 @@ function HomePage({ db, setDB, likes, setLikes, currentIndex, setCurrentIndex, l
     console.log(id)
 
     if (direction === 'right') {
-      axios.post('http://localhost:4000/like', {
+      axios.patch(likeUrl, {
         user_id: id,
         profile_id: db[index].id
       })
@@ -72,7 +72,7 @@ function HomePage({ db, setDB, likes, setLikes, currentIndex, setCurrentIndex, l
         })
 
     } else if (direction === 'left') {
-      axios.post(dislikeUrl, {
+      axios.patch(dislikeUrl, {
         user_id: id,
         profile_id: db[index].id
       })
