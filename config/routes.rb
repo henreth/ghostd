@@ -13,15 +13,20 @@ Rails.application.routes.draw do
 
   # Authorization
   get "/me", to: "users#show"
+
   post "/signup", to: "users#create"
   post "/login", to: "sessions#create"
+
   delete "/logout", to: "sessions#destroy"
 
   # Interactions
+  get "/all_interactions", to: "interactions#index"
+  
   post "/like", to: "interactions#like"
   post "/dislike", to: "interactions#dislike"
 
   ## All route name changes
     ##"/profiles" to "/profiledeck"
+    ##"/likes" to "/all_interactions"
 
 end

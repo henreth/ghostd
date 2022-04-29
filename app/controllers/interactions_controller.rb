@@ -1,5 +1,10 @@
 class InteractionsController < ApplicationController
 
+    def index
+        interactions = Interaction.all
+        render json: interactions
+    end
+
     def like
         user = User.find_by(id: session[:user_id])
         profile = Profile.find(params[:profile_id])
