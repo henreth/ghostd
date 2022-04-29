@@ -47,6 +47,30 @@ class InteractionsController < ApplicationController
         target_interaction.update(:user_like => false)
     end
 
+    def reset
+        user = find_user
+        target_interactions = Interation.where(user_id: user.id)
+
+        ### destroys all previous interactions
+        target_interactions.destroy_all
+
+        ### creates new likes
+        profile_array = Profile.all.shuffle.collect do |prof| 
+            prof.id
+        end
+
+        count = 0
+        while count < profile_array.length do
+            if count < 14 
+                Interaction.create(user_id: user.id, profile_id: profile_array[count], user_like: nil, profile_like: true, swiped_status: false)
+            else
+                Interaction.create(user_id: user.id, profile_id: profile_array[count], user_like: nil, profile_like: false, swiped_status: false)
+            end
+
+            count += 1
+        end
+    end
+
     private 
 
     def find_user
