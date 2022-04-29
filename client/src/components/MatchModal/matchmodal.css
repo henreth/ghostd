@@ -1,0 +1,131 @@
+.my-holder {
+  z-index: 1000;
+  width: 50% !important;
+  background-color: black;
+}
+
+.text-holder {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.match-profile-image {
+  height: 250px;
+  width: 250px;
+  border-radius: 300px;
+  border-style: solid;
+  border: 6px solid whitesmoke;
+}
+
+.match-image {
+  height: 250px;
+  width: 250px;
+  border-radius: 300px;
+  border-style: solid;
+  border: 6px solid whitesmoke;
+}
+
+.userimage {
+  border: 6px solid black;
+  -webkit-filter: invert(50);
+          filter: invert(50);
+}
+
+.match-user-image {
+  height: 250px;
+  width: 250px;
+  border-radius: 300px;
+  border-style: solid;
+  border: 6px solid black;
+  -webkit-filter: invert(50);
+          filter: invert(50);
+}
+
+.redirect-button {
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #fff;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  border-radius: 5px;
+  padding-left: 3.4rem;
+  padding-right: 3.4rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #706f6f;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.redirect-button:hover {
+  background-color: #252525;
+  color: #00a984;
+}
+
+.swipe-button {
+  /* display: inline-block; */
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #fff;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  border-radius: 5px;
+  padding-left: 3.4rem;
+  padding-right: 3.4rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #706f6f;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.swipe-button:hover {
+  background-color: #252525;
+  color: salmon;
+}
+
+.hidden {
+  display: hidden;
+}
+
+@-webkit-keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.itsamatch {
+  font-family: 'Nosifer', cursive;
+  font-size: 500%;
+}
+
+.match-subtitle {
+  font-size: 200%;
+  text-transform: uppercase;
+}
+
+.match-images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+/*# sourceMappingURL=matchmodal.css.map */
