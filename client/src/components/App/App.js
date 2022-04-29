@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { Route, Switch, useHistory } from "react-router-dom";
 import axios from 'axios';
-import '../style/app.css';
-import Header from './Header';
-import HomePage from './HomePage/HomePage';
-import Matches from './Matches';
-import SelectedProfile from './SelectedProfile/SelectedProfile';
-import './InfoModal/InfoModal';
-import Auth from './Auth/Auth';
-import logo from '../img/heart-ghost.png'
+import './app.css';
+import Header from '../Header';
+import HomePage from '../HomePage/HomePage';
+import Matches from '../Matches';
+import SelectedProfile from '../SelectedProfile/SelectedProfile';
+import '../InfoModal/InfoModal';
+import Auth from '../Auth/Auth';
+import logo from '../../img/heart-ghost.png'
 
 //Endpoints:
 
