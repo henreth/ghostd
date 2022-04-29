@@ -15,7 +15,9 @@ function LikeCounter ({likeCount}) {
     return (
         <div className='likecounter-Container'>
                 <div className='likecounter-card'>
-                    <div className='likecounter-name'>{likeCount}</div>
+                    <div className='likecounter-total'>{likeCount}</div>
+                    <div className='likecounter-title'>Potential</div>
+                    <div className='likecounter-title'>Matches</div>
                 </div>
       </div>
     )
