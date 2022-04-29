@@ -1,4 +1,3 @@
-import * as BS from 'react-bootstrap'
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import confetti from "canvas-confetti";
