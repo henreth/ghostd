@@ -50,7 +50,7 @@ class InteractionsController < ApplicationController
 
     def reset
         user = find_user
-        target_interactions = Interation.where(user_id: user.id)
+        target_interactions = Interaction.where(user_id: user.id)
 
         ### destroys all previous interactions
         target_interactions.destroy_all

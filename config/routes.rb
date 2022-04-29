@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   patch "/like", to: "interactions#like"
   patch "/dislike", to: "interactions#dislike"
   patch "/undo", to: "interactions#undo"
-  patch "/unmatch", to: "interaction#unmatch"
+  patch "/unmatch", to: "interactions#unmatch"
 
 
 
