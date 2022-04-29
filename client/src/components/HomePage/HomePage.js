@@ -21,7 +21,7 @@ let dislikeUrl = '/dislike'
 let undoUrl = '/undo'
 
 
-function HomePage({ db, setDB, likes, setLikes, currentIndex, setCurrentIndex, lastPerson, setLastPerson, peopleUrl, user, matches, setMatches, showMatchModal, setShowMatchModal, handleAllModals }) {
+function HomePage({ db, setDB, likes, setLikes, currentIndex, setCurrentIndex, lastPerson, setLastPerson, peopleUrl, user, matches, setMatches, showMatchModal, setShowMatchModal, handleAllModals, likeCount, setLikeCount }) {
   document.title = 'Ghostd - Home'
 
   let [userx, setUserx] = useState('')
@@ -67,6 +67,7 @@ function HomePage({ db, setDB, likes, setLikes, currentIndex, setCurrentIndex, l
             case true:
               setShowMatchModal(true);
               setMatches([...matches, db[index]])
+              setLikeCount(likeCount-=1)
               break;
           }
         })
@@ -75,6 +76,15 @@ function HomePage({ db, setDB, likes, setLikes, currentIndex, setCurrentIndex, l
       axios.patch(dislikeUrl, {
         user_id: id,
         profile_id: db[index].id
+      })
+      .then(r=>{
+        switch (r.data) {
+          case false:
+            break;
+          case true:
+            setLikeCount(likeCount-=1)
+            break;
+        }      
       })
     }
     setLastPerson(db[index - 1])

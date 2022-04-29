@@ -30,6 +30,14 @@ class InteractionsController < ApplicationController
 
         target_interaction.update(:user_like => false, :swiped_status => true)
 
+        if target_interaction.profile_like == true
+            response = true
+            render json: response
+        else
+            response = false
+            render json: response
+        end
+
     end
 
     def undo 
