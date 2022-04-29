@@ -4,11 +4,12 @@ import './sidebar.css';
 import MiniCard from '../MiniCard/MiniCard';
 import SideBarMoreMatchInfo from '../SideBarMoreMatchInfo/SideBarMoreMatchInfo';
 import MoreProfileInfo from '../MoreUserInfo/MoreUserInfo';
+import LikeCounter from '../LikeCounter/LikeCounter';
 import userPhoto from '../../img/user-icon.png'
 import location from '../../img/location_icon.png';
 
 
-function Sidebar({ matches, setMatches, user, setUser, signedIn, handleLogOut }) {
+function Sidebar({ matches, setMatches, user, setUser, signedIn, handleLogOut, likeCount }) {
     let [showMoreUserInfo, setShowMoreUserInfo] = useState(false);
     let [showMoreProfileInfo, setShowMoreProfileInfo] = useState(false);
     let [selectedMatch, setSelectedMatch] = useState(user);
@@ -69,6 +70,7 @@ function Sidebar({ matches, setMatches, user, setUser, signedIn, handleLogOut })
                 </div>
 
                 <div className='minicards-container'>
+                    <LikeCounter likeCount={likeCount}/>
                     {firstColumnToDisplay}
                 </div>
                 <div className='minicards-container-secondColumn'>

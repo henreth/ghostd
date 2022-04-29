@@ -57,7 +57,7 @@ class UsersController < ApplicationController
             target.profile
         end
 
-        render json: target_profiles
+        render json: target_profiles.size
     end
 
     private 

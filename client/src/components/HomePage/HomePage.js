@@ -21,7 +21,7 @@ let dislikeUrl = '/dislike'
 let undoUrl = '/undo'
 
 
-function HomePage({ db, setDB, likes, setLikes, currentIndex, setCurrentIndex, lastPerson, setLastPerson, peopleUrl, user, matches, setMatches, showMatchModal, setShowMatchModal, handleAllModals }) {
+function HomePage({ db, setDB, likes, setLikes, currentIndex, setCurrentIndex, lastPerson, setLastPerson, peopleUrl, user, matches, setMatches, showMatchModal, setShowMatchModal, handleAllModals, likeCount, setLikeCount }) {
   document.title = 'Ghostd - Home'
 
   let [userx, setUserx] = useState('')
@@ -67,6 +67,7 @@ function HomePage({ db, setDB, likes, setLikes, currentIndex, setCurrentIndex, l
             case true:
               setShowMatchModal(true);
               setMatches([...matches, db[index]])
+              setLikeCount(likeCount-=1)
               break;
           }
         })

@@ -53,6 +53,7 @@ export default function App() {
   let [db, setDB] = useState([]);
   let [likes, setLikes] = useState([]);
   let [matches, setMatches] = useState([]);
+  let [likeCount, setLikeCount] = useState(0);
 
   const [currentIndex, setCurrentIndex] = useState(db.length - 1)
   const [lastPerson, setLastPerson] = useState({})
@@ -107,6 +108,9 @@ export default function App() {
                   // console.log(r.data)
                 })
 
+              axios.get('/unswiped_likes')
+                .then(r => setLikeCount(r.data))
+
             })
         } else {
           history.push("/auth")
@@ -160,6 +164,9 @@ export default function App() {
                 // console.log(r.data)
               })
 
+            axios.get('/unswiped_likes')
+              .then(r => setLikeCount(r.data))
+
             history.push('/');
           })
 
@@ -167,8 +174,8 @@ export default function App() {
       .catch(function (error) {
         if (error.response) {
           console.log(error.response.data.errors);
-          let msg ='';
-          error.response.data.errors.map(error=>{msg+=error+'\n'})
+          let msg = '';
+          error.response.data.errors.map(error => { msg += error + '\n' })
           alert(msg)
         } else if (error.request) {
           console.log(error.request);
@@ -201,23 +208,21 @@ export default function App() {
                     setCurrentIndex(r.data.length - 1)
                     setLastPerson(r.data[r.data.length - 1])
 
-                    // axios.get(likesUrl)
-                    //   .then(r => {
-                    //     // console.log(r.data)
-                    //     setLikes(r.data)
-                    //   })
+                    axios.get(likesUrl)
+                      .then(r => {
+                        // console.log(r.data)
+                        setLikes(r.data)
+                      })
 
-                    // axios.get(matchesUrl)
-                    //   .then(r => {
-                    //     setMatches(r.data)
-                    //     // console.log(r.data)
-                    //   })
+                    axios.get(matchesUrl)
+                      .then(r => {
+                        setMatches(r.data)
+                        // console.log(r.data)
+                      })
 
-                    // axios.get(userUrl)
-                    //   .then(r => {
-                    //     setUser(r.data)
-                    //     // console.log(r.data)
-                    //   })
+                    axios.get('/unswiped_likes')
+                      .then(r => setLikeCount(r.data))
+
                     history.push('/');
                   })
 
@@ -232,8 +237,8 @@ export default function App() {
       .catch(function (error) {
         if (error.response) {
           console.log(error.response.data.errors);
-          let msg ='';
-          error.response.data.errors.map(error=>{msg+=error+'\n'})
+          let msg = '';
+          error.response.data.errors.map(error => { msg += error + '\n' })
           alert(msg)
         } else if (error.request) {
           console.log(error.request);
@@ -255,8 +260,8 @@ export default function App() {
       .catch(function (error) {
         if (error.response) {
           console.log(error.response.data.errors);
-          let msg ='';
-          error.response.data.errors.map(error=>{msg+=error+'\n'})
+          let msg = '';
+          error.response.data.errors.map(error => { msg += error + '\n' })
           alert(msg)
         } else if (error.request) {
           console.log(error.request);
@@ -282,8 +287,8 @@ export default function App() {
         handleLogOut={handleLogOut}
         signedIn={signedIn}
         setUser={setUser}
+        likeCount={likeCount}
       /> : null}
-      {/* ADD WELCOME TO GHOSTED TITLE THAT ONLY DISPLAYS WHEN NOT SIGNED IN */}
       {signedIn ? null : <React.Fragment>
         <div className='welcome-header'>
           <div className="welcome-title">Ghostd</div>
@@ -314,6 +319,8 @@ export default function App() {
               showMatchModal={showMatchModal}
               setShowMatchModal={setShowMatchModal}
               handleAllModals={handleAllModals}
+              likeCount={likeCount}
+              setLikeCount={setLikeCount}
             />
           </Route>
           <Route path="/matches">
