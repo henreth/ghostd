@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { elastic as Menu } from 'react-burger-menu';
 import '../style/sidebar.css';
-import MiniCard from './MiniCard';
+import MiniCard from './MiniCard/MiniCard';
 import SideBarMoreMatchInfo from './SideBarMoreMatchInfo';
 import MoreProfileInfo from './MoreProfileInfo';
 import userPhoto from '../img/user-icon.png'
