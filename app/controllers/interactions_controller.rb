@@ -10,9 +10,9 @@ class InteractionsController < ApplicationController
         profile = find_profile
         target_interaction = Interaction.find_by(:user_id => user.id, :profile_id => profile.id)
 
-        target_interaction.update(:user_like => true, swiped_status => true)
+        target_interaction.update(:user_like => true, :swiped_status => true)
 
-        if target_interaction.profile_like = true
+        if target_interaction.profile_like == true
             response = true
             render json: response
         else
@@ -27,7 +27,7 @@ class InteractionsController < ApplicationController
         profile = find_profile
         target_interaction = Interaction.find_by(:user_id => user.id, :profile_id => profile.id)
 
-        target_interaction.update(:user_like => false, swiped_status => true)
+        target_interaction.update(:user_like => false, :swiped_status => true)
 
     end
 
@@ -36,7 +36,7 @@ class InteractionsController < ApplicationController
         profile = find_profile
         target_interaction = Interaction.find_by(:user_id => user.id, :profile_id => profile.id)
 
-        target_interaction.update(:user_like => nil, swiped_status => false)
+        target_interaction.update(:user_like => nil, :swiped_status => false)
     end
 
     def unmatch
