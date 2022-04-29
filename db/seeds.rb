@@ -42,7 +42,7 @@ puts "seeding profiles"
   p33 = Profile.create(name: "Karl", pronouns: "he/him/his", age: 139, description: "Looking for the opium of my heart", location: "London, England", image: "karlmarx.jpeg")
   p34 = Profile.create(name: "Calamity", pronouns: 'she/her/hers', age: 119, description: 'Wild at heart', location: "Pierre, South Dakota", image: 'calamityjane.png')
   p35 = Profile.create(name: "Candyman", pronouns: 'he/him/his', age: 241, description: 'Sweet as honey, I am filled with bees after all', location: "Chicago, IL", image: 'candyman.png')
-  p36 = Profile.create(name: "Present", pronouns: 'he/they/theirs', age: 10000, description: 'A feast for ALL senses!', location: "Christmas Eve", image: 'ghostofchristmastpresent.jpeg')
+  p36 = Profile.create(name: "Present", pronouns: 'he/they/theirs', age: 10000, description: 'A feast for ALL senses!', location: "Christmas Eve", image: 'ghostofchristmaspresent.jpeg')
   p37 = Profile.create(name: "Howie", pronouns: 'he/him/his', age: 10, description: 'This is how I win.', location: "New York, NY", image: 'howiebling.jpg')
   p38 = Profile.create(name: "Jason", pronouns: 'he/him/his', age: 65, description: '...', image: 'jason.jpeg', location: 'Camp Crystal Lake')
   p39 = Profile.create(name: "Wakasa", pronouns: 'she/her/hers', age: 387, description: 'Trying not to uhaul, failing miserably', image: 'wakasa.jpeg', location: 'Kyoto, Japan')

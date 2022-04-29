@@ -4,8 +4,6 @@ import confetti from "canvas-confetti";
 import './matchmodal.css'
 import userPhoto from '../../img/user-icon.png'
 
-
-
 function MatchModal({ setShowMatchModal, user, profile }) {
     const charImages = require.context('../../img/characters', true);
     const [openMatchModal, setOpenMatchModal] = useState(true)
