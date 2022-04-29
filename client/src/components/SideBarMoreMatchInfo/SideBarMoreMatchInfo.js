@@ -7,6 +7,7 @@ let unmatchUrl = 'http://localhost:4000/unmatch';
 let userUrl = 'http://localhost:4000/user';
 
 function SideBarMoreMatchInfo ({profile,nameLength,setShowMoreProfileInfo,descriptionLength,locationLength,matches,setMatches}) {
+    const charImages = require.context('../../img/characters', true);
 
     let [userx,setUserx] = useState('')
     useEffect(()=>{
@@ -38,7 +39,7 @@ function SideBarMoreMatchInfo ({profile,nameLength,setShowMoreProfileInfo,descri
     return (
         <div className='matchinfo-cardContainer'>
             <div className='matchinfo-card'>
-            <img className='matchinfo-img' src={profile.image}/>
+            <img className='matchinfo-img' src={charImages('./' + profile.image)}/>
                 <div className='info-box'>
                     <h1 className={nameLength > 10?'matchinfo-card-title-long':'matchinfo-card-title'}>{profile.name}</h1>
                     <h3 className={locationLength > 15? 'matchinfo-card-location-long':'matchinfo-card-location'}><img className ='location-icon-here' src={location}/>{profile.location}</h3>
