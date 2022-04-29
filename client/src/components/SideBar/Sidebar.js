@@ -53,6 +53,8 @@ function Sidebar({ matches, setMatches, user, setUser, signedIn, handleLogOut, l
         )
     })
 
+    let likeCountToDisplay = likeCount!=0?<LikeCounter likeCount={likeCount}/>:null
+
 
 
     return (
@@ -70,7 +72,7 @@ function Sidebar({ matches, setMatches, user, setUser, signedIn, handleLogOut, l
                 </div>
 
                 <div className='minicards-container'>
-                    <LikeCounter likeCount={likeCount}/>
+                    {likeCountToDisplay}
                     {firstColumnToDisplay}
                 </div>
                 <div className='minicards-container-secondColumn'>
