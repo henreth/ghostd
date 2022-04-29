@@ -1,7 +1,8 @@
 class InteractionsController < ApplicationController
 
     def index
-        interactions = Interaction.all
+        user = find_user
+        interactions = user.interactions.all
         render json: interactions
     end
 
