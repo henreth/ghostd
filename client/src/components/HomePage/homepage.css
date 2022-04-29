@@ -1,0 +1,300 @@
+h1 {
+  font-family: 'Hind', sans-serif;
+  color: #fff;
+  text-shadow: 0px 0px 60px 0px rgba(74, 241, 177, 0.3);
+}
+
+h2 {
+  color: #fff;
+}
+
+.infoText {
+  width: 100%;
+  height: 28px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #fff;
+  -webkit-animation-name: popup;
+          animation-name: popup;
+  -webkit-animation-duration: 800ms;
+          animation-duration: 800ms;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.buttons {
+  margin: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 180px;
+  /* z-index: 100; */
+}
+
+.buttons button {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  margin: 0 10px;
+  font-weight: bolder;
+  width: 160px;
+  -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+}
+
+@-webkit-keyframes popup {
+  0% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  10% {
+    -webkit-transform: scale(1.1, 1.1);
+            transform: scale(1.1, 1.1);
+  }
+  30% {
+    -webkit-transform: scale(0.9, 0.9);
+            transform: scale(0.9, 0.9);
+  }
+  50% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  57% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  64% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
+
+@keyframes popup {
+  0% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  10% {
+    -webkit-transform: scale(1.1, 1.1);
+            transform: scale(1.1, 1.1);
+  }
+  30% {
+    -webkit-transform: scale(0.9, 0.9);
+            transform: scale(0.9, 0.9);
+  }
+  50% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  57% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  64% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
+
+@-webkit-keyframes pump {
+  0% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+  5% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  39% {
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
+  }
+  45% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  60% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+  100% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+}
+
+@keyframes pump {
+  0% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+  5% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  39% {
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
+  }
+  45% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  60% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+  100% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+}
+
+.like-button {
+  cursor: pointer;
+  height: 4.5rem;
+  text-decoration: none;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  /* animation: pump 1s linear infinite; */
+}
+
+.like-button:hover {
+  -webkit-filter: opacity(0.5) drop-shadow(0 0 0 red);
+          filter: opacity(0.5) drop-shadow(0 0 0 red);
+  /* transform: scale(1.15); */
+  -webkit-animation: pump 1.5s linear infinite;
+          animation: pump 1.5s linear infinite;
+}
+
+.frozen-like-button {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  height: 4.25rem;
+  text-decoration: none;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.test {
+  color: #d1d1d1;
+}
+
+.reject-button {
+  cursor: pointer;
+  height: 4.25rem;
+  text-decoration: none;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  margin-left: 5px;
+}
+
+.reject-button:hover {
+  -webkit-filter: opacity(0.5) drop-shadow(0 0 0 red);
+          filter: opacity(0.5) drop-shadow(0 0 0 red);
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.frozen-reject-button {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  height: 4.25rem;
+  text-decoration: none;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  margin-left: 5px;
+}
+
+.undo-button {
+  -webkit-filter: brightness(85%);
+          filter: brightness(85%);
+  cursor: pointer;
+  height: 5.25rem;
+  text-decoration: none;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  margin-left: 3.75rem;
+  margin-right: 3.25rem;
+  z-index: 0;
+}
+
+.undo-button:hover {
+  /* filter: invert(70%) ;  */
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.frozen-undo-button {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  /* cursor: pointer; */
+  height: 5.25rem;
+  text-decoration: none;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  margin-left: 3.75rem;
+  margin-right: 3.25rem;
+  z-index: 0;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.moreProfileInfo-curtain {
+  -webkit-animation: fadeInAnimation ease .25s;
+          animation: fadeInAnimation ease .25s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  position: absolute;
+  z-index: 999;
+  background-color: black;
+  opacity: .65;
+  padding-top: 1000px;
+  padding-left: 10000px;
+}
+
+@-webkit-keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=homepage.css.map */

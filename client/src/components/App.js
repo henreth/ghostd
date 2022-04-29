@@ -3,7 +3,7 @@ import { Route, Switch, useHistory } from "react-router-dom";
 import axios from 'axios';
 import '../style/app.css';
 import Header from './Header';
-import HomePage from './HomePage';
+import HomePage from './HomePage/HomePage';
 import Matches from './Matches';
 import SelectedProfile from './SelectedProfile';
 import '../components/InfoModal';

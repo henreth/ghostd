@@ -1,14 +1,14 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react'
-import '../style/homepage.css';
+import './homepage.css';
 import axios from 'axios';
-import undo from '../img/reboot-icon.png';
-import heart from '../img/real_heart.png';
-import reject from '../img/bones-icon.png';
-import ProfileCard from './ProfileCard'
-import Card from './Card';
-import info from '../img/info-icon.png';
-import MatchModal from './MatchModal';
-import MoreProfileInfo from './MoreProfileInfo';
+import undo from '../../img/reboot-icon.png';
+import heart from '../../img/real_heart.png';
+import reject from '../../img/bones-icon.png';
+import ProfileCard from '../ProfileCard/ProfileCard'
+import Card from '../ProfileCard/Card';
+import info from '../../img/info-icon.png';
+import MatchModal from '../MatchModal';
+import MoreProfileInfo from '../MoreProfileInfo';
 
 
 // posts 
@@ -23,6 +23,7 @@ let undoUrl = '/undo'
 
 function HomePage({ db, setDB, likes, setLikes, currentIndex, setCurrentIndex, lastPerson, setLastPerson, peopleUrl, user, matches, setMatches, showMatchModal, setShowMatchModal, handleAllModals }) {
   document.title = 'Ghostd - Home'
+
   let [userx, setUserx] = useState('')
   useEffect(() => {
     axios.get('/user')
