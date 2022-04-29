@@ -1,12 +1,13 @@
 import React, { useState,useEffect } from 'react'
-import '../style/largecard.css';
-import location from '../img/location_icon.png';
+import './largecard.css';
+import location from '../../img/location_icon.png';
 import axios from 'axios';
 
-let unmatchUrl = 'http://localhost:4000/unmatch';
-let userUrl = 'http://localhost:4000/user';
+let unmatchUrl = '/unmatch';
+let userUrl = '/user';
 
 function LargeCard ({profile,nameLength,locationLength,matches,setMatches}) {
+    const charImages = require.context('../../img/characters', true);
 
     let [userx,setUserx] = useState('')
     useEffect(()=>{
@@ -32,7 +33,7 @@ function LargeCard ({profile,nameLength,locationLength,matches,setMatches}) {
     return (
         <div className='large-cardContainer'>
             <div className='large-card'>
-            <img className='large-img' src={profile.image}/>
+            <img className='large-img' src={charImages('./' + profile.image)}/>
                 <div className='info-box'>
                     <h1 className={nameLength > 10?'card-title-long':'card-title'}>{profile.name}</h1>
                     <h3 className={locationLength > 15? 'card-location-long':'card-location'}><img className ='location-icon-here' src={location}/>{profile.location}</h3>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import '../style/matches.css';
 import MediumCard from './MediumCard/MediumCard';
-import LargeCard from './LargeCard';
+import LargeCard from './LargeCard/LargeCard';
 import MoreMatchInfo from './MoreMatchInfo';
 import heart from '../img/real_heart.png';
 

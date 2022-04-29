@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import '../style/selectedprofile.css';
-import LargeCard from "./LargeCard";
+import LargeCard from "./LargeCard/LargeCard";
 
 let profileUrl = 'http://localhost:4000/profile/'
 
