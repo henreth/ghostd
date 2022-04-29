@@ -7,7 +7,7 @@ import reset from '../img/reset-icon.png';
 import axios from "axios";
 import homeIcon from '../img/home-icon.png';
 import helpIcon from '../img/help-icon.png';
-import InfoModal from './InfoModal';
+import InfoModal from './InfoModal/InfoModal';
 
 
 let undoUrl = '/reset'

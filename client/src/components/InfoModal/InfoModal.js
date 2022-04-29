@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import '../style/infomodal.css'
+import './infomodal.css'
 
 function InfoModal({ setShowInfoModal, user }) {
     const [openInfoModal, setOpenInfoModal] = useState(true)

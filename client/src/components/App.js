@@ -6,7 +6,7 @@ import Header from './Header';
 import HomePage from './HomePage/HomePage';
 import Matches from './Matches';
 import SelectedProfile from './SelectedProfile/SelectedProfile';
-import '../components/InfoModal';
+import './InfoModal/InfoModal';
 import Auth from './Auth/Auth';
 import logo from '../img/heart-ghost.png'
 
