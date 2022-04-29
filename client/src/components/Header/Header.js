@@ -3,27 +3,14 @@ import { NavLink, useHistory } from "react-router-dom";
 import logo from '../../img/heart-ghost.png'
 import './header.css';
 import Sidebar from '../SideBar/Sidebar';
-import reset from '../../img/reset-icon.png';
 import axios from "axios";
 import homeIcon from '../../img/home-icon.png';
 import helpIcon from '../../img/help-icon.png';
 import InfoModal from '../InfoModal/InfoModal';
 
-
-let undoUrl = '/reset'
-
-
 function Header({ matches, setMatches, user, showInfoModal, setShowInfoModal, handleAllModals,handleLogOut,signedIn,setUser, likeCount }) {
 
   let history = useHistory();
-
-  function handleResetClick() {
-    axios.patch(undoUrl)
-      .then(r => {
-        history.push('/')
-        window.location.reload()
-      })
-  }
 
   function handleHomeClick() {
     history.push('/')
@@ -69,12 +56,6 @@ function Header({ matches, setMatches, user, showInfoModal, setShowInfoModal, ha
             onClick={handleHomeClick}
           />
 
-
-          {/* <img
-            src={reset}
-            className='reset-button'
-            onClick={handleResetClick}
-          /> */}
 
         </div>
       </div>
