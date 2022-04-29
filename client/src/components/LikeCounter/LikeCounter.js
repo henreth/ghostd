@@ -1,5 +1,5 @@
 import React from 'react'
-import '../style/likceounter.css';
+import './likecounter.css';
 import { Route, Link, useHistory } from "react-router-dom";
 import cancel from '../img/cancel-icon.png';
 

@@ -1,13 +1,13 @@
 import React from "react";
 import { NavLink, useHistory } from "react-router-dom";
-import logo from '../img/heart-ghost.png'
-import '../style/header.css';
-import Sidebar from './Sidebar';
-import reset from '../img/reset-icon.png';
+import logo from '../../img/heart-ghost.png'
+import './header.css';
+import Sidebar from '../SideBar/Sidebar';
+import reset from '../../img/reset-icon.png';
 import axios from "axios";
-import homeIcon from '../img/home-icon.png';
-import helpIcon from '../img/help-icon.png';
-import InfoModal from './InfoModal/InfoModal';
+import homeIcon from '../../img/home-icon.png';
+import helpIcon from '../../img/help-icon.png';
+import InfoModal from '../InfoModal/InfoModal';
 
 
 let undoUrl = '/reset'

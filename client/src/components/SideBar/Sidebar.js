@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { elastic as Menu } from 'react-burger-menu';
-import '../style/sidebar.css';
-import MiniCard from './MiniCard/MiniCard';
-import SideBarMoreMatchInfo from './SideBarMoreMatchInfo';
-import MoreProfileInfo from './MoreUserInfo/MoreUserInfo';
-import userPhoto from '../img/user-icon.png'
-import location from '../img/location_icon.png';
+import './sidebar.css';
+import MiniCard from '../MiniCard/MiniCard';
+import SideBarMoreMatchInfo from '../SideBarMoreMatchInfo/SideBarMoreMatchInfo';
+import MoreProfileInfo from '../MoreUserInfo/MoreUserInfo';
+import userPhoto from '../../img/user-icon.png'
+import location from '../../img/location_icon.png';
 
 
 function Sidebar({ matches, setMatches, user, setUser, signedIn, handleLogOut }) {

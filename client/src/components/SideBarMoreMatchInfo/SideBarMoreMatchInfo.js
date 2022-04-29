@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react'
-import '../style/sidebarmorematchinfo.css';
-import location from '../img/location_icon.png';
+import './sidebarmorematchinfo.css';
+import location from '../../img/location_icon.png';
 import axios from 'axios';
 
 let unmatchUrl = 'http://localhost:4000/unmatch';
