@@ -23,11 +23,13 @@ Rails.application.routes.draw do
   # Interactions
   get "/all_interactions", to: "interactions#index"
   
-  post "/like", to: "interactions#like"
-  post "/dislike", to: "interactions#dislike"
+  patch "/like", to: "interactions#like"
+  patch "/dislike", to: "interactions#dislike"
+  patch "/undo", to: "interactions#undo"
 
-  ## All route name changes
+  ## All changes
     ##"/profiles" to "/profiledeck"
     ##"/likes" to "/all_interactions"
+    ## like and dislike are now patches
 
 end
