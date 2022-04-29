@@ -1,7 +1,6 @@
 .header {
   top: 0;
   z-index: 2000;
-  /* height: 55px; */
 }
 
 .header-container {
@@ -59,16 +58,6 @@
 
 .header-title:hover {
   opacity: 1;
-}
-
-.reset-button {
-  position: fixed;
-  height: 30px;
-  margin-left: 1150px;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
 }
 
 .reset-button:hover {

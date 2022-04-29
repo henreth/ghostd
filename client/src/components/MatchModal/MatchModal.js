@@ -82,6 +82,10 @@ function MatchModal({ setShowMatchModal, user, profile }) {
                     </div>
                 </div>
             </div>
+            {openMatchModal?<div className='fireworks'><div class="pyro">
+  <div class="before"></div>
+  <div class="after"></div>
+</div></div>:null}
         </React.Fragment>
     )
 }

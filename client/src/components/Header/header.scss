@@ -1,8 +1,6 @@
 .header {
     top: 0;
     z-index: 2000;
-    // position: fixed;
-    /* height: 55px; */
 }
 
 .header-container {
@@ -17,7 +15,6 @@
 }
 
 .header-logo {
-
     height: 5vh;
     cursor: default;
     background-color: transparent;
@@ -44,14 +41,7 @@
     }
 }
 
-.reset-button{
-    position: fixed;
-    height: 30px;
-    margin-left: 1150px;
-    transition: all 0.2s;
-    filter: grayscale(100%);
-    // opacity: .015;
-}
+
 
 .reset-button:hover{
     transform: scale(1.35);
