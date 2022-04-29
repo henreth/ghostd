@@ -177,7 +177,9 @@ export default function App() {
       .catch(function (error) {
         if (error.response) {
           console.log(error.response.data.errors);
-          alert(error.response.data.errors)
+          let msg ='';
+          error.response.data.errors.map(error=>{msg+=error+'\n'})
+          alert(msg)
         } else if (error.request) {
           console.log(error.request);
         } else {
@@ -240,7 +242,9 @@ export default function App() {
       .catch(function (error) {
         if (error.response) {
           console.log(error.response.data.errors);
-          alert(error.response.data.errors)
+          let msg ='';
+          error.response.data.errors.map(error=>{msg+=error+'\n'})
+          alert(msg)
         } else if (error.request) {
           console.log(error.request);
         } else {
@@ -261,7 +265,9 @@ export default function App() {
       .catch(function (error) {
         if (error.response) {
           console.log(error.response.data.errors);
-          alert(error.response.data.errors)
+          let msg ='';
+          error.response.data.errors.map(error=>{msg+=error+'\n'})
+          alert(msg)
         } else if (error.request) {
           console.log(error.request);
         } else {

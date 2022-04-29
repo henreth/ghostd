@@ -37,9 +37,6 @@ function Header({ matches, setMatches, user, showInfoModal, setShowInfoModal, ha
   return (
     <div>
       <Sidebar
-        pageWrapId={'page-wrap'}
-        outerContainerId={'outer-container'}
-        width={"500px"}
         matches={matches}
         setMatches={setMatches}
         user={user}

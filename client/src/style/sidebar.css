@@ -10,7 +10,7 @@
   /* Color/shape of burger icon bars */
   .bm-burger-bars {
     /* background: #373a47; */
-    background: #5e5f63;
+    background: #e5e5e6;
     transition: .5s;
 
   }
@@ -42,14 +42,14 @@
   
   /* General sidebar styles */
   .bm-menu {
-    background: #373a47;
+    background: #24252b;
     padding: 2.5em 1.5em 0;
     font-size: 1.15em;
   }
   
   /* Morph shape necessary with bubble or elastic */
   .bm-morph-shape {
-    fill: #373a47;
+    fill: #24252b;
   }
   
   /* Wrapper for item list */
@@ -65,7 +65,7 @@
   
   /* Styling of overlay */
   .bm-overlay {
-    background: rgba(0, 0, 0, 0.3);
+    background: rgb(0, 0, 0);
   }
   
   /* Individual item */
