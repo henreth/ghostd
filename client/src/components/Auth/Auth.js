@@ -63,7 +63,7 @@ export default function Auth({username, setUsername, password, setPassword, sign
                         <input className='auth-input' type="text" name="pronouns" placeholder="Pronouns" value={signUpProNouns} onChange={(e)=>{setSignUpProNouns(e.target.value)}}  />
                         <input className='auth-input' type="text" name="location" placeholder="Location" value={signUpLocation} onChange={(e)=>{setSignUpLocation(e.target.value)}} />
                         <input className='auth-input' type="password" name="password" placeholder="Password" value={password} onChange={(e)=>{setPassword(e.target.value)}} />
-                        <input className='auth-input' type="password" name="password" placeholder="Password Confirmation" value={signUpPasswordConfirmation} onChange={(e)=>{setSignUpPasswordConfirmation(e.target.value)}} />
+                        <input className='auth-input' type="password" name="password" placeholder=" Password Confirmation" value={signUpPasswordConfirmation} onChange={(e)=>{setSignUpPasswordConfirmation(e.target.value)}} />
                     </div>
                     <button className='auth-button' onClick={handleSignUpSubmit}>SIGN UP</button>
                 </form>

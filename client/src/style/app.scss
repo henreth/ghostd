@@ -1,0 +1,32 @@
+.main-page>div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.welcome-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  transition: .5s;
+}
+
+.welcome-logo {
+  height: 10vh;
+  cursor: default;
+  z-index: 10;
+  transition: .5s;
+  user-select: none;
+}
+
+
+.welcome-title {
+  font-family: 'Nosifer', cursive;
+  cursor: default;
+  font-size: 600%;
+  color: #fff;
+  transition: .5s;
+  user-select: none;
+}
