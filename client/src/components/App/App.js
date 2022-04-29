@@ -325,6 +325,7 @@ export default function App() {
           </Route>
           <Route exact path='/match/:profileId'>
             <SelectedProfile
+              user={user}
               matches={matches}
               setMatches={setMatches}
             />

@@ -4,7 +4,7 @@ Profile.destroy_all
 User.destroy_all
 
 puts "seeding test user"
-  u1 = User.create(name: "Jonathan", pronouns: "he/him/his", age: 1, description: "Ask me about my icebreakers", location: "New York, NY", image: "https://media-exp1.licdn.com/dms/image/C4E03AQFar5W8R6vTFw/profile-displayphoto-shrink_800_800/0/1602806523478?e=1652313600&v=beta&t=0nqDOqDwQ8ql6cOTYx6gLlQJwdGABiTCx2gQL_DB8wc", username: "tester1", password: "12345")
+  u1 = User.create(name: "Jonathan", pronouns: "he/him/his", age: 1, description: "Ask me about my icebreakers", location: "New York, NY", image: "https://media-exp1.licdn.com/dms/image/C4E03AQFar5W8R6vTFw/profile-displayphoto-shrink_800_800/0/1602806523478?e=1652313600&v=beta&t=0nqDOqDwQ8ql6cOTYx6gLlQJwdGABiTCx2gQL_DB8wc", username: "icebreaker", password: "12345")
 
 puts "seeding profiles"
   p1 = Profile.create(name: "Abe", pronouns: "he/they/theirs", age: 156, description: "Live theatre blows my mind! Take me out to a show?", location: "Springfield", image: "abelincoln.jpeg")
@@ -50,7 +50,7 @@ puts "seeding profiles"
   p41 = Profile.create(name: 'Javaman', pronouns: '?/?/?', age: 1000000, description: '?', image: 'javaman.webp', location: "Java")
   p42 = Profile.create(name: 'Simone', pronouns: 'she/her/hers', age: 36, description: 'Not looking for anything serious', image: 'simonebeauvoir.jpeg', location: "Paris, France")
   p43 = Profile.create(name: 'Jean-Paul', pronouns: 'he/him/his', age: 42, description: 'Not looking for anything serious', image: 'sartre.jpeg', location: "Paris, France")
-  p44 = Profile.create(name: 'Albert', pronouns: 'he/him/his', age: 62, description: 'I know of only one duty, and that is to love.', image: 'albertcamus.webp', location: "Villeblevin, France")
+  p44 = Profile.create(name: 'Albert', pronouns: 'he/him/his', age: 62, description: 'I know of only one duty, and that is to love.', image: 'albertcamus.jpeg', location: "Villeblevin, France")
 
   profile_array = [p1.id, p2.id, p4.id, p5.id, p6.id, p7.id, p8.id, p9.id, p11.id, p12.id, 
   p13.id, p14.id, p15.id, p16.id, p17.id, p18.id, p19.id, p20.id, p21.id, p22.id, p23.id, 
