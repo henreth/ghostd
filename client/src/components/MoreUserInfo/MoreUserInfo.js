@@ -71,6 +71,7 @@ function MoreProfileInfo({ signedIn, showMoreProfileInfo, setShowMoreProfileInfo
     </React.Fragment>
 
     let editButtonsToDisplay = <React.Fragment>
+        <button className='close-button' onClick={()=>{alert('Add in this functionality!')}}>RESET PROFILE</button> 
         <button className='close-button' onClick={handleSubmitChanges}>CONFIRM</button> 
         <button className='close-button' onClick={() => { setClickedEdit(false) }}>CANCEL</button> 
         </React.Fragment>
@@ -79,15 +80,15 @@ function MoreProfileInfo({ signedIn, showMoreProfileInfo, setShowMoreProfileInfo
 
 
     return (
-        <div className='moreProfileInfo-cardContainer'>
+        <div className='moreuserinfo-cardContainer'>
             <div className='moreuser-info-card'>
-                <img className='moreprofile-info-img' src={userPhoto} />
-                <div className='info-box'>
-                    {clickedEdit?<input className='' type='text' name='name' value={fullName} placeholder='Full Name' onChange={(e)=>{setFullName(e.target.value)}} />:<h1 className={nameLength > 10 ? 'card-title-long' : 'card-title'}>{profile.name}</h1>}
-                    <h3 className={locationLength > 15 ? 'card-location-long' : 'card-location'}><img className='location-icon-here' src={locationIcon} />{clickedEdit?<input className='' type='text' name='location' value={location} placeholder='Location' onChange={(e)=>{setLocation(e.target.value)}} />:profile.location}</h3>
-                    <h3 className='card-subtitle'>{clickedEdit?<input className='' type='text' name='pronouns' value={pronouns} placeholder='Pronouns' onChange={(e)=>{setPronouns(e.target.value)}} />:profile.pronouns} - {profile.age} years dead</h3>
+                <img className='moreuser-info-img' src={userPhoto} />
+                <div className='moreuser-info-box'>
+                    {clickedEdit?<input className='' type='text' name='name' value={fullName} placeholder='Full Name' onChange={(e)=>{setFullName(e.target.value)}} />:<h1 className={nameLength > 10 ? 'moreuser-card-title-long' : 'moreuser-card-title'}>{profile.name}</h1>}
+                    <h3 className={locationLength > 15 ? 'moreuser-card-location-long' : 'moreuser-card-location'}><img className='moreuser-location-icon-here' src={locationIcon} />{clickedEdit?<input className='' type='text' name='location' value={location} placeholder='Location' onChange={(e)=>{setLocation(e.target.value)}} />:profile.location}</h3>
+                    <h3 className='moreuser-card-subtitle'>{clickedEdit?<input className='' type='text' name='pronouns' value={pronouns} placeholder='Pronouns' onChange={(e)=>{setPronouns(e.target.value)}} />:profile.pronouns} - {profile.age} years dead</h3>
                     <hr></hr>
-                    <p className='card-text'>{profile.description}</p>
+                    <p className='moreuser-card-text'>{profile.description}</p>
                     {buttonsToDisplay}
                 </div>
             </div>
