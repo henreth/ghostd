@@ -48,7 +48,7 @@ class UsersController < ApplicationController
             fresh.profile
         end
 
-        render json: fresh_profiles
+        render json: fresh_profiles.shuffle
     end
 
     def unswiped_likes
