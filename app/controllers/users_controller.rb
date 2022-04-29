@@ -51,6 +51,15 @@ class UsersController < ApplicationController
         render json: fresh_profiles
     end
 
+    def unswiped_likes
+        user = find_user
+        target_profiles = user.interactions.where(swiped_status: false, profile_like: true).collect do |target|
+            target.profile
+        end
+
+        render json: fresh_profiles
+    end
+
     private 
 
     def user_params 
