@@ -8,6 +8,7 @@ import Matches from './Matches';
 import SelectedProfile from './SelectedProfile';
 import '../components/InfoModal';
 import Auth from './Auth/Auth';
+import logo from '../img/heart-ghost.png'
 
 //Endpoints:
 
@@ -142,36 +143,35 @@ export default function App() {
         setSignUpLocation('');
         setSignUpProNouns('');
 
-
         setUser(r.data)
         setSignedIn(true)
         history.push('/')
         axios.get(unswiped)
-        .then(r => {
-          setDB(r.data)
-          // console.log(r.data)
-          setCurrentIndex(r.data.length - 1)
-          setLastPerson(r.data[r.data.length - 1])
+          .then(r => {
+            setDB(r.data)
+            // console.log(r.data)
+            setCurrentIndex(r.data.length - 1)
+            setLastPerson(r.data[r.data.length - 1])
 
-          // axios.get(likesUrl)
-          //   .then(r => {
-          //     // console.log(r.data)
-          //     setLikes(r.data)
-          //   })
+            // axios.get(likesUrl)
+            //   .then(r => {
+            //     // console.log(r.data)
+            //     setLikes(r.data)
+            //   })
 
-          // axios.get(matchesUrl)
-          //   .then(r => {
-          //     setMatches(r.data)
-          //     // console.log(r.data)
-          //   })
+            // axios.get(matchesUrl)
+            //   .then(r => {
+            //     setMatches(r.data)
+            //     // console.log(r.data)
+            //   })
 
-          // axios.get(userUrl)
-          //   .then(r => {
-          //     setUser(r.data)
-          //     // console.log(r.data)
-          //   })
-          history.push('/');
-        })
+            // axios.get(userUrl)
+            //   .then(r => {
+            //     setUser(r.data)
+            //     // console.log(r.data)
+            //   })
+            history.push('/');
+          })
 
       })
       .catch(function (error) {
@@ -201,6 +201,7 @@ export default function App() {
             if (r.ok) {
               r.json().then((user) => {
                 setUser(user)
+                setSignedIn(true)
                 axios.get(unswiped)
                   .then(r => {
                     setDB(r.data)
@@ -287,6 +288,16 @@ export default function App() {
         setUser={setUser}
       /> : null}
       {/* ADD WELCOME TO GHOSTED TITLE THAT ONLY DISPLAYS WHEN NOT SIGNED IN */}
+      {signedIn ? null : <React.Fragment>
+        <div className='welcome-header'>
+          <div className="welcome-title">Ghostd</div>
+          <img
+            src={logo}
+            alt="Logo"
+            className="welcome-logo"
+          />
+        </div>
+      </React.Fragment>}
       <div className='main-page'>
         <Switch>
           <Route exact path="/">

@@ -1,164 +1,126 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto',sans-serif;
-}
-
 .header {
-    top: 0;
-    z-index: 2000;
-    background: linear-gradient(#838181, #222020);
-    background: transparent;
-    position: fixed;
-    height: 55px;
-    transition-timing-function: ease-in;
-    transition: all 1s;
+  top: 0;
+  z-index: 2000;
+  /* height: 55px; */
 }
 
 .header-container {
-    margin: 0 auto;
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    flex-direction: row;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  /* margin: 0 auto; */
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .header-logo {
-    position: absolute;
-    height: 50px;
-    cursor: default;
-    /* padding-right: 1rem; */
-    background-color: transparent;
-    align-items: center;
-    margin-left: 820px;
-    margin-top: 10px;
-    /* filter: invert(94%); */
-    z-index: 10;
-    opacity: .55;
-    transition: 1s;
-    animation: 'fadeInAnimation ease .4s';
-    animationIterationCount: '1';
-    animationFillMode: 'forwards';
+  height: 5vh;
+  cursor: default;
+  background-color: transparent;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  opacity: .55;
+  -webkit-transition: .5s;
+  transition: .5s;
 }
 
-.header-logo:hover{
+.header-logo:hover {
+  opacity: 1;
+}
+
+.header-title {
+  font-family: 'Nosifer', cursive;
+  cursor: default;
+  font-size: 300%;
+  background-color: transparent;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  opacity: .55;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.header-title:hover {
+  opacity: 1;
+}
+
+.reset-button {
+  position: fixed;
+  height: 30px;
+  margin-left: 1150px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.reset-button:hover {
+  -webkit-transform: scale(1.35);
+          transform: scale(1.35);
+  opacity: 1;
+  cursor: pointer;
+}
+
+.home-icon {
+  height: 44px;
+  opacity: 0.45;
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+.home-icon:hover {
+  opacity: .75;
+  cursor: pointer;
+}
+
+.help-icon {
+  height: 44px;
+  opacity: 0.40;
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+.help-icon:hover {
+  opacity: .75;
+  cursor: pointer;
+}
+
+@-webkit-keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
     opacity: 1;
+  }
 }
-
-.header-title{
-    font-family: 'Nosifer', cursive;
-    position: absolute;
-    cursor: default;
-    font-size: 300%;
-    background-color: transparent;
-    align-items: center;
-    margin-left: 570px;
-    margin-top: 10px;
-    z-index: 10;
-    color: #fff;
-    opacity: .55;
-    transition: 1s;
-    animation: 'fadeInAnimation ease .4s';
-    animationIterationCount: '1';
-    animationFillMode: 'forwards';
-}
-
-.header-title:hover{
-    opacity: 1;
-}
-
-.nav-home {
-    text-decoration: wavy;
-    font-weight: 500;
-    font-size: 1.4rem;
-    /* color: rgb(221, 221, 221); */
-    color: rgb(94, 88, 88);
-    text-decoration: none;
-    margin-right: 2rem;
-    transition: all 0.2s;
-}
-  
-.nav-home:hover{
-    color: rgb(167, 167, 167);
-}
-
-.reset-button{
-    position: fixed;
-    height: 30px;
-    margin-left: 1150px;
-    transition: all 0.2s;
-    filter: grayscale(100%);
-    opacity: .015;
-}
-
-.reset-button:hover{
-    transform: scale(1.35);
-    opacity: 1;
-    cursor: pointer;
-}
-
-.profile-photo{
-    position: absolute;
-    height: 48px;
-    border-radius: 25px;
-    border-style: solid;
-    border: 1px solid whitesmoke;
-    opacity: 0.5;
-    border-width: 2px;
-    margin-top: 10px;
-    margin-left: 1290px;
-    filter:grayscale(100);
-    transition: .5s
-}
-
-.profile-photo:hover{
-    opacity: 1;
-    cursor: pointer;
-}
-
-.home-icon{
-    position: absolute;
-    height: 44px;
-    opacity: 0.45;
-    margin-top: 10px;
-    margin-left: 1340px;
-    transition: 1s;
-    /* filter: opacity(.15) drop-shadow(0 0 0 rgb(255, 255, 255));  */
-    filter: invert(1)
-}
-
-.home-icon:hover{
-    /* filter: opacity(.50) drop-shadow(0 0 0 #00a984);  */
-    opacity: .75;
-    cursor: pointer;
-}
-
-.help-icon{
-    position: absolute;
-    height: 44px;
-    opacity: 0.40;
-    margin-top: 10px;
-    margin-left: 1270px;
-    transition: .5s;
-    /* filter: opacity(.15) drop-shadow(0 0 0 rgb(255, 255, 255));  */
-    filter: invert(1)
-}
-
-.help-icon:hover{
-    /* filter: opacity(.35) drop-shadow(0 0 0 #00a984);  */
-    opacity: .75;
-    cursor: pointer;
-}
-
 
 @keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-     }
+  0% {
+    opacity: 0;
   }
+  100% {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=header.css.map */

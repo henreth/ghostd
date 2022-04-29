@@ -52,15 +52,12 @@ function Header({ matches, setMatches, user, showInfoModal, setShowInfoModal, ha
       <div className="header">
         <div className='header-container'>
 
+          <div className="header-title">Ghostd</div>
           <img
             src={logo}
-            alt="Logo" className="header-logo"
-            hidden={showInfoModal ? 'true' : null}
+            alt="Logo" 
+            className="header-logo"
           />
-
-          <div
-            className="header-title" hidden={showInfoModal ? 'true' : null}
-          >Ghostd</div>
 
           <img
             src={helpIcon}
@@ -75,11 +72,11 @@ function Header({ matches, setMatches, user, showInfoModal, setShowInfoModal, ha
           />
 
 
-          <img
+          {/* <img
             src={reset}
             className='reset-button'
             onClick={handleResetClick}
-          />
+          /> */}
 
         </div>
       </div>

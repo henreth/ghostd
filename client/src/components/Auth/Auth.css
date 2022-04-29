@@ -48,10 +48,10 @@ body {
   right: 45%;
 }
 
-.loginMsg, .signupMsg {
+.loginMsg,
+.signupMsg {
   width: 50%;
   height: 100%;
-  font-size: 15px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -59,12 +59,7 @@ body {
 .loginMsg .title,
 .signupMsg .title {
   font-weight: 300;
-  font-size: 23px;
-}
-
-.loginMsg p,
-.signupMsg p {
-  font-weight: 100;
+  font-size: 200%;
 }
 
 .textcontent {
@@ -73,73 +68,15 @@ body {
   margin-left: 12%;
 }
 
-.loginMsg button,
-.signupMsg button {
-  background-color: #404040;
-  border: 2px solid white;
-  border-radius: 10px;
-  color: white;
-  font-size: 12px;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-  font-weight: 300;
-  padding: 10px;
-  margin-top: 20px;
-}
-
 /* front box content*/
-.login, .signup {
+.login,
+.signup {
   padding: 20px;
   text-align: center;
 }
 
-.login h2,
-.signup h2 {
-  color: #88dfcc;
-  font-size: 22px;
-}
-
-.inputbox {
-  margin-top: 30px;
-}
-
-.login input,
-.signup input {
-  display: block;
-  width: 100%;
-  height: 40px;
-  background-color: #f2f2f2;
-  border: none;
-  margin-bottom: 20px;
-  font-size: 12px;
-}
-
-.login button,
-.signup button {
-  background-color: #88dfcc;
-  border: none;
-  color: white;
-  font-size: 12px;
-  font-weight: 300;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-  padding: 10px;
-  border-radius: 10px;
-  width: 60px;
-  position: absolute;
-  right: 30px;
-  bottom: 30px;
-  cursor: pointer;
-}
-
-/* Fade In & Out*/
-.login p {
-  cursor: pointer;
-  color: #404040;
-  font-size: 15px;
-}
-
-.loginMsg, .signupMsg {
+.loginMsg,
+.signupMsg {
   /*opacity: 1;*/
   -webkit-transition: opacity .8s ease-in-out;
   transition: opacity .8s ease-in-out;
@@ -154,8 +91,16 @@ body {
 }
 
 .switch-button {
-  -webkit-transform: scale(125%);
-          transform: scale(125%);
+  background-color: #404040;
+  border: 2px solid white;
+  border-radius: 10px;
+  color: white;
+  font-size: 105%;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  font-weight: 300;
+  padding: 2%;
+  margin-top: 5%;
   -webkit-transition: .5s;
   transition: .5s;
 }
@@ -169,7 +114,22 @@ body {
   transition: .5s;
 }
 
+.auth-title-type {
+  color: #88dfcc;
+  font-size: 22px;
+}
+
 .auth-button {
+  background-color: #88dfcc;
+  border: none;
+  color: white;
+  font-size: 102.5%;
+  font-weight: 300;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
   -webkit-transition: .5s;
   transition: .5s;
 }
@@ -180,5 +140,35 @@ body {
   cursor: pointer;
   -webkit-transition: .5s;
   transition: .5s;
+}
+
+.auth-input {
+  font-size: 125%;
+  display: block;
+  width: 100%;
+  height: 4.5vh;
+  background-color: #f2f2f2;
+  border: none;
+  margin-bottom: 5%;
+  font-size: 110%;
+  padding-left: 2.5%;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.auth-input:focus {
+  -webkit-transition: .5s;
+  transition: .5s;
+  background-color: #d3d3d3;
+}
+
+.auth-subtitle {
+  width: 90%;
+  margin-top: 1.5%;
+  font-weight: 100;
+}
+
+.auth-subtitle span {
+  color: #88dfcc;
 }
 /*# sourceMappingURL=Auth.css.map */
