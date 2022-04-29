@@ -7,7 +7,7 @@ import reject from '../../img/bones-icon.png';
 import ProfileCard from '../ProfileCard/ProfileCard'
 import Card from '../ProfileCard/Card';
 import info from '../../img/info-icon.png';
-import MatchModal from '../MatchModal';
+import MatchModal from '../MatchModal/MatchModal';
 import MoreProfileInfo from '../MoreProfileInfo';
 
 

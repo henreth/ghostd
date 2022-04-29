@@ -2,12 +2,13 @@ import * as BS from 'react-bootstrap'
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import confetti from "canvas-confetti";
-import '../style/matchmodal.css'
-import userPhoto from '../img/user-icon.png'
+import './matchmodal.css'
+import userPhoto from '../../img/user-icon.png'
 
 
 
 function MatchModal({ setShowMatchModal, user, profile }) {
+    const charImages = require.context('../../img/characters', true);
     const [openMatchModal, setOpenMatchModal] = useState(true)
     const history = useHistory()
 
@@ -75,7 +76,7 @@ function MatchModal({ setShowMatchModal, user, profile }) {
                         <strong className='match-subtitle'> YOU AND {profile.name} LIKED ONE ANOTHER</strong>
                         <div className='match-images'>
                             <img className='match-image userimage' src={userPhoto} />
-                            <img className='match-image' src={profile.image} />
+                            <img className='match-image' src={charImages('./' + profile.image)} />
                         </div>
                         <hr></hr>
                         <div></div>

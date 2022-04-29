@@ -1,12 +1,13 @@
 import React, { useState,useEffect } from 'react'
-import '../style/morematchinfo.css';
-import location from '../img/location_icon.png';
+import './morematchinfo.css';
+import location from '../../img/location_icon.png';
 import axios from 'axios';
 
-let unmatchUrl = 'http://localhost:4000/unmatch';
-let userUrl = 'http://localhost:4000/user';
+let unmatchUrl = '/unmatch';
+let userUrl = '/user';
 
 function MoreMatchInfo ({profile,nameLength,setShowMoreProfileInfo,descriptionLength,locationLength,matches,setMatches,size}) {
+    const charImages = require.context('../../img/characters', true);
 
     let [userx,setUserx] = useState('')
     useEffect(()=>{
@@ -36,7 +37,7 @@ function MoreMatchInfo ({profile,nameLength,setShowMoreProfileInfo,descriptionLe
     return (
         <div className='matchinfo-cardContainer'>
             <div className='matches-matchinfo-card'>
-            <img className='matchinfo-img' src={profile.image}/>
+            <img className='matchinfo-img' src={charImages('./' + profile.image)}/>
                 <div className='info-box'>
                     <h1 className={nameLength > 10?'matchinfo-card-title-long':'matchinfo-card-title'}>{profile.name}</h1>
                     <h3 className={locationLength > 15? 'matchinfo-card-location-long':'matchinfo-card-location'}><img className ='location-icon-here' src={location}/>{profile.location}</h3>
