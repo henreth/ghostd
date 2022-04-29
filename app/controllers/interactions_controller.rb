@@ -39,8 +39,16 @@ class InteractionsController < ApplicationController
         target_interaction.update(:user_like => nil, swiped_status => false)
     end
 
+    def unmatch
+        user = find_user
+        profile = find_profile
+        target_interaction = Interaction.find_by(:user_id => user.id, :profile_id => profile.id)
+
+        target_interaction.update(:user_like => false)
+    end
+
     private 
-    
+
     def find_user
         User.find_by(id: session[:user_id])
     end
