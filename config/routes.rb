@@ -22,11 +22,13 @@ Rails.application.routes.draw do
 
   # Interactions
   get "/all_interactions", to: "interactions#index"
+
+  post "/reset", to: "interactions#reset"
   
   patch "/like", to: "interactions#like"
   patch "/dislike", to: "interactions#dislike"
   patch "/undo", to: "interactions#undo"
-  patch "/unmatch", to: "interaction#unmatch"
+  patch "/unmatch", to: "interactions#unmatch"
 
 
 
