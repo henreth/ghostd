@@ -34,20 +34,24 @@ function SideBarMoreMatchInfo ({profile,nameLength,setShowMoreProfileInfo,descri
         setShowMoreProfileInfo(false)
     }
 
-    let matchinfocardtext = descriptionLength >40?'matchinfo-card-text-long':'matchinfo-card-text'
+    let newText1 = profile.description.split(' ').slice(0,8).map(word=>word).join(' ')
+    let newText2 = profile.description.split(' ').slice(8,).map(word=>word).join(' ')
+
+    let matchinfocardtext = descriptionLength >40?'sb-matchinfo-card-text':'sb-matchinfo-card-text'
 
     return (
-        <div className='matchinfo-cardContainer'>
-            <div className='matchinfo-card'>
-            <img className='matchinfo-img' src={charImages('./' + profile.image)}/>
-                <div className='info-box'>
-                    <h1 className={nameLength > 10?'matchinfo-card-title-long':'matchinfo-card-title'}>{profile.name}</h1>
-                    <h3 className={locationLength > 15? 'matchinfo-card-location-long':'matchinfo-card-location'}><img className ='location-icon-here' src={location}/>{profile.location}</h3>
-                    <h3 className='matchinfo-card-subtitle'>{profile.pronouns} - {profile.age} years dead</h3>
+        <div className='sb-matchinfo-cardContainer'>
+            <div className='sb-matchinfo-card'>
+            <img className='sb-matchinfo-img' src={charImages('./' + profile.image)}/>
+                <div className='sb-info-box'>
+                    <h1 className={nameLength > 10?'sb-matchinfo-card-title-long':'sb-matchinfo-card-title'}>{profile.name}</h1>
+                    <h3 className={locationLength > 15? 'sb-matchinfo-card-location-long':'sb-matchinfo-card-location'}><img className ='location-icon-here' src={location}/>{profile.location}</h3>
+                    <h3 className='sb-matchinfo-card-subtitle'>{profile.pronouns} - {profile.age} years dead</h3>
                     <hr></hr>
-                    <p className={matchinfocardtext}>{profile.description}</p>
-                    {clicked? <button className='matchinfo-clicked-button'>UNMATCHED</button>:<button className='matchinfo-unmatch-button' onClick={handleRemoveClick}>UNMATCH</button>}
-                    <button className='matchinfo-close-button' onClick={handleCloseProfile}>CLOSE PROFILE</button>
+                    <div className={matchinfocardtext}>{newText1}</div>
+                    <div className={matchinfocardtext}>{newText2}</div>
+                    {clicked? <button className='sb-matchinfo-clicked-button'>UNMATCHED</button>:<button className='sb-matchinfo-unmatch-button' onClick={handleRemoveClick}>UNMATCH</button>}
+                    <button className='sb-matchinfo-close-button' onClick={handleCloseProfile}>CLOSE PROFILE</button>
                 </div>
             </div>
       </div>

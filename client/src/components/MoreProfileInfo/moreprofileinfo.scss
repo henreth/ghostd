@@ -81,6 +81,7 @@ color: white;
 display: flex;
 justify-content: left;
 font-family: 'Montserrat', sans-serif;
+width: 75%;
 }
 
 .moreprofile-card-location-long {
@@ -103,8 +104,10 @@ font-family: 'Montserrat', sans-serif;
 display: flex;
 justify-content: left;
 margin-top: -0% !important;
-font-size: 120%;
+// font-size: 120%;
 font-family: 'Montserrat', sans-serif;
+width:75%;
+color: red;
 }
 
 .moreprofile-close-button {
