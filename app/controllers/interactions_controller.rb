@@ -37,7 +37,6 @@ class InteractionsController < ApplicationController
             response = false
             render json: response
         end
-
     end
 
     def undo 
@@ -46,6 +45,15 @@ class InteractionsController < ApplicationController
         target_interaction = Interaction.find_by(:user_id => user.id, :profile_id => profile.id)
 
         target_interaction.update(:user_like => nil, :swiped_status => false)
+
+        if target_interaction.profile_like == true
+            response = true
+            render json: response
+        else
+            response = false
+            render json: response
+        end
+
     end
 
     def unmatch

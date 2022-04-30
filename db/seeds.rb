@@ -43,34 +43,32 @@ puts "seeding profiles"
   p34 = Profile.create(name: "Calamity", pronouns: 'she/her/hers', age: 119, description: 'Wild at heart', location: "Pierre, South Dakota", image: 'calamityjane.png')
   p35 = Profile.create(name: "Candyman", pronouns: 'he/him/his', age: 241, description: 'Sweet as honey, I am filled with bees after all', location: "Chicago, IL", image: 'candyman.png')
   p36 = Profile.create(name: "Present", pronouns: 'he/they/theirs', age: 10000, description: 'A feast for ALL senses!', location: "Christmas Eve", image: 'ghostofchristmaspresent.jpeg')
-  p37 = Profile.create(name: "Howie", pronouns: 'he/him/his', age: 10, description: 'This is how I win.', location: "New York, NY", image: 'howiebling.jpg')
-  p38 = Profile.create(name: "Jason", pronouns: 'he/him/his', age: 65, description: '...', image: 'jason.jpeg', location: 'Camp Crystal Lake')
-  p39 = Profile.create(name: "Wakasa", pronouns: 'she/her/hers', age: 387, description: 'Trying not to uhaul, failing miserably', image: 'wakasa.jpeg', location: 'Kyoto, Japan')
-  p40 = Profile.create(name: 'Billie', pronouns: 'she/her/hers', age: 63, description: 'Looking to end my solitude', image: 'billieholiday.webp', location: "New York, NY")
-  p41 = Profile.create(name: 'Javaman', pronouns: '?/?/?', age: 1000000, description: '?', image: 'javaman.webp', location: "Java")
-  p42 = Profile.create(name: 'Simone', pronouns: 'she/her/hers', age: 36, description: 'Not looking for anything serious', image: 'simonebeauvoir.jpeg', location: "Paris, France")
-  p43 = Profile.create(name: 'Jean-Paul', pronouns: 'he/him/his', age: 42, description: 'Not looking for anything serious', image: 'sartre.jpeg', location: "Paris, France")
-  p44 = Profile.create(name: 'Albert', pronouns: 'he/him/his', age: 62, description: 'I know of only one duty, and that is to love.', image: 'albertcamus.jpeg', location: "Villeblevin, France")
+  p37 = Profile.create(name: "Jason", pronouns: 'he/him/his', age: 65, description: '...', image: 'jason.jpeg', location: 'Camp Crystal Lake')
+  p38 = Profile.create(name: "Wakasa", pronouns: 'she/her/hers', age: 387, description: 'Trying not to uhaul, failing miserably', image: 'wakasa.jpeg', location: 'Kyoto, Japan')
+  p39 = Profile.create(name: 'Billie', pronouns: 'she/her/hers', age: 63, description: 'Looking to end my solitude', image: 'billieholiday.webp', location: "New York, NY")
+  p40 = Profile.create(name: 'Simone', pronouns: 'she/her/hers', age: 36, description: 'Not looking for anything serious', image: 'simonebeauvoir.jpeg', location: "Paris, France")
+  p41 = Profile.create(name: 'Jean-Paul', pronouns: 'he/him/his', age: 42, description: 'Not looking for anything serious', image: 'sartre.jpeg', location: "Paris, France")
+  p42 = Profile.create(name: 'Albert', pronouns: 'he/him/his', age: 62, description: 'I know of only one duty, and that is to love.', image: 'albertcamus.jpeg', location: "Villeblevin, France")
 
   profile_array = [p1.id, p2.id, p4.id, p5.id, p6.id, p7.id, p8.id, p9.id, p11.id, p12.id, 
   p13.id, p14.id, p15.id, p16.id, p17.id, p18.id, p19.id, p20.id, p21.id, p22.id, p23.id, 
   p24.id, p25.id, p26.id, p27.id, p28.id, p29.id, p30.id, p31.id, p32.id, p33.id, p34.id, 
-  p35.id, p36.id, p37.id, p38.id, p39.id, p40.id, p41.id, p42.id, p43.id, p44.id].shuffle
+  p35.id, p36.id, p37.id, p38.id, p39.id, p40.id, p41.id, p42.id, p42.id].shuffle
 
-puts "creating interactions"
-  l1 = Interaction.create(user_id: u1.id, profile_id: profile_array[0], user_like: nil, profile_like: true, swiped_status: false)
-  l2 = Interaction.create(user_id: u1.id, profile_id: profile_array[1], user_like: nil, profile_like: true, swiped_status: false)
-  l3 = Interaction.create(user_id: u1.id, profile_id: profile_array[2], user_like: nil, profile_like: true, swiped_status: false)
-  l4 = Interaction.create(user_id: u1.id, profile_id: profile_array[3], user_like: nil, profile_like: true, swiped_status: false)
-  l5 = Interaction.create(user_id: u1.id, profile_id: profile_array[4], user_like: nil, profile_like: true, swiped_status: false)
-  l6 = Interaction.create(user_id: u1.id, profile_id: profile_array[5], user_like: nil, profile_like: true, swiped_status: false)
-  l7 = Interaction.create(user_id: u1.id, profile_id: profile_array[6], user_like: nil, profile_like: true, swiped_status: false)
-  l8 = Interaction.create(user_id: u1.id, profile_id: profile_array[7], user_like: nil, profile_like: true, swiped_status: false)
-  l9 = Interaction.create(user_id: u1.id, profile_id: profile_array[8], user_like: nil, profile_like: true, swiped_status: false)
-  l10 = Interaction.create(user_id: u1.id, profile_id: profile_array[9], user_like: nil, profile_like: true, swiped_status: false)
-  l11 = Interaction.create(user_id: u1.id, profile_id: profile_array[10], user_like: nil, profile_like: true, swiped_status: false)
-  l12 = Interaction.create(user_id: u1.id, profile_id: profile_array[11], user_like: nil, profile_like: true, swiped_status: false)
-  l13 = Interaction.create(user_id: u1.id, profile_id: profile_array[12], user_like: nil, profile_like: true, swiped_status: false)
-  l14 = Interaction.create(user_id: u1.id, profile_id: profile_array[13], user_like: nil, profile_like: true, swiped_status: false)
+# puts "creating interactions"
+#   l1 = Interaction.create(user_id: u1.id, profile_id: profile_array[0], user_like: nil, profile_like: true, swiped_status: false)
+#   l2 = Interaction.create(user_id: u1.id, profile_id: profile_array[1], user_like: nil, profile_like: true, swiped_status: false)
+#   l3 = Interaction.create(user_id: u1.id, profile_id: profile_array[2], user_like: nil, profile_like: true, swiped_status: false)
+#   l4 = Interaction.create(user_id: u1.id, profile_id: profile_array[3], user_like: nil, profile_like: true, swiped_status: false)
+#   l5 = Interaction.create(user_id: u1.id, profile_id: profile_array[4], user_like: nil, profile_like: true, swiped_status: false)
+#   l6 = Interaction.create(user_id: u1.id, profile_id: profile_array[5], user_like: nil, profile_like: true, swiped_status: false)
+#   l7 = Interaction.create(user_id: u1.id, profile_id: profile_array[6], user_like: nil, profile_like: true, swiped_status: false)
+#   l8 = Interaction.create(user_id: u1.id, profile_id: profile_array[7], user_like: nil, profile_like: true, swiped_status: false)
+#   l9 = Interaction.create(user_id: u1.id, profile_id: profile_array[8], user_like: nil, profile_like: true, swiped_status: false)
+#   l10 = Interaction.create(user_id: u1.id, profile_id: profile_array[9], user_like: nil, profile_like: true, swiped_status: false)
+#   l11 = Interaction.create(user_id: u1.id, profile_id: profile_array[10], user_like: nil, profile_like: true, swiped_status: false)
+#   l12 = Interaction.create(user_id: u1.id, profile_id: profile_array[11], user_like: nil, profile_like: true, swiped_status: false)
+#   l13 = Interaction.create(user_id: u1.id, profile_id: profile_array[12], user_like: nil, profile_like: true, swiped_status: false)
+#   l14 = Interaction.create(user_id: u1.id, profile_id: profile_array[13], user_like: nil, profile_like: true, swiped_status: false)
 
 puts "have a nice day!"
