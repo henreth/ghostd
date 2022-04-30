@@ -22,8 +22,8 @@ function Sidebar({ matches, setMatches, user, setUser, signedIn, handleLogOut, l
     }
 
 
-    let matchesFirstColumn = matches.filter((match, index) => index % 2 === 0)
-    let matchesSecondColumn = matches.filter((match, index) => index % 2 !== 0)
+    let matchesFirstColumn = matches.filter((match, index) => index % 2 !== 0)
+    let matchesSecondColumn = matches.filter((match, index) => index % 2 === 0)
 
     let firstColumnToDisplay = matchesFirstColumn.map((match) => {
         return (
