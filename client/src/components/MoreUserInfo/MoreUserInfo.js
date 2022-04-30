@@ -7,7 +7,7 @@ import axios from 'axios';
 let unmatchUrl = '/unmatch';
 let userUrl = '/user';
 
-function MoreProfileInfo({ signedIn, showMoreProfileInfo, setShowMoreProfileInfo, profile, setUser, nameLength, locationLength, handleLogOut }) {
+function MoreProfileInfo({ signedIn, showMoreProfileInfo, setShowMoreProfileInfo, profile, setUser, nameLength, locationLength, handleLogOut, setLikeCount, setMatches, setProfiles, setCurrentIndex,setLastPerson}) {
     let [clickedLogOut, setClickedLogOut] = useState(false);
     let [clickedEdit, setClickedEdit] = useState(false);
     let [clickedReset,setClickedReset] = useState(false);
@@ -72,23 +72,41 @@ function MoreProfileInfo({ signedIn, showMoreProfileInfo, setShowMoreProfileInfo
     }
 
     function handleConfirmReset(){
+        axios.post('/reset')
+        .then(r=>{
+            alert('All interactions have been reset!')
+            axios.get('/unswiped_profiles')
+            .then(r => {
+              setProfiles(r.data)
+              setCurrentIndex(r.data.length - 1)
+              setLastPerson(r.data[r.data.length - 1])
 
+              axios.get('/matches')
+                .then(r => {
+                  setMatches(r.data)
+                })
+
+              axios.get('/unswiped_likes')
+                .then(r => setLikeCount(r.data))
+                window.location.reload();
+            })        
+        })
     }
 
     let LogOutbuttonsToDisplay = <React.Fragment>
-        {clickedLogOut ? <button className='close-button'>ARE YOU SURE?</button> : <button className='close-button' onClick={handleCloseProfile}>CLOSE PROFILE</button>}
-        {clickedLogOut ? <button className='close-button' onClick={handleLogOut}>CONFIRM LOG OUT</button> : <button className='close-button' onClick={() => { setClickedEdit(!clickedEdit) }}>EDIT PROFILE</button>}
-        {clickedLogOut ? <button className='close-button' onClick={() => { setClickedLogOut(false) }}>CANCEL</button> : <button className='close-button' onClick={() => { setClickedLogOut(true) }}>LOG OUT</button>}
+        {clickedLogOut ? <button className='sb-matchinfo-close-button'>ARE YOU SURE?</button> : <button className='sb-matchinfo-close-button' onClick={handleCloseProfile}>CLOSE PROFILE</button>}
+        {clickedLogOut ? <button className='sb-matchinfo-close-button' onClick={handleLogOut}>CONFIRM LOG OUT</button> : <button className='sb-matchinfo-close-button' onClick={() => { setClickedEdit(!clickedEdit) }}>EDIT PROFILE</button>}
+        {clickedLogOut ? <button className='sb-matchinfo-close-button' onClick={() => { setClickedLogOut(false) }}>CANCEL</button> : <button className='sb-matchinfo-close-button' onClick={() => { setClickedLogOut(true) }}>LOG OUT</button>}
     </React.Fragment>
 
     let editButtonsToDisplay = clickedReset?<React.Fragment>
-    <button className='close-button'>ARE YOU SURE?</button>
-    <button className='close-button' onClick={handleConfirmReset}>CONFIRM RESET</button>
-    <button className='close-button' onClick={() => { setClickedReset(false) }}>CANCEL</button>
+    <button className='sb-matchinfo-close-button'>ARE YOU SURE?</button>
+    <button className='sb-matchinfo-close-button' onClick={handleConfirmReset}>CONFIRM RESET</button>
+    <button className='sb-matchinfo-close-button' onClick={() => { setClickedReset(false) }}>CANCEL</button>
 </React.Fragment>:<React.Fragment>
-        <button className='close-button' onClick={() => { setClickedReset(true) }}>RESET INTERACTIONS</button>
-        <button className='close-button' onClick={handleSubmitChanges}>CONFIRM EDITS</button>
-        <button className='close-button' onClick={() => { setClickedEdit(false) }}>CANCEL</button>
+        <button className='sb-matchinfo-close-button' onClick={() => { setClickedReset(true) }}>RESET INTERACTIONS</button>
+        <button className='sb-matchinfo-close-button' onClick={handleSubmitChanges}>CONFIRM EDITS</button>
+        <button className='sb-matchinfo-close-button' onClick={() => { setClickedEdit(false) }}>CANCEL</button>
     </React.Fragment>
 
     
@@ -100,16 +118,18 @@ function MoreProfileInfo({ signedIn, showMoreProfileInfo, setShowMoreProfileInfo
 
     return (
         <div className='moreuserinfo-cardContainer'>
-            <div className='moreuser-info-card'>
-                <img className='moreuser-info-img' src={userPhoto} />
-                <div className='moreuser-info-box'>
-                    {clickedEdit ? <input className='' type='text' name='name' value={fullName} placeholder='Full Name' onChange={(e) => { setFullName(e.target.value) }} /> : <h1 className={nameLength > 10 ? 'moreuser-card-title-long' : 'moreuser-card-title'}>{profile.name}</h1>}
-                    <h3 className={locationLength > 15 ? 'moreuser-card-location-long' : 'moreuser-card-location'}><img className='moreuser-location-icon-here' src={locationIcon} />{clickedEdit ? <input className='' type='text' name='location' value={location} placeholder='Location' onChange={(e) => { setLocation(e.target.value) }} /> : profile.location}</h3>
-                    <h3 className='moreuser-card-subtitle'>{clickedEdit ? <input className='' type='text' name='pronouns' value={pronouns} placeholder='Pronouns' onChange={(e) => { setPronouns(e.target.value) }} /> : profile.pronouns} - {profile.age} year dead</h3>
+            <div className='sb-matchinfo-card'>
+                <img className='sb-matchinfo-img' src={userPhoto} />
+                <div className='sb-matchinfo-box'>
+                    {clickedEdit ? <input className='' type='text' name='name' value={fullName} placeholder='Full Name' onChange={(e) => { setFullName(e.target.value) }} /> : <h1 className={nameLength > 10 ? 'sb-card-title-long' : 'sb-matchinfo-card-title'}>{profile.name}</h1>}
+                    <h3 className={locationLength > 15 ? 'sb-matchinfo-card-location-long' : 'sb-matchinfo-card-location'}><img className='moreuser-location-icon-here' src={locationIcon} />{clickedEdit ? <input className='' type='text' name='location' value={location} placeholder='Location' onChange={(e) => { setLocation(e.target.value) }} /> : profile.location}</h3>
+                    <h3 className='sb-matchinfo-card-subtitle'>{clickedEdit ? <input className='' type='text' name='pronouns' value={pronouns} placeholder='Pronouns' onChange={(e) => { setPronouns(e.target.value) }} /> : profile.pronouns} - {profile.age} year dead</h3>
                     <hr></hr>
-                    {clickedEdit ? <input className='' type='text' name='description' placeholder='Description' value={description} onChange={(e) => { setDescription(e.target.value) }}/> : <React.Fragment><div className='user-card-text'>{newText1}</div>
-                        <div className='user-card-text'>{newText2}</div></React.Fragment>}
+                    {clickedEdit ? <input className='' type='text' name='description' placeholder='Description' value={description} onChange={(e) => { setDescription(e.target.value) }}/> : <React.Fragment><div className='sb-matchinfo-card-text'>{newText1}</div>
+                        <div className='sb-matchinfo-card-text'>{newText2}</div></React.Fragment>}
+                    <div className='user-buttons'>
                     {buttonsToDisplay}
+                    </div>
                 </div>
             </div>
         </div>

@@ -9,7 +9,7 @@ import userPhoto from '../../img/user-icon.png'
 import location from '../../img/location_icon.png';
 
 
-function Sidebar({ matches, setMatches, user, setUser, signedIn, handleLogOut, likeCount }) {
+function Sidebar({ matches, setMatches, user, setUser, signedIn, handleLogOut, likeCount, setLikeCount, setProfiles, setCurrentIndex, setLastPerson }) {
     let [showMoreUserInfo, setShowMoreUserInfo] = useState(false);
     let [showMoreProfileInfo, setShowMoreProfileInfo] = useState(false);
     let [selectedMatch, setSelectedMatch] = useState(user);
@@ -53,15 +53,34 @@ function Sidebar({ matches, setMatches, user, setUser, signedIn, handleLogOut, l
         )
     })
 
-    let likeCountToDisplay = likeCount!=0?<LikeCounter likeCount={likeCount}/>:null
+    let likeCountToDisplay = likeCount != 0 ? <LikeCounter likeCount={likeCount} /> : null
 
 
 
     return (
         <div className='menu-holder'>
             <Menu>
-                {showMoreUserInfo ? <MoreProfileInfo showMoreProfileInfo={showMoreUserInfo} setShowMoreProfileInfo={setShowMoreUserInfo} profile={user} setUser={setUser} signedIn={signedIn} handleLogOut={handleLogOut} /> : null}
-                {showMoreProfileInfo ? <SideBarMoreMatchInfo matches={matches} setMatches={setMatches} showMoreProfileInfo={showMoreProfileInfo} setShowMoreProfileInfo={setShowMoreProfileInfo} profile={selectedMatch} nameLength={selectedMatch.name.length} locationLength={selectedMatch.name.length} descriptionLength={selectedMatch.description.length} /> : null}
+                {showMoreUserInfo ? <MoreProfileInfo
+                    showMoreProfileInfo={showMoreUserInfo}
+                    setShowMoreProfileInfo={setShowMoreUserInfo}
+                    profile={user}
+                    setUser={setUser}
+                    signedIn={signedIn}
+                    handleLogOut={handleLogOut}
+                    setLikeCount={setLikeCount}
+                    setMatches={setMatches}
+                    setProfiles={setProfiles}
+                    setCurrentIndex={setCurrentIndex}
+                    setLastPerson={setLastPerson} /> : null}
+                {showMoreProfileInfo ? <SideBarMoreMatchInfo
+                    matches={matches}
+                    setMatches={setMatches}
+                    showMoreProfileInfo={showMoreProfileInfo}
+                    setShowMoreProfileInfo={setShowMoreProfileInfo}
+                    profile={selectedMatch}
+                    nameLength={selectedMatch.name.length}
+                    locationLength={selectedMatch.name.length}
+                    descriptionLength={selectedMatch.description.length} /> : null}
                 <img src={userPhoto} onClick={handleClickUser} className='profile-photo-sidebar' />
                 <a className="spacing-menu-item">'</a>
                 <div className='profile-name-sidebar'>{user.name}</div>

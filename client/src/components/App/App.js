@@ -21,9 +21,6 @@ let unswiped = '/unswiped_profiles'
 //everyone (swiped/unswiped)
 let peopleUrl = '/profiledeck'
 
-// all likes
-let likesUrl = '/likes'
-
 //all matches
 let matchesUrl = '/matches'
 
@@ -50,12 +47,11 @@ let unmatchUrl = '/unmatch'
 export default function App() {
   let history = useHistory();
 
-  let [db, setDB] = useState([]);
-  let [likes, setLikes] = useState([]);
+  let [profiles, setProfiles] = useState([]);
   let [matches, setMatches] = useState([]);
   let [likeCount, setLikeCount] = useState(0);
 
-  const [currentIndex, setCurrentIndex] = useState(db.length - 1)
+  const [currentIndex, setCurrentIndex] = useState(profiles.length - 1)
   const [lastPerson, setLastPerson] = useState({})
 
   let [showMatchModal, setShowMatchModal] = useState(false);
@@ -91,16 +87,10 @@ export default function App() {
 
           axios.get(unswiped)
             .then(r => {
-              setDB(r.data)
+              setProfiles(r.data)
               // console.log(r.data)
               setCurrentIndex(r.data.length - 1)
               setLastPerson(r.data[r.data.length - 1])
-
-              axios.get(likesUrl)
-                .then(r => {
-                  // console.log(r.data)
-                  setLikes(r.data)
-                })
 
               axios.get(matchesUrl)
                 .then(r => {
@@ -148,16 +138,11 @@ export default function App() {
         history.push('/')
         axios.get(unswiped)
           .then(r => {
-            setDB(r.data)
+            setProfiles(r.data)
             // console.log(r.data)
             setCurrentIndex(r.data.length - 1)
             setLastPerson(r.data[r.data.length - 1])
 
-            axios.get(likesUrl)
-              .then(r => {
-                // console.log(r.data)
-                setLikes(r.data)
-              })
 
             axios.get(matchesUrl)
               .then(r => {
@@ -204,16 +189,10 @@ export default function App() {
                 setSignedIn(true)
                 axios.get(unswiped)
                   .then(r => {
-                    setDB(r.data)
+                    setProfiles(r.data)
                     // console.log(r.data)
                     setCurrentIndex(r.data.length - 1)
                     setLastPerson(r.data[r.data.length - 1])
-
-                    axios.get(likesUrl)
-                      .then(r => {
-                        // console.log(r.data)
-                        setLikes(r.data)
-                      })
 
                     axios.get(matchesUrl)
                       .then(r => {
@@ -289,6 +268,10 @@ export default function App() {
         signedIn={signedIn}
         setUser={setUser}
         likeCount={likeCount}
+        setLikeCount={setLikeCount}
+        setProfiles={setProfiles}
+        setCurrentIndex={setCurrentIndex}
+        setLastPerson={setLastPerson}
       /> : null}
       {signedIn ? null : <React.Fragment>
         <div className='welcome-header'>
@@ -304,16 +287,13 @@ export default function App() {
         <Switch>
           <Route exact path="/">
             <HomePage
-              db={db}
-              setDB={setDB}
-              likes={likes}
-              setLikes={setLikes}
+              profiles={profiles}
+              setProfiles={setProfiles}
               currentIndex={currentIndex}
               setCurrentIndex={setCurrentIndex}
               lastPerson={lastPerson}
               setLastPerson={setLastPerson}
               peopleUrl={peopleUrl}
-              likesUrl={likesUrl}
               matches={matches}
               setMatches={setMatches}
               user={user}
@@ -322,6 +302,7 @@ export default function App() {
               handleAllModals={handleAllModals}
               likeCount={likeCount}
               setLikeCount={setLikeCount}
+            
             />
           </Route>
           <Route path="/matches">

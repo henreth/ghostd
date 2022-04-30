@@ -21,7 +21,7 @@ let dislikeUrl = '/dislike'
 let undoUrl = '/undo'
 
 
-function HomePage({ db, setDB, likes, setLikes, currentIndex, setCurrentIndex, lastPerson, setLastPerson, peopleUrl, user, matches, setMatches, showMatchModal, setShowMatchModal, handleAllModals, likeCount, setLikeCount }) {
+function HomePage({ profiles, setProfiles,currentIndex, setCurrentIndex, lastPerson, setLastPerson, peopleUrl, user, matches, setMatches, showMatchModal, setShowMatchModal, handleAllModals, likeCount, setLikeCount }) {
   document.title = 'Ghostd - Home'
 
   let [userx, setUserx] = useState('')
@@ -35,7 +35,7 @@ function HomePage({ db, setDB, likes, setLikes, currentIndex, setCurrentIndex, l
   // used for outOfFrame closure
   const currentIndexRef = useRef(currentIndex)
 
-  const childRefs = Array(db.length)
+  const childRefs = Array(profiles.length)
     .fill(0)
     .map((i) => React.createRef())
 
@@ -44,7 +44,7 @@ function HomePage({ db, setDB, likes, setLikes, currentIndex, setCurrentIndex, l
     currentIndexRef.current = val
   }
 
-  const canGoBack = currentIndex < db.length - 1
+  const canGoBack = currentIndex < profiles.length - 1
 
   const canSwipe = currentIndex >= 0
 
@@ -52,13 +52,12 @@ function HomePage({ db, setDB, likes, setLikes, currentIndex, setCurrentIndex, l
   function swiped(direction, profile, index, id) {
     setLastDirection(direction)
     updateCurrentIndex(index - 1)
-    // console.log(db[index].id)
-    console.log(id)
+    // console.log(profiles[index].id)
 
     if (direction === 'right') {
       axios.patch(likeUrl, {
         user_id: id,
-        profile_id: db[index].id
+        profile_id: profiles[index].id
       })
         .then(r => {
           switch (r.data) {
@@ -66,7 +65,7 @@ function HomePage({ db, setDB, likes, setLikes, currentIndex, setCurrentIndex, l
               break;
             case true:
               setShowMatchModal(true);
-              setMatches([...matches, db[index]])
+              setMatches([...matches, profiles[index]])
               setLikeCount(likeCount-=1)
               break;
           }
@@ -75,7 +74,7 @@ function HomePage({ db, setDB, likes, setLikes, currentIndex, setCurrentIndex, l
     } else if (direction === 'left') {
       axios.patch(dislikeUrl, {
         user_id: id,
-        profile_id: db[index].id
+        profile_id: profiles[index].id
       })
       .then(r=>{
         switch (r.data) {
@@ -87,7 +86,7 @@ function HomePage({ db, setDB, likes, setLikes, currentIndex, setCurrentIndex, l
         }      
       })
     }
-    setLastPerson(db[index - 1])
+    setLastPerson(profiles[index - 1])
   }
 
 
@@ -97,7 +96,7 @@ function HomePage({ db, setDB, likes, setLikes, currentIndex, setCurrentIndex, l
   }
 
   let swipe = async (dir, profile) => {
-    if (canSwipe && currentIndex < db.length) {
+    if (canSwipe && currentIndex < profiles.length) {
       await childRefs[currentIndex].current.swipe(dir) // swipe card
       if (dir === 'right') {
 
@@ -114,13 +113,13 @@ function HomePage({ db, setDB, likes, setLikes, currentIndex, setCurrentIndex, l
     const newIndex = currentIndex + 1
     updateCurrentIndex(newIndex)
     await childRefs[newIndex].current.restoreCard()
-    setLastPerson(db[newIndex])
+    setLastPerson(profiles[newIndex])
     axios.patch(undoUrl, {
       user_id: id,
-      profile_id: db[newIndex].id
+      profile_id: profiles[newIndex].id
     })
     setMatches(matches.filter(match => {
-      return match.id !== db[newIndex].id
+      return match.id !== profiles[newIndex].id
     }))
   }
 
@@ -129,7 +128,7 @@ function HomePage({ db, setDB, likes, setLikes, currentIndex, setCurrentIndex, l
     setShowMoreProfileInfo(true)
   }
 
-  let cardsToDisplay = db.map((profile, index) => (
+  let cardsToDisplay = profiles.map((profile, index) => (
     <ProfileCard
       key={profile.name}
       childRefs={childRefs}
@@ -145,7 +144,7 @@ function HomePage({ db, setDB, likes, setLikes, currentIndex, setCurrentIndex, l
   return (
     <React.Fragment>
       <div>
-        {showMatchModal ? <MatchModal user={userx} profile={db[currentIndex + 1]} setShowMatchModal={setShowMatchModal} /> : null}
+        {showMatchModal ? <MatchModal user={userx} profile={profiles[currentIndex + 1]} setShowMatchModal={setShowMatchModal} /> : null}
         {showMoreProfileInfo ? <React.Fragment><div className='infomodal-curtain'>-</div> <MoreProfileInfo showMoreProfileInfo={showMoreProfileInfo} setShowMoreProfileInfo={setShowMoreProfileInfo} profile={lastPerson} nameLength={lastPerson.name.length} locationLength={lastPerson.location.length} /></React.Fragment> : null}
         <div className='cardContainer'>
           {cardsToDisplay}
