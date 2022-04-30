@@ -37,8 +37,6 @@ function SideBarMoreMatchInfo ({profile,nameLength,setShowMoreProfileInfo,descri
     let newText1 = profile.description.split(' ').slice(0,8).map(word=>word).join(' ')
     let newText2 = profile.description.split(' ').slice(8,).map(word=>word).join(' ')
 
-    let matchinfocardtext = descriptionLength >40?'sb-matchinfo-card-text':'sb-matchinfo-card-text'
-
     return (
         <div className='sb-matchinfo-cardContainer'>
             <div className='sb-matchinfo-card'>
@@ -48,8 +46,8 @@ function SideBarMoreMatchInfo ({profile,nameLength,setShowMoreProfileInfo,descri
                     <h3 className={locationLength > 15? 'sb-matchinfo-card-location-long':'sb-matchinfo-card-location'}><img className ='location-icon-here' src={location}/>{profile.location}</h3>
                     <h3 className='sb-matchinfo-card-subtitle'>{profile.pronouns} - {profile.age} years dead</h3>
                     <hr></hr>
-                    <div className={matchinfocardtext}>{newText1}</div>
-                    <div className={matchinfocardtext}>{newText2}</div>
+                    <div className='sb-matchinfo-card-text'>{newText1}</div>
+                    <div className='sb-matchinfo-card-text'>{newText2}</div>
                     {clicked? <button className='sb-matchinfo-clicked-button'>UNMATCHED</button>:<button className='sb-matchinfo-unmatch-button' onClick={handleRemoveClick}>UNMATCH</button>}
                     <button className='sb-matchinfo-close-button' onClick={handleCloseProfile}>CLOSE PROFILE</button>
                 </div>
