@@ -34,8 +34,8 @@ function SideBarMoreMatchInfo ({profile,nameLength,setShowMoreProfileInfo,descri
         setShowMoreProfileInfo(false)
     }
 
-    let newText1 = profile.description.split(' ').slice(0,8).map(word=>word).join(' ')
-    let newText2 = profile.description.split(' ').slice(8,).map(word=>word).join(' ')
+    let newText1 = profile.description.split(' ').slice(0,7).map(word=>word).join(' ')
+    let newText2 = profile.description.split(' ').slice(7,).map(word=>word).join(' ')
 
     return (
         <div className='sb-matchinfo-cardContainer'>

@@ -5,7 +5,7 @@ import MiniCard from '../MiniCard/MiniCard';
 import SideBarMoreMatchInfo from '../SideBarMoreMatchInfo/SideBarMoreMatchInfo';
 import MoreProfileInfo from '../MoreUserInfo/MoreUserInfo';
 import LikeCounter from '../LikeCounter/LikeCounter';
-import userPhoto from '../../img/user-icon.png'
+import userPhoto from '../../img/user-photo.png'
 import location from '../../img/location_icon.png';
 
 
@@ -87,7 +87,7 @@ function Sidebar({ matches, setMatches, user, setUser, signedIn, handleLogOut, l
                 <img className='profile-location-icon-sidebar' src={location} />
                 <div className='profile-location-sidebar'>{user.location}</div>
                 <div className='sidebar-title'>
-                    <a className="large-menu-item" href="/matches">Matches</a>
+                    <div className="large-menu-item" >Matches</div>
                 </div>
 
                 <div className='minicards-container'>
