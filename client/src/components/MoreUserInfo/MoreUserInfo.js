@@ -88,6 +88,7 @@ function MoreProfileInfo({ signedIn, showMoreProfileInfo, setShowMoreProfileInfo
 
               axios.get('/unswiped_likes')
                 .then(r => setLikeCount(r.data))
+                window.location.reload();
             })        
         })
     }
