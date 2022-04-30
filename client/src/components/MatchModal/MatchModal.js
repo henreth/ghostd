@@ -66,8 +66,7 @@ function MatchModal({ setShowMatchModal, user, profile }) {
     return (
         <React.Fragment>
             <div className={openMatchModal ? 'infomodal-curtain' : 'hidden'}>-</div>
-            <div className='information-modal-container'>
-                <div className='text-holder'>
+            <div className='match-modal-container'>
                     <div className='text-holder'>
                         <strong className='itsamatch'>IT'S A MATCH!</strong>
                         <strong className='match-subtitle'> YOU AND {profile.name} LIKED ONE ANOTHER</strong>
@@ -77,15 +76,15 @@ function MatchModal({ setShowMatchModal, user, profile }) {
                         </div>
                         <hr></hr>
                         <div></div>
-                        <button className='redirect-button' onClick={handleGoToProfile}>GO TO PROFILE</button>
-                        <button className='swipe-button' onClick={handleClose}>KEEP SWIPING</button>
+                        <button className='match-button redirect' onClick={handleGoToProfile}>GO TO PROFILE</button>
+                        <button className='match-button keepswiping' onClick={handleClose}>KEEP SWIPING</button>
                     </div>
-                </div>
             </div>
-            {openMatchModal?<div className='fireworks'><div class="pyro">
-  <div class="before"></div>
-  <div class="after"></div>
-</div></div>:null}
+            {openMatchModal ? <div className='fireworks'><div className="pyro">
+                <div className="before"></div>
+                <div className="after"></div>
+            </div>
+            </div> : null}
         </React.Fragment>
     )
 }

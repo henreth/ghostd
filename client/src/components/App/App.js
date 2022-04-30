@@ -131,6 +131,7 @@ export default function App() {
       "age": 1,
       username,
       password,
+      "description": "Press edit to update your description!",
       "password_confirmation": signUpPasswordConfirmation,
     }
     axios.post("/signup", signUpDetails)
