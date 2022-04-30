@@ -1,9 +1,6 @@
-# <img src='title.png' width='500'>
+# <img src='title-large.png' width='500'>
 
 A simulated dating app experience themed around creating matches with famous historical figures and ghosts from popular culture
-
-
-
 
 **APP**: [COMING SOON]
 
