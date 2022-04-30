@@ -8,7 +8,7 @@ import homeIcon from '../../img/home-icon.png';
 import helpIcon from '../../img/help-icon.png';
 import InfoModal from '../InfoModal/InfoModal';
 
-function Header({ matches, setMatches, user, showInfoModal, setShowInfoModal, handleAllModals,handleLogOut,signedIn,setUser, likeCount }) {
+function Header({ matches, setMatches, user, showInfoModal, setShowInfoModal, handleAllModals,handleLogOut,signedIn,setUser, likeCount, setLikeCount, setDB, setCurrentIndex, setLastPerson }) {
 
   let history = useHistory();
 
@@ -31,6 +31,10 @@ function Header({ matches, setMatches, user, showInfoModal, setShowInfoModal, ha
         handleLogOut={handleLogOut}
         signedIn={signedIn}
         likeCount={likeCount}
+        setLikeCount={setLikeCount}
+        setDB={setDB}
+        setCurrentIndex={setCurrentIndex}
+        setLastPerson={setLastPerson}
       />
       {showInfoModal ? <InfoModal user={user} setShowInfoModal={setShowInfoModal} /> : null}
 

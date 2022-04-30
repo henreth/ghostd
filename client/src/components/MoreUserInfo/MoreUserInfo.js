@@ -7,7 +7,7 @@ import axios from 'axios';
 let unmatchUrl = '/unmatch';
 let userUrl = '/user';
 
-function MoreProfileInfo({ signedIn, showMoreProfileInfo, setShowMoreProfileInfo, profile, setUser, nameLength, locationLength, handleLogOut }) {
+function MoreProfileInfo({ signedIn, showMoreProfileInfo, setShowMoreProfileInfo, profile, setUser, nameLength, locationLength, handleLogOut, setLikeCount, setMatches, setDB, setCurrentIndex,setLastPerson}) {
     let [clickedLogOut, setClickedLogOut] = useState(false);
     let [clickedEdit, setClickedEdit] = useState(false);
     let [clickedReset,setClickedReset] = useState(false);
@@ -72,7 +72,24 @@ function MoreProfileInfo({ signedIn, showMoreProfileInfo, setShowMoreProfileInfo
     }
 
     function handleConfirmReset(){
+        axios.post('/reset')
+        .then(r=>{
+            alert('All interactions have been reset!')
+            axios.get('/unswiped_profiles')
+            .then(r => {
+              setDB(r.data)
+              setCurrentIndex(r.data.length - 1)
+              setLastPerson(r.data[r.data.length - 1])
 
+              axios.get('/matches')
+                .then(r => {
+                  setMatches(r.data)
+                })
+
+              axios.get('/unswiped_likes')
+                .then(r => setLikeCount(r.data))
+            })        
+        })
     }
 
     let LogOutbuttonsToDisplay = <React.Fragment>

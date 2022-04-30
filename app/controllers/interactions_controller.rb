@@ -78,6 +78,8 @@ class InteractionsController < ApplicationController
 
             count += 1
         end
+
+        render json: profile_array
     end
 
     private 

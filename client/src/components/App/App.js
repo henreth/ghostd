@@ -21,9 +21,6 @@ let unswiped = '/unswiped_profiles'
 //everyone (swiped/unswiped)
 let peopleUrl = '/profiledeck'
 
-// all likes
-let likesUrl = '/likes'
-
 //all matches
 let matchesUrl = '/matches'
 
@@ -51,7 +48,6 @@ export default function App() {
   let history = useHistory();
 
   let [db, setDB] = useState([]);
-  let [likes, setLikes] = useState([]);
   let [matches, setMatches] = useState([]);
   let [likeCount, setLikeCount] = useState(0);
 
@@ -95,12 +91,6 @@ export default function App() {
               // console.log(r.data)
               setCurrentIndex(r.data.length - 1)
               setLastPerson(r.data[r.data.length - 1])
-
-              axios.get(likesUrl)
-                .then(r => {
-                  // console.log(r.data)
-                  setLikes(r.data)
-                })
 
               axios.get(matchesUrl)
                 .then(r => {
@@ -153,11 +143,6 @@ export default function App() {
             setCurrentIndex(r.data.length - 1)
             setLastPerson(r.data[r.data.length - 1])
 
-            axios.get(likesUrl)
-              .then(r => {
-                // console.log(r.data)
-                setLikes(r.data)
-              })
 
             axios.get(matchesUrl)
               .then(r => {
@@ -208,12 +193,6 @@ export default function App() {
                     // console.log(r.data)
                     setCurrentIndex(r.data.length - 1)
                     setLastPerson(r.data[r.data.length - 1])
-
-                    axios.get(likesUrl)
-                      .then(r => {
-                        // console.log(r.data)
-                        setLikes(r.data)
-                      })
 
                     axios.get(matchesUrl)
                       .then(r => {
@@ -289,6 +268,10 @@ export default function App() {
         signedIn={signedIn}
         setUser={setUser}
         likeCount={likeCount}
+        setLikeCount={setLikeCount}
+        setDB={setDB}
+        setCurrentIndex={setCurrentIndex}
+        setLastPerson={setLastPerson}
       /> : null}
       {signedIn ? null : <React.Fragment>
         <div className='welcome-header'>
@@ -306,14 +289,11 @@ export default function App() {
             <HomePage
               db={db}
               setDB={setDB}
-              likes={likes}
-              setLikes={setLikes}
               currentIndex={currentIndex}
               setCurrentIndex={setCurrentIndex}
               lastPerson={lastPerson}
               setLastPerson={setLastPerson}
               peopleUrl={peopleUrl}
-              likesUrl={likesUrl}
               matches={matches}
               setMatches={setMatches}
               user={user}
@@ -322,6 +302,7 @@ export default function App() {
               handleAllModals={handleAllModals}
               likeCount={likeCount}
               setLikeCount={setLikeCount}
+            
             />
           </Route>
           <Route path="/matches">
