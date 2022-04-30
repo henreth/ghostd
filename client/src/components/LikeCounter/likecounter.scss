@@ -14,12 +14,13 @@
   border-radius: 10px;
   background-size: cover;
   background-position: center;
-  cursor: pointer;
+  // cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
   align-items: center;
+  user-select: none;
 }
 
 .likecounter-total{

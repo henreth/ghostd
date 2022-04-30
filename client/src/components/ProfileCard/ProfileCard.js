@@ -18,7 +18,7 @@ export default function ProfileCard({childRefs,index,profile, swiped, outOfFrame
         onCardLeftScreen={() => outOfFrame(profile.name, index)}
       >
         <div className='card'>
-          <h3 className='name-age'>{profile.name} {profile.age}</h3>
+          <h3 className='name-age'>{profile.name}, <span>{profile.age}</span></h3>
           <img className='img' src={charImages('./'+profile.image)}/>
           <div className='description-text'>{profileDescription}</div>
           <img className='info-icon' onClick={handleClickInfoButton} src={info} />

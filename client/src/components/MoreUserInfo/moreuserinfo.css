@@ -189,6 +189,7 @@
 }
 
 .user-buttons {
+  margin-top: 1%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -216,6 +217,10 @@
   background-color: rgba(136, 136, 136, 0.311);
   -webkit-transition: .25s;
   transition: .25s;
+}
+
+.user-info-input.description {
+  font-size: 100%;
 }
 
 .user-info-card-subtitle {

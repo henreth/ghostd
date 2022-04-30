@@ -3,9 +3,13 @@
 A simulated dating app experience themed around creating matches with famous historical figures and ghosts from popular culture
 
 
-**Demo**: [COMING SOON]
+
 
 **APP**: [COMING SOON]
+
+# Demos:
+
+<img src='ghostd-demo.gif' width='500'>
 
 #
 ## Technical Accomplishments
@@ -21,7 +25,7 @@ A simulated dating app experience themed around creating matches with famous his
   <a href="https://www.ruby-lang.org/en/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/ruby/ruby-original.svg" alt="ruby" width="40" height="40"/> </a>
    <a href="https://rubyonrails.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/rails/rails-original-wordmark.svg" alt="rails" width="40" height="40"/> </a> 
     <a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a>
-
+#
 ## How to Run This Application:
 * Install Ruby Gems with via the "Bundle Install" command
 * Install required NPM nodes with the command "npm install --prefix client"

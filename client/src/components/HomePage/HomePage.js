@@ -118,6 +118,15 @@ function HomePage({ profiles, setProfiles,currentIndex, setCurrentIndex, lastPer
       user_id: id,
       profile_id: profiles[newIndex].id
     })
+    .then(r=>{
+      switch (r.data) {
+        case false:
+          break;
+        case true:
+          setLikeCount(likeCount+=1)
+          break;
+      }      
+    })
     setMatches(matches.filter(match => {
       return match.id !== profiles[newIndex].id
     }))
