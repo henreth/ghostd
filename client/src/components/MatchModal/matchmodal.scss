@@ -15,14 +15,6 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-.match-profile-image{
-    height: 250px;
-    width: 250px;
-    border-radius: 300px;
-    border-style: solid;
-    border: 6px solid whitesmoke;
-}
-
 .match-image{
     margin-top: 5%;
     margin-bottom: 5%;
@@ -34,15 +26,6 @@
 }
 
 .userimage{ 
-    border: 6px solid black;
-    filter: invert(50);
-}
-
-.match-user-image{
-    height: 250px;
-    width: 250px;
-    border-radius: 300px;
-    border-style: solid;
     border: 6px solid black;
     filter: invert(50);
 }
