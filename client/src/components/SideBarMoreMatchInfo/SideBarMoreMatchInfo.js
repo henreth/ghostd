@@ -3,25 +3,16 @@ import './sidebarmorematchinfo.css';
 import location from '../../img/location_icon.png';
 import axios from 'axios';
 
-let unmatchUrl = 'http://localhost:4000/unmatch';
-let userUrl = 'http://localhost:4000/user';
+let unmatchUrl = '/unmatch';
 
 function SideBarMoreMatchInfo ({profile,nameLength,setShowMoreProfileInfo,descriptionLength,locationLength,matches,setMatches}) {
     const charImages = require.context('../../img/characters', true);
-
-    let [userx,setUserx] = useState('')
-    useEffect(()=>{
-      axios.get(userUrl)
-      .then(r=>setUserx(r.data))
-    },[])
-    let id = userx.id
 
     let [clicked,setClicked] = useState(false);
 
     function handleRemoveClick(){
         setClicked(true);
         axios.patch(unmatchUrl,{
-            user_id: id,
             profile_id: profile.id
         })
         setMatches(matches.filter(match=>{
