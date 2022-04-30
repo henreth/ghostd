@@ -36,8 +36,9 @@
 }
 
 .moreuser-info-img {
-  margin-left: -1.5%;
-  height: 55vh;
+  height: 500px;
+  width: 460px;
+  max-width: 410px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   -webkit-filter: invert(25%);
@@ -195,17 +196,59 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  max-width: 75%;
 }
 
-.user-buttons button {
-  width: 110%;
+.user-info-input {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  outline: none;
+  border: none;
+  font-size: 125%;
+  font-weight: 700;
+  border-radius: 5px;
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color: rgba(136, 136, 136, 0.311);
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.user-info-card-subtitle {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.user-info-card-subtitle span {
+  color: transparent;
+}
+
+.user-info-button {
+  cursor: pointer;
+  font-size: 110%;
+  color: #fff;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  border-radius: 2.5px;
+  width: 120%;
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color: #706f6f;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.user-info-button:hover {
+  background-color: #926060;
+  color: #121212;
 }
 /*# sourceMappingURL=moreuserinfo.css.map */

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import confetti from "canvas-confetti";
 import './matchmodal.css'
-import userPhoto from '../../img/user-icon.png'
+import userPhoto from '../../img/user-photo.png'
 
 function MatchModal({ setShowMatchModal, user, profile }) {
     const charImages = require.context('../../img/characters', true);

@@ -19,32 +19,27 @@
     height: 500px;
     border-radius: 10px;
     background-size: cover;
-    background-position: center;
-    /* cursor: pointer; */
+    background-position: center;    /* cursor: pointer; */
     box-shadow: -80px -15px 25px rgba(0, 0, 0, 0.199);
     transition: all .15s;
-    margin-left: 325px;
-    margin-top: 95px;
     z-index: 1000;
     animation: fadeInAnimation ease .3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+    margin-left: 125%;
+    margin-top: 40%;
 
 }
 
-
-  
 .sb-matchinfo-img {
     height: 500px;
     width: 460px;
     max-width: 410px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+    z-index: 1004;
 }
 
-.sb-matchinfo-card:hover{
-    box-shadow: 0px 0px 60px 0px rgba(60, 236, 183, 0.295);
-}
 
 .location-icon-here {
    filter: invert(100%);
