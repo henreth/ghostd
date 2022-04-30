@@ -42,7 +42,7 @@ function MoreProfileInfo({ signedIn, showMoreProfileInfo, setShowMoreProfileInfo
         }
 
         if (description === '') {
-            setPronouns(profile.description)
+            setDescription(profile.description)
         }
 
         let updatedDetails = {
@@ -118,14 +118,14 @@ function MoreProfileInfo({ signedIn, showMoreProfileInfo, setShowMoreProfileInfo
 
     return (
         <div className='sb-matchinfo-cardContainer'>
-            <div className='sb-matchinfo-card'>
+            <div className='sb-matchinfo-card usercard'>
                 <img className='moreuser-info-img' src={userPhoto} />
                 <div className='sb-info-box'>
                     {clickedEdit ? <input className='user-info-input' type='text' name='name' value={fullName} placeholder='Full Name' onChange={(e) => { setFullName(e.target.value) }} /> : <h1 className={nameLength > 10 ? 'sb-matchinfo-card-title-long' : 'sb-matchinfo-card-title'}>{profile.name}</h1>}
                     {clickedEdit ? <input className='user-info-input' type='text' name='location' value={location} placeholder='Location' onChange={(e) => { setLocation(e.target.value) }} /> :<h3 className={locationLength > 15 ? 'sb-matchinfo-card-location-long' : 'sb-matchinfo-card-location'}><img className='moreuser-location-icon-here' src={locationIcon} />{profile.location}</h3>}
                     {clickedEdit ? <input className='user-info-input' type='text' name='pronouns' value={pronouns} placeholder='Pronouns' onChange={(e) => { setPronouns(e.target.value) }} /> :<h3 className='sb-matchinfo-card-subtitle'>{profile.pronouns} - {profile.age} year dead</h3>}
                     <hr></hr>
-                    {clickedEdit ? <input className='user-info-input' type='text' name='description' placeholder='Description' value={description} onChange={(e) => { setDescription(e.target.value) }} /> : <React.Fragment><div className='sb-matchinfo-card-text'>{newText1}</div>
+                    {clickedEdit ? <input className='user-info-input description' type='text' name='description' placeholder='Description' value={description} onChange={(e) => { setDescription(e.target.value) }} /> : <React.Fragment><div className='sb-matchinfo-card-text'>{newText1}</div>
                         <div className='sb-matchinfo-card-text'>{newText2}</div></React.Fragment>}
                     <div className='user-buttons'>
                         {buttonsToDisplay}

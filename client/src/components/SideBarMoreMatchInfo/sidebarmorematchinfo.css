@@ -19,7 +19,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  background-color: black;
+  background-color: #181818;
   width: 850px;
   height: 500px;
   border-radius: 10px;
@@ -39,6 +39,10 @@
           animation-fill-mode: forwards;
   margin-left: 125%;
   margin-top: 40%;
+}
+
+.sb-matchinfo-card.usercard {
+  background-color: #303030;
 }
 
 .sb-matchinfo-img {

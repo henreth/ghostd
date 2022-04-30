@@ -14,7 +14,7 @@
     position: absolute;
     display: flex;
     flex-direction: row;
-    background-color: black;
+    background-color: rgb(24, 24, 24);
     width: 850px;
     height: 500px;
     border-radius: 10px;
@@ -29,6 +29,9 @@
     margin-left: 125%;
     margin-top: 40%;
 
+    &.usercard {
+    background-color: rgb(48, 48, 48);
+  }
 }
 
 .sb-matchinfo-img {
@@ -54,6 +57,7 @@
    padding-left: 5%;
   padding-right: 5%; 
   width: 50%;
+  
 }
 
 .sb-matchinfo-card-title {

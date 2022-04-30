@@ -1,117 +1,130 @@
 .swipe {
-    position: absolute;
-  }
-  
-.cardContainer {
-    margin-top: 50px;
-    width: 390vw;
-    max-width: 460px;
-    height: 490px;
-  }
-  
-  .card {
-    margin-top: 50px;
-    position: relative;
-    background-color: black;
-    width: 380vw;
-    max-width: 460px;
-    height: 590px;
-    border-radius: 20px;
-    background-size: cover;
-    background-position: center;
-    box-shadow: -80px -15px 25px rgba(0,0,0,0.020);
-    -webkit-transform: skew(-36deg);
-    -moz-transform: skew(-36deg);
-    -ms-transform: skew(-36deg);
-    -o-transform: skew(-36deg);
-    transform: skew(0deg);
-    -webkit-transform-origin: 0% 100%;
-    -moz-transform-origin: 0% 100%;
-    -ms-transform-origin: 0% 100%;
-    -o-transform-origin: 0% 100%;
-    transform-origin: 0% 100%;
-  }
-  
-  .card:active{
-    box-shadow: 0px 0px 60px 0px rgba(60, 236, 183, 0.384);
-  }
-  
-  .cardContent {
-    width: 100%;
-    height: 100%;
-  }
-  
-  .card h3 {
-    position: absolute;
-    font-size: xx-large;
-    bottom: 0;
-    margin: 10px;
-    margin-bottom: 30px;
-    margin-left: 13px;
-    color: #fff;
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  .card h4 {
-    position: absolute;
-    font-weight: lighter;
-    bottom: 0;
-    margin: 10px;
-    margin-bottom: 10px;
-    color: #fff;
-  }
-  
+  position: absolute;
+}
 
-  
-  .card .description-text {
-    position: absolute;
-    font-weight: 100;
-    bottom: 0;
-    margin: 10px;
-    margin-left: 14px;
-    margin-bottom: 7px;
-    color: #fff;
-    font-family: 'Montserrat', sans-serif;
-  
-  }
-  
-  .infoText {
-    width: 100%;
-    height: 28px;
-    justify-content: center;
-    display: flex;
-    color: #fff;
-    animation-name: popup;
-    animation-duration: 800ms;
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  .card .img {
-    height: 500px;
-    width: 460px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    cursor: grab;
-  }
-  
-  .card .img:active{
-    cursor: grabbing;
-  }
-  
-  .card .info-icon {
-    filter: brightness(100%);
-    filter: invert(100%);
-    position: absolute;
-    bottom: 0;
-    margin-left: -45px;
-    margin-bottom: 45px;
-    height: 30px;
-    transition: .25s;
-  }
-  
-  .card .info-icon:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-  }
-  
-  
+.cardContainer {
+  margin-top: 50px;
+  width: 390vw;
+  max-width: 460px;
+  height: 490px;
+}
+
+.card {
+  margin-top: 50px;
+  position: relative;
+  background-color: black;
+  width: 380vw;
+  max-width: 460px;
+  height: 590px;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  -webkit-box-shadow: -80px -15px 25px rgba(0, 0, 0, 0.02);
+          box-shadow: -80px -15px 25px rgba(0, 0, 0, 0.02);
+  -webkit-transform: skew(-36deg);
+  transform: skew(0deg);
+  -webkit-transform-origin: 0% 100%;
+  transform-origin: 0% 100%;
+}
+
+.card:active {
+  -webkit-box-shadow: 0px 0px 60px 0px rgba(60, 236, 183, 0.384);
+          box-shadow: 0px 0px 60px 0px rgba(60, 236, 183, 0.384);
+}
+
+.cardContent {
+  width: 100%;
+  height: 100%;
+}
+
+.name-age {
+  position: absolute;
+  font-size: 250%;
+  bottom: 0;
+  margin-bottom: 32.5px;
+  padding-left: 13px;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.55) 55%, rgba(0, 0, 0, 0.7) 65%, rgba(0, 0, 0, 0.85) 75%, rgba(0, 0, 0, 0.95) 85%, rgba(0, 0, 0, 0.95) 90%, rgba(0, 0, 0, 0.95) 95%, black 100%);
+  width: 100%;
+}
+
+.name-age span {
+  font-size: 85%;
+}
+
+.card h4 {
+  position: absolute;
+  font-weight: lighter;
+  bottom: 0;
+  margin: 10px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.card .description-text {
+  background-color: black;
+  width: 100%;
+  position: absolute;
+  font-weight: 100;
+  bottom: 0;
+  padding-left: 14px;
+  margin-bottom: 0px;
+  padding-bottom: 15px;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.infoText {
+  width: 100%;
+  height: 28px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #fff;
+  -webkit-animation-name: popup;
+          animation-name: popup;
+  -webkit-animation-duration: 800ms;
+          animation-duration: 800ms;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.card .img {
+  height: 550px;
+  width: 460px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.card .img:active {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+.card .info-icon {
+  -webkit-filter: brightness(100%);
+          filter: brightness(100%);
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+  position: absolute;
+  bottom: 0;
+  margin-left: -45px;
+  margin-bottom: 45px;
+  height: 30px;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.card .info-icon:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  cursor: pointer;
+}
+/*# sourceMappingURL=profilecard.css.map */
