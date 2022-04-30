@@ -9,7 +9,7 @@ import userPhoto from '../../img/user-icon.png'
 import location from '../../img/location_icon.png';
 
 
-function Sidebar({ matches, setMatches, user, setUser, signedIn, handleLogOut, likeCount, setLikeCount, setDB, setCurrentIndex, setLastPerson }) {
+function Sidebar({ matches, setMatches, user, setUser, signedIn, handleLogOut, likeCount, setLikeCount, setProfiles, setCurrentIndex, setLastPerson }) {
     let [showMoreUserInfo, setShowMoreUserInfo] = useState(false);
     let [showMoreProfileInfo, setShowMoreProfileInfo] = useState(false);
     let [selectedMatch, setSelectedMatch] = useState(user);
@@ -69,7 +69,7 @@ function Sidebar({ matches, setMatches, user, setUser, signedIn, handleLogOut, l
                     handleLogOut={handleLogOut}
                     setLikeCount={setLikeCount}
                     setMatches={setMatches}
-                    setDB={setDB}
+                    setProfiles={setProfiles}
                     setCurrentIndex={setCurrentIndex}
                     setLastPerson={setLastPerson} /> : null}
                 {showMoreProfileInfo ? <SideBarMoreMatchInfo

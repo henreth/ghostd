@@ -7,7 +7,7 @@ import axios from 'axios';
 let unmatchUrl = '/unmatch';
 let userUrl = '/user';
 
-function MoreProfileInfo({ signedIn, showMoreProfileInfo, setShowMoreProfileInfo, profile, setUser, nameLength, locationLength, handleLogOut, setLikeCount, setMatches, setDB, setCurrentIndex,setLastPerson}) {
+function MoreProfileInfo({ signedIn, showMoreProfileInfo, setShowMoreProfileInfo, profile, setUser, nameLength, locationLength, handleLogOut, setLikeCount, setMatches, setProfiles, setCurrentIndex,setLastPerson}) {
     let [clickedLogOut, setClickedLogOut] = useState(false);
     let [clickedEdit, setClickedEdit] = useState(false);
     let [clickedReset,setClickedReset] = useState(false);
@@ -77,7 +77,7 @@ function MoreProfileInfo({ signedIn, showMoreProfileInfo, setShowMoreProfileInfo
             alert('All interactions have been reset!')
             axios.get('/unswiped_profiles')
             .then(r => {
-              setDB(r.data)
+              setProfiles(r.data)
               setCurrentIndex(r.data.length - 1)
               setLastPerson(r.data[r.data.length - 1])
 

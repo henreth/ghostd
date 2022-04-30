@@ -47,11 +47,11 @@ let unmatchUrl = '/unmatch'
 export default function App() {
   let history = useHistory();
 
-  let [db, setDB] = useState([]);
+  let [profiles, setProfiles] = useState([]);
   let [matches, setMatches] = useState([]);
   let [likeCount, setLikeCount] = useState(0);
 
-  const [currentIndex, setCurrentIndex] = useState(db.length - 1)
+  const [currentIndex, setCurrentIndex] = useState(profiles.length - 1)
   const [lastPerson, setLastPerson] = useState({})
 
   let [showMatchModal, setShowMatchModal] = useState(false);
@@ -87,7 +87,7 @@ export default function App() {
 
           axios.get(unswiped)
             .then(r => {
-              setDB(r.data)
+              setProfiles(r.data)
               // console.log(r.data)
               setCurrentIndex(r.data.length - 1)
               setLastPerson(r.data[r.data.length - 1])
@@ -138,7 +138,7 @@ export default function App() {
         history.push('/')
         axios.get(unswiped)
           .then(r => {
-            setDB(r.data)
+            setProfiles(r.data)
             // console.log(r.data)
             setCurrentIndex(r.data.length - 1)
             setLastPerson(r.data[r.data.length - 1])
@@ -189,7 +189,7 @@ export default function App() {
                 setSignedIn(true)
                 axios.get(unswiped)
                   .then(r => {
-                    setDB(r.data)
+                    setProfiles(r.data)
                     // console.log(r.data)
                     setCurrentIndex(r.data.length - 1)
                     setLastPerson(r.data[r.data.length - 1])
@@ -269,7 +269,7 @@ export default function App() {
         setUser={setUser}
         likeCount={likeCount}
         setLikeCount={setLikeCount}
-        setDB={setDB}
+        setProfiles={setProfiles}
         setCurrentIndex={setCurrentIndex}
         setLastPerson={setLastPerson}
       /> : null}
@@ -287,8 +287,8 @@ export default function App() {
         <Switch>
           <Route exact path="/">
             <HomePage
-              db={db}
-              setDB={setDB}
+              profiles={profiles}
+              setProfiles={setProfiles}
               currentIndex={currentIndex}
               setCurrentIndex={setCurrentIndex}
               lastPerson={lastPerson}
