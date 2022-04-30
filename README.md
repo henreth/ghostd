@@ -1,6 +1,11 @@
 # <img src='title-large.png' width='500'>
 
-A simulated dating app experience themed around creating matches with famous historical figures and ghosts from popular culture
+A simulated dating app experience themed around creating matches with famous historical figures and ghosts from popular culture.
+
+* Swipe right on profiles you 'like' or swipe right on the ones you don't.
+* Press the undo button to undo your last decision if you think you made a mistake.
+* Match with 40+ unique profiles.
+
 
 **APP**: [COMING SOON]
 
