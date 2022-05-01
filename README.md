@@ -7,7 +7,7 @@ A simulated dating app experience themed around creating matches with famous his
 * Match with 40+ unique profiles.
 
 
-**APP**: [COMING SOON]
+**APP**: [GHOSTD] (https://ghostd-app.herokuapp.com/)
 
 # Demos:
 
