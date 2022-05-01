@@ -22,7 +22,7 @@
 
 .title-logo {
   font-family: 'Nosifer', cursive;
-  font-size: 655%;
+  font-size: 10vh;
   padding-bottom: .5%;
 }
 
@@ -56,8 +56,15 @@
 }
 
 .info-text.end {
-  font-size: 130%;
+  width: 80%;
+  font-size: 145%;
   margin-top: 1.5%;
+}
+
+.info-text.middle {
+  margin-top: 1.5%;
+  font-size: 145%;
+  font-weight: bold;
 }
 
 .info-exit-button {
@@ -124,13 +131,13 @@
   border-radius: 20px;
   background-color: rgba(0, 0, 0, 0.75);
   width: 47.5%;
-  position: fixed;
+  position: absolute;
   -webkit-animation: fadeInAnimation ease 1s;
           animation: fadeInAnimation ease 1s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   z-index: 1000;
-  top: 15%;
-  left: 25%;
+  top: 10vh;
+  left: 25vw;
 }
 /*# sourceMappingURL=infomodal.css.map */

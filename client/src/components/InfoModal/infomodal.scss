@@ -16,7 +16,7 @@
 
 .title-logo{
     font-family: 'Nosifer', cursive;
-    font-size: 655%;
+    font-size: 10vh;
     padding-bottom: .5%;
 }
 
@@ -47,8 +47,15 @@
   }
 
   &.end{
-    font-size: 130%;
+    width: 80%;
+    font-size: 145%;
     margin-top: 1.5%;
+  }
+
+  &.middle{
+    margin-top: 1.5%;
+    font-size: 145%;
+    font-weight:bold;
   }
 }
 
@@ -103,11 +110,10 @@
   border-radius: 20px;
   background-color: rgba(0, 0, 0, 0.75);
   width: 47.5%;
-  position: fixed;
+  position: absolute;
   animation: fadeInAnimation ease 1s;
   animation-fill-mode: forwards;
   z-index:1000;
-  top: 15%; 
-  left: 25%; 
-
+  top: 10vh; 
+  left: 25vw; 
 }
