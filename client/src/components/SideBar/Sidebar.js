@@ -84,7 +84,7 @@ function Sidebar({ matches, setMatches, user, setUser, signedIn, handleLogOut, l
                     descriptionLength={selectedMatch.description.length} /> : null}
                 <img src={userPhoto} onClick={handleClickUser} className='profile-photo-sidebar' />
                 <a className="spacing-menu-item">'</a>
-                <div className='profile-name-sidebar'>{user.name}</div>
+                <div className='profile-name-sidebar'>{user.username}</div>
                 <img className='profile-location-icon-sidebar' src={location} />
                 <div className='profile-location-sidebar'>{user.location}</div>
                 <div className='sidebar-title'>
