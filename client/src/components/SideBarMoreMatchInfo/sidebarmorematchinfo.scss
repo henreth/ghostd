@@ -14,7 +14,9 @@
     position: absolute;
     display: flex;
     flex-direction: row;
-    background-color: rgb(24, 24, 24);
+    // background-color: rgb(24, 24, 24);
+    background-color: rgb(48, 48, 48);
+
     width: 850px;
     height: 500px;
     border-radius: 10px;
@@ -26,8 +28,10 @@
     animation: fadeInAnimation ease .3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
-    margin-left: 125%;
-    margin-top: 40%;
+    margin-left: 75%;
+    margin-top: 30%;
+    margin-left: 22.5vw;
+    margin-top: 12.5vh;
 
     &.usercard {
     background-color: rgb(48, 48, 48);
@@ -69,13 +73,14 @@
   margin-top: 5%;
   margin-bottom: 1%;
   font-family: 'Montserrat', sans-serif;
+  width: 50%;
 }
 
 .sb-matchinfo-card-title-long {
   color: white;
   display: flex;
   justify-content: left;
-  font-size: 240%;
+  font-size: 275%;
   padding-bottom: 0%;
   margin-top: 5%;
   margin-bottom: 1%;

@@ -19,7 +19,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  background-color: #181818;
+  background-color: #303030;
   width: 850px;
   height: 500px;
   border-radius: 10px;
@@ -37,8 +37,10 @@
           animation-iteration-count: 1;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-  margin-left: 125%;
-  margin-top: 40%;
+  margin-left: 75%;
+  margin-top: 30%;
+  margin-left: 22.5vw;
+  margin-top: 12.5vh;
 }
 
 .sb-matchinfo-card.usercard {
@@ -90,6 +92,7 @@
   margin-top: 5%;
   margin-bottom: 1%;
   font-family: 'Montserrat', sans-serif;
+  width: 50%;
 }
 
 .sb-matchinfo-card-title-long {
@@ -100,7 +103,7 @@
   -webkit-box-pack: left;
       -ms-flex-pack: left;
           justify-content: left;
-  font-size: 240%;
+  font-size: 275%;
   padding-bottom: 0%;
   margin-top: 5%;
   margin-bottom: 1%;

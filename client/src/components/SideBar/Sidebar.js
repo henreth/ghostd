@@ -63,6 +63,7 @@ function Sidebar({ matches, setMatches, user, setUser, signedIn, handleLogOut, l
                 {showMoreUserInfo ? <MoreProfileInfo
                     showMoreProfileInfo={showMoreUserInfo}
                     setShowMoreProfileInfo={setShowMoreUserInfo}
+                    nameLength={user.name.length}
                     profile={user}
                     setUser={setUser}
                     signedIn={signedIn}
