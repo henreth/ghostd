@@ -10,6 +10,8 @@ export default function ProfileCard({ childRefs, index, profile, swiped, outOfFr
 
   let profileDescription = profile.description.split('').length > 50 ? profile.description.slice(0, 50) + '...' : profile.description
 
+  let nameClass = profile.name.length > 10 ? 'name-age-long': 'name-age'
+
   return (
     <TinderCard
       ref={childRefs[index]}
@@ -19,7 +21,7 @@ export default function ProfileCard({ childRefs, index, profile, swiped, outOfFr
       onCardLeftScreen={() => outOfFrame(profile.name, index)}
     >
       <div className='card'>
-        <h3 className='name-age'>{profile.name}, <span>{profile.age}</span></h3>
+        <h3 className={nameClass}>{profile.name}, <span>{profile.age}</span></h3>
         <img className='img' src={charImages('./' + profile.image)} />
         <div className='description-text'>{profileDescription}</div>
         <img className='info-icon' onClick={handleClickInfoButton} src={info} />

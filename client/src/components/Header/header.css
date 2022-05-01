@@ -33,6 +33,8 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 
 .header-buttons {
