@@ -3,15 +3,16 @@
   }
   
 .cardContainer {
-    margin-top: 50px;
+    // margin-top: 50px;
     width: 390vw;
     max-width: 460px;
     height: 490px;
+    z-index: 1;
   }
   
   .card {
-    margin-top: 50px;
-    position: relative;
+    margin-top: 7.5vh;
+    // position: relative;
     background-color: rgb(0, 0, 0);
     width: 380vw;
     max-width: 460px;
@@ -44,6 +45,24 @@
   .name-age {
     position: absolute;
     font-size: 250%;
+    bottom: 0;
+    // margin: 10px;
+    margin-bottom: 32.5px;
+    padding-left: 13px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    // background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.022) 0%,rgba(0, 0, 0, 0.15) 25%,rgba(0, 0, 0, 0.2) 27.5%,rgba(0, 0, 0, 0.332) 35%,rgba(0, 0, 0, 0.453) 45%,rgba(0, 0, 0, 0.543) 52.5%,rgba(0, 0, 0, 0.643) 60%, rgba(0, 0, 0, 0.871) 75%, rgba(0,0,0, 1) 100%);
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.0) 0%,rgba(0, 0, 0, 0.25) 25%,rgba(0, 0, 0, 0.50) 50%,rgba(0, 0, 0, 0.55) 55%,rgba(0, 0, 0, 0.70) 65%,rgba(0, 0, 0, 0.85) 75%,rgba(0, 0, 0, 0.95) 85%,rgba(0, 0, 0, 0.95) 90%,rgba(0, 0, 0, 0.95) 95%,rgba(0, 0, 0, 1.0) 100%,);
+    width: 100%;
+
+    & span{
+      font-size: 85%;
+    }
+  }
+
+  .name-age-long {
+    position: absolute;
+    font-size: 180%;
     bottom: 0;
     // margin: 10px;
     margin-bottom: 32.5px;

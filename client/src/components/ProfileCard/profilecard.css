@@ -3,15 +3,14 @@
 }
 
 .cardContainer {
-  margin-top: 50px;
   width: 390vw;
   max-width: 460px;
   height: 490px;
+  z-index: 1;
 }
 
 .card {
-  margin-top: 50px;
-  position: relative;
+  margin-top: 7.5vh;
   background-color: black;
   width: 380vw;
   max-width: 460px;
@@ -50,6 +49,22 @@
 }
 
 .name-age span {
+  font-size: 85%;
+}
+
+.name-age-long {
+  position: absolute;
+  font-size: 180%;
+  bottom: 0;
+  margin-bottom: 32.5px;
+  padding-left: 13px;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.55) 55%, rgba(0, 0, 0, 0.7) 65%, rgba(0, 0, 0, 0.85) 75%, rgba(0, 0, 0, 0.95) 85%, rgba(0, 0, 0, 0.95) 90%, rgba(0, 0, 0, 0.95) 95%, black 100%);
+  width: 100%;
+}
+
+.name-age-long span {
   font-size: 85%;
 }
 

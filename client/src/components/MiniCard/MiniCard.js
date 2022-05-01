@@ -10,10 +10,11 @@ function MiniCard({ profile, showMoreProfileInfo, setShowMoreProfileInfo, setSel
         setShowMoreUserInfo(false)
     }
 
+    let profileName = profile.name === 'Public Universal Friend'?'P.U.F.':profile.name
     return (
         <div className='mini-cardContainer'>
             <div className='mini-card'>
-                <div className='mini-name'>{profile.name}</div>
+                <div className='mini-name'>{profileName}</div>
                 <img className='mini-img' src={charImages('./' + profile.image)} onClick={handleOpenInfo} />
             </div>
         </div>
