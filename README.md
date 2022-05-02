@@ -35,8 +35,6 @@ A simulated dating app experience themed around creating matches with famous his
 * Run the following commands in two seperate terminals:
 
 ```
-
-
 // start the server
 rails s 
 ```
