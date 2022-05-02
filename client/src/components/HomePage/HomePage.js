@@ -66,7 +66,7 @@ function HomePage({ profiles, setProfiles,currentIndex, setCurrentIndex, lastPer
             case true:
               setShowMatchModal(true);
               setMatches([...matches, profiles[index]])
-              setLikeCount(likeCount-=1)
+              setLikeCount(likeCount-1)
               break;
           }
         })
@@ -81,7 +81,7 @@ function HomePage({ profiles, setProfiles,currentIndex, setCurrentIndex, lastPer
           case false:
             break;
           case true:
-            setLikeCount(likeCount-=1)
+            setLikeCount(likeCount-1)
             break;
         }      
       })
@@ -123,7 +123,7 @@ function HomePage({ profiles, setProfiles,currentIndex, setCurrentIndex, lastPer
         case false:
           break;
         case true:
-          setLikeCount(likeCount+=1)
+          setLikeCount(likeCount+1)
           break;
       }      
     })

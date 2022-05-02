@@ -7,10 +7,6 @@ import axios from 'axios';
 function LikeCounter ({likeCount}) {
     let history = useHistory();
 
-    function handleClick(){
-        history.push(`/`)
-    }
-
     let likeMsg = likeCount == 1 ? 'Match Left': 'Matches'
     return (
         <div className='likecounter-Container'>
