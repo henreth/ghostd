@@ -16,9 +16,9 @@ A simulated dating app experience themed around creating matches with famous his
 #
 ## Technical Accomplishments
 
-* Implemented Rails Active Storage to capture user image submissions, stored data in a relational PostgreSQL database, and display the image via a URL source. 
-* Added bcrypt user authentication to facilitate account creation, securely pass sensitive information, set protected cookies allowing for persisting user login, and ` validate login status to access certain application features.
-* Employed Flexbox CSS to build a full UI from scratch, style React components and page elements. 
+* Utilized Ruby on Rails to manipulate an object-relational database of profiles that are randomly assigned to match with the user.
+* Developed a series of custom methods to track and manage profile relationships, such as likes and resets.
+* Implemented React.js hooks to dynamically respond to user inputs, creating card swiping functionality reminiscent to popular dating applications
 
 **Made With:** 
 
@@ -35,6 +35,8 @@ A simulated dating app experience themed around creating matches with famous his
 * Run the following commands in two seperate terminals:
 
 ```
+
+
 // start the server
 rails s 
 ```
@@ -46,3 +48,4 @@ npm start --prefix client
 
 Developed by: 
 * [Scarlett Eller](https://github.com/ScarlettEller1715)
+* [Henry Miller](https://github.com/henreth/) 
