@@ -11,7 +11,7 @@ A simulated dating app experience themed around creating matches with famous his
 
 # Demos:
 
-<img src='ghostd-demo.gif' width='500'>
+<img src='ghostd-demo.gif' width='750'>
 
 #
 ## Technical Accomplishments
@@ -34,15 +34,15 @@ A simulated dating app experience themed around creating matches with famous his
 * Run the following commands in two seperate terminals:
 
 ```
-rails s
+// start the server
+rails s 
 ```
 
 ```
-npm start --prefix client
+// start the frontend interface
+npm start --prefix client 
 ```
 
 Developed by: 
 * [Scarlett Eller](https://github.com/ScarlettEller1715)
 * [Henry Miller](https://github.com/henreth/)
-
-
