@@ -17,7 +17,6 @@ function MatchModal({ setShowMatchModal, user, profile }) {
 
     function handleGoToProfile() {
         history.push('/match/' + profile.id)
-        history.go(0)
         setShowMatchModal(false)
     }
 
