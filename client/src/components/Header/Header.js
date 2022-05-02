@@ -14,6 +14,7 @@ function Header({ matches, setMatches, user, showInfoModal, setShowInfoModal, ha
 
   function handleHomeClick() {
     history.push('/')
+    window.location.reload()
   }
 
   function handleInfoClick() {
