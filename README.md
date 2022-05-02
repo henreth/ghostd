@@ -16,9 +16,9 @@ A simulated dating app experience themed around creating matches with famous his
 #
 ## Technical Accomplishments
 
-* Utilized Ruby on Rails to manipulate an object-relational database of profiles that are randomly assigned to match with the user.
-* Developed a series of custom methods to track and manage profile relationships, such as likes and resets.
-* Implemented React.js hooks to dynamically respond to user inputs, creating card swiping functionality reminiscent to popular dating applications
+* Implemented Rails Active Storage to capture user image submissions, stored data in a relational PostgreSQL database, and display the image via a URL source. 
+* Added bcrypt user authentication to facilitate account creation, securely pass sensitive information, set protected cookies allowing for persisting user login, and ` validate login status to access certain application features.
+* Employed Flexbox CSS to build a full UI from scratch, style React components and page elements. 
 
 **Made With:** 
 
@@ -28,6 +28,7 @@ A simulated dating app experience themed around creating matches with famous his
    <a href="https://rubyonrails.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/rails/rails-original-wordmark.svg" alt="rails" width="40" height="40"/> </a> 
     <a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a>
 #
+
 ## How to Run This Application:
 * Install Ruby Gems with via the "Bundle Install" command
 * Install required NPM nodes with the command "npm install --prefix client"
@@ -45,4 +46,3 @@ npm start --prefix client
 
 Developed by: 
 * [Scarlett Eller](https://github.com/ScarlettEller1715)
-* [Henry Miller](https://github.com/henreth/)
