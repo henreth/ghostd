@@ -11,7 +11,7 @@ A simulated dating app experience themed around creating matches with famous his
 
 # Demos:
 
-<img src='ghostd-demo.gif' width='500'>
+<img src='ghostd-demo.gif' width='750'>
 
 #
 ## Technical Accomplishments
@@ -28,21 +28,22 @@ A simulated dating app experience themed around creating matches with famous his
    <a href="https://rubyonrails.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/rails/rails-original-wordmark.svg" alt="rails" width="40" height="40"/> </a> 
     <a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a>
 #
+
 ## How to Run This Application:
 * Install Ruby Gems with via the "Bundle Install" command
 * Install required NPM nodes with the command "npm install --prefix client"
 * Run the following commands in two seperate terminals:
 
 ```
-rails s
+// start the server
+rails s 
 ```
 
 ```
-npm start --prefix client
+// start the frontend interface
+npm start --prefix client 
 ```
 
 Developed by: 
 * [Scarlett Eller](https://github.com/ScarlettEller1715)
-* [Henry Miller](https://github.com/henreth/)
-
-
+* [Henry Miller](https://github.com/henreth/) 
