@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  # resources :interactions
-  # resources :profiles
   resources :users
 
   # Profiles 
@@ -29,12 +27,5 @@ Rails.application.routes.draw do
   patch "/dislike", to: "interactions#dislike"
   patch "/undo", to: "interactions#undo"
   patch "/unmatch", to: "interactions#unmatch"
-
-
-
-  ## All changes
-    ##"/profiles" to "/profiledeck"
-    ##"/likes" to "/all_interactions"
-    ## like and dislike are now patches
 
 end

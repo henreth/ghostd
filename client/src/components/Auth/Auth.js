@@ -8,12 +8,6 @@ export default function Auth({username, setUsername, password, setPassword, sign
     let [formType,setFormType]=useState(false)
     let history = useHistory();
 
-    // useEffect(() => {
-    //     if (signedIn == true) {
-    //       history.push('/');
-    //     }
-    //   }, [])
-
     function changeType(){
         setUsername('');
         setPassword('');
@@ -51,7 +45,6 @@ export default function Auth({username, setUsername, password, setPassword, sign
                         <input className='auth-input' type="text" name="email" placeholder="Username" value={username} onChange={(e)=>{setUsername(e.target.value)}} />
                         <input className='auth-input' type="password" name="password" placeholder="Password"  value={password} onChange={(e)=>{setPassword(e.target.value)}}/>
                     </div>
-                    {/* <p>Forgot Your Password?</p> */}
                     <button className='auth-button' onClick={handleLogInSubmit}>SUBMIT</button>
                 </form>
 

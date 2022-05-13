@@ -88,14 +88,12 @@ export default function App() {
           axios.get(unswiped)
             .then(r => {
               setProfiles(r.data)
-              // console.log(r.data)
               setCurrentIndex(r.data.length - 1)
               setLastPerson(r.data[r.data.length - 1])
 
               axios.get(matchesUrl)
                 .then(r => {
                   setMatches(r.data)
-                  // console.log(r.data)
                 })
 
               axios.get('/unswiped_likes')
@@ -139,7 +137,6 @@ export default function App() {
         axios.get(unswiped)
           .then(r => {
             setProfiles(r.data)
-            // console.log(r.data)
             setCurrentIndex(r.data.length - 1)
             setLastPerson(r.data[r.data.length - 1])
 
@@ -147,7 +144,6 @@ export default function App() {
             axios.get(matchesUrl)
               .then(r => {
                 setMatches(r.data)
-                // console.log(r.data)
               })
 
             axios.get('/unswiped_likes')
@@ -190,14 +186,12 @@ export default function App() {
                 axios.get(unswiped)
                   .then(r => {
                     setProfiles(r.data)
-                    // console.log(r.data)
                     setCurrentIndex(r.data.length - 1)
                     setLastPerson(r.data[r.data.length - 1])
 
                     axios.get(matchesUrl)
                       .then(r => {
                         setMatches(r.data)
-                        // console.log(r.data)
                       })
 
                     axios.get('/unswiped_likes')
