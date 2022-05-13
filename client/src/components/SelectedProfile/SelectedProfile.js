@@ -14,7 +14,7 @@ export default function SelectedProfile({user, matches,setMatches}) {
     let [locationLength, setLocationLength] = useState(0)
 
 
-    // console.log(params.profileId)
+
     document.title=`Ghostd - ${data.name}`
 
 
@@ -28,7 +28,7 @@ export default function SelectedProfile({user, matches,setMatches}) {
     },[])
 
     // if the selected profile is not in the user matches, display nothing
-    // add error message?
+
     let matchIds = matches.map(match=>(match['id'] === data['id']))
     if (matchIds.includes(true)){
     } else {

@@ -52,7 +52,6 @@ function HomePage({ profiles, setProfiles,currentIndex, setCurrentIndex, lastPer
   function swiped(direction, profile, index, id) {
     setLastDirection(direction)
     updateCurrentIndex(index - 1)
-    // console.log(profiles[index].id)
 
     if (direction === 'right') {
       axios.patch(likeUrl, {
