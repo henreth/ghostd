@@ -55,20 +55,4 @@ puts "seeding profiles"
   p24.id, p25.id, p26.id, p27.id, p28.id, p29.id, p30.id, p31.id, p32.id, p33.id, p34.id, 
   p35.id, p36.id, p37.id, p38.id, p39.id, p40.id, p41.id, p42.id, p42.id].shuffle
 
-# puts "creating interactions"
-#   l1 = Interaction.create(user_id: u1.id, profile_id: profile_array[0], user_like: nil, profile_like: true, swiped_status: false)
-#   l2 = Interaction.create(user_id: u1.id, profile_id: profile_array[1], user_like: nil, profile_like: true, swiped_status: false)
-#   l3 = Interaction.create(user_id: u1.id, profile_id: profile_array[2], user_like: nil, profile_like: true, swiped_status: false)
-#   l4 = Interaction.create(user_id: u1.id, profile_id: profile_array[3], user_like: nil, profile_like: true, swiped_status: false)
-#   l5 = Interaction.create(user_id: u1.id, profile_id: profile_array[4], user_like: nil, profile_like: true, swiped_status: false)
-#   l6 = Interaction.create(user_id: u1.id, profile_id: profile_array[5], user_like: nil, profile_like: true, swiped_status: false)
-#   l7 = Interaction.create(user_id: u1.id, profile_id: profile_array[6], user_like: nil, profile_like: true, swiped_status: false)
-#   l8 = Interaction.create(user_id: u1.id, profile_id: profile_array[7], user_like: nil, profile_like: true, swiped_status: false)
-#   l9 = Interaction.create(user_id: u1.id, profile_id: profile_array[8], user_like: nil, profile_like: true, swiped_status: false)
-#   l10 = Interaction.create(user_id: u1.id, profile_id: profile_array[9], user_like: nil, profile_like: true, swiped_status: false)
-#   l11 = Interaction.create(user_id: u1.id, profile_id: profile_array[10], user_like: nil, profile_like: true, swiped_status: false)
-#   l12 = Interaction.create(user_id: u1.id, profile_id: profile_array[11], user_like: nil, profile_like: true, swiped_status: false)
-#   l13 = Interaction.create(user_id: u1.id, profile_id: profile_array[12], user_like: nil, profile_like: true, swiped_status: false)
-#   l14 = Interaction.create(user_id: u1.id, profile_id: profile_array[13], user_like: nil, profile_like: true, swiped_status: false)
-
 puts "have a nice day!"
