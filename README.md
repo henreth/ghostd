@@ -6,8 +6,15 @@ A simulated dating app experience themed around creating matches with famous his
 * Press the undo button to undo your last decision if you think you made a mistake.
 * Match with 40+ unique profiles.
 
+**Try it out here:**: https://ghostd-app.herokuapp.com/
 
-**APP**: https://ghostd-app.herokuapp.com/
+
+### Developed by: 
+
+![Contributors Display](https://badges.pufler.dev/contributors/henreth/ghostd)
+
+* [Henry Miller](https://github.com/henreth/) 
+* [Scarlett Eller](https://github.com/ScarlettEller1715)
 
 # Demos:
 
@@ -45,12 +52,3 @@ rails s
 // start the frontend interface
 npm start --prefix client 
 ```
-# 
-
-### Developed by: 
-
-![Contributors Display](https://badges.pufler.dev/contributors/henreth/ghostd)
-
-* [Henry Miller](https://github.com/henreth/) 
-* [Scarlett Eller](https://github.com/ScarlettEller1715)
-
