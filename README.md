@@ -11,10 +11,12 @@ A simulated dating app experience themed around creating matches with famous his
 
 ### Developed by: 
 
-![Contributors Display](https://badges.pufler.dev/contributors/henreth/ghostd)
-
-* [Henry Miller](https://github.com/henreth/) 
-* [Scarlett Eller](https://github.com/ScarlettEller1715)
+<a href="https://github.com/henreth" target="_blank" title="henreth">
+  <img src="https://github.com/henreth.png?size=50" height="45" width="45" alt="henreth"/>
+</a>
+<a href="https://github.com/ScarlettEller1715" target="_blank" title="ScarlettEller1715">
+  <img src="https://github.com/ScarlettEller1715.png?size=50" height="45" width="45" alt="ScarlettEller1715"/>
+</a>
 
 # Demos:
 
