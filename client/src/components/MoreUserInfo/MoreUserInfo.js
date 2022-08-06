@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import {useHistory} from 'react-router-dom'
 import './moreuserinfo.css';
 import locationIcon from '../../img/location_icon.png';
 import userPhoto from '../../img/user-photo.png'
@@ -11,6 +12,7 @@ function MoreProfileInfo({ signedIn, showMoreProfileInfo, setShowMoreProfileInfo
     let [clickedLogOut, setClickedLogOut] = useState(false);
     let [clickedEdit, setClickedEdit] = useState(false);
     let [clickedReset, setClickedReset] = useState(false);
+    let history = useHistory();
 
     function handleCloseProfile() {
         setShowMoreProfileInfo(!showMoreProfileInfo)
@@ -88,6 +90,7 @@ function MoreProfileInfo({ signedIn, showMoreProfileInfo, setShowMoreProfileInfo
 
                         axios.get('/unswiped_likes')
                             .then(r => setLikeCount(r.data))
+                        history.push('/')
                         window.location.reload();
                     })
             })
