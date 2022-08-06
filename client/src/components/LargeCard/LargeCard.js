@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react'
 import './largecard.css';
 import location from '../../img/location_icon.png';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 let unmatchUrl = '/unmatch';
 
@@ -9,6 +10,7 @@ export default function LargeCard ({profile,nameLength,locationLength,matches,se
     const charImages = require.context('../../img/characters', true);
 
     let [clicked,setClicked] = useState(false);
+    let history = useHistory()
 
     function handleRemoveClick(){
         setClicked(true);
@@ -19,6 +21,7 @@ export default function LargeCard ({profile,nameLength,locationLength,matches,se
         setMatches(matches.filter(match=>{
             return match.id !== profile.id
           }))
+        history.push('/')
     
     }
 
